@@ -8,14 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Object",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://scripts/utils.gd"
+} ]
 _global_script_class_icons={
-
+"Utils": ""
 }
 
 [application]
 
 config/name="nlp_og"
+run/main_scene="res://scenes/farms.tscn"
 config/icon="res://icon.png"
 
 [debug]
@@ -24,7 +30,9 @@ gdscript/warnings/treat_warnings_as_errors=true
 
 [display]
 
-window/stretch/mode="viewport"
+window/size/width=960
+window/size/height=540
+window/stretch/mode="2d"
 
 [editor_plugins]
 
