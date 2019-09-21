@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/gate.json-c4882928a68ece3eb5a66df765074323.scn"
+
+[deps]
+
+source_file="res://sprites/gate.json"
+dest_files=[ "res://.import/gate.json-c4882928a68ece3eb5a66df765074323.scn" ]
+
+[params]
+
+autoplay_animation="Closed"
+constant_frame_rate=100
+default_animation_looping=false
