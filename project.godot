@@ -102,6 +102,54 @@ scale_down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777236,"unicode":0,"echo":false,"script":null)
  ]
 }
+p2_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_up={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [physics]
 
