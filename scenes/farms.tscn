@@ -806,6 +806,7 @@ position = Vector2( 168, 72 )
 position = Vector2( 168, 136 )
 
 [node name="Well" parent="." instance=ExtResource( 3 )]
+position = Vector2( 264, 248 )
 
 [node name="Gates" type="Node2D" parent="."]
 
