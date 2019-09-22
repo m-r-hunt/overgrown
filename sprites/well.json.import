@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/well.json-d67a9ddb6c05b7f249f5eb608ecdb63a.scn"
+
+[deps]
+
+source_file="res://sprites/well.json"
+dest_files=[ "res://.import/well.json-d67a9ddb6c05b7f249f5eb608ecdb63a.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

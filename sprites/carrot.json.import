@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/carrot.json-4b9c887488507c80d30e76664491dd7b.scn"
+
+[deps]
+
+source_file="res://sprites/carrot.json"
+dest_files=[ "res://.import/carrot.json-4b9c887488507c80d30e76664491dd7b.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
