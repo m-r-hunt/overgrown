@@ -23,6 +23,8 @@ texture = ExtResource( 3 )
 [node name="RayCast2D" type="RayCast2D" parent="KinematicBody2D/Selector"]
 enabled = true
 cast_to = Vector2( 0, 1 )
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Aseprite Sprite" parent="KinematicBody2D" instance=ExtResource( 4 )]
 position = Vector2( 0, -6.897 )

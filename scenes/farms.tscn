@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/plot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/well.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/gate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/catman.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -841,3 +842,6 @@ player_number = 3
 [node name="Player4" parent="Players" instance=ExtResource( 5 )]
 position = Vector2( 416, 417.103 )
 player_number = 4
+
+[node name="Carrot" parent="." instance=ExtResource( 6 )]
+position = Vector2( 184, 264 )
