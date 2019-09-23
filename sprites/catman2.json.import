@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/catman2.json-1bc2c497755aad823a6c2512480a4f25.scn"
+
+[deps]
+
+source_file="res://sprites/catman2.json"
+dest_files=[ "res://.import/catman2.json-1bc2c497755aad823a6c2512480a4f25.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

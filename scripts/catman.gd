@@ -3,10 +3,10 @@ extends KinematicBody2D
 var player_speed := 100.0
 var last_select_dir := Vector2(0, 1)
 
-var down_action := "p1_down"
-var up_action := "p1_up"
-var left_action := "p1_left"
-var right_action := "p1_right"
+export var down_action := "p1_down"
+export var up_action := "p1_up"
+export var left_action := "p1_left"
+export var right_action := "p1_right"
 
 func _ready():
 	$"Aseprite Sprite/Animation Player".play("Walk")
