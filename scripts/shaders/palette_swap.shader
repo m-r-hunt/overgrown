@@ -1,6 +1,5 @@
 shader_type canvas_item;
 
-uniform bool swap;
 uniform sampler2D palettes;
 uniform int palette_n;
 

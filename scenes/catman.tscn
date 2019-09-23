@@ -10,7 +10,6 @@
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
 shader = ExtResource( 5 )
-shader_param/swap = true
 shader_param/palette_n = 0
 shader_param/palettes = ExtResource( 6 )
 
@@ -22,6 +21,7 @@ height = 1.5921
 script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 3
 script = ExtResource( 2 )
 
 [node name="Selector" type="Sprite" parent="KinematicBody2D"]
