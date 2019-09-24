@@ -18,3 +18,8 @@ func pickable():
 		_:
 			return false
 
+
+func place_on(obj):
+	get_parent().remove_child(self)
+	obj.add_child(self)
+	position = Vector2.ZERO

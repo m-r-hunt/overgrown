@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ScaleControl="*res://scripts/scale_control.gd"
+DebugHelper="*res://scripts/debug_helper.gd"
 
 [debug]
 

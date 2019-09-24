@@ -32,10 +32,16 @@ func _physics_process(delta):
 	$"Selector".position = Vector2(selector_x, selector_y) - global_position
 	if Input.is_action_just_pressed(interact_action):
 		if has_node("Held"):
-			var obj = get_node("Held")
-			obj.position = $Selector.global_position - get_parent().position
-			remove_child(obj)
-			get_parent().add_child(obj)
+			var collider = $Selector/RayCast2D.get_collider()
+			if collider:
+				if $Held.has_method("place_on"):
+					print("Placing", $Held, "on", collider.get_parent())
+					$Held.place_on(collider.get_parent())
+			else:
+				var obj = get_node("Held")
+				obj.position = $Selector.global_position - get_parent().position
+				remove_child(obj)
+				get_parent().add_child(obj)
 		else:
 			var collider = $Selector/RayCast2D.get_collider()
 			if collider:
