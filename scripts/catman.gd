@@ -10,7 +10,7 @@ export var right_action := "p1_right"
 export var interact_action := "p1_interact"
 
 func _ready():
-	$"Aseprite Sprite/Animation Player".play("Walk")
+	$AsepriteSprite/AnimationPlayer.play("Walk")
 
 
 func _physics_process(delta):

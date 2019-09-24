@@ -4,4 +4,4 @@
 
 [node name="Well" type="Node2D"]
 
-[node name="Aseprite Sprite" parent="." instance=ExtResource( 1 )]
+[node name="AsepriteSprite" parent="." instance=ExtResource( 1 )]

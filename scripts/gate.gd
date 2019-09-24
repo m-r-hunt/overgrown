@@ -13,8 +13,8 @@ func _ready():
 
 
 func on_body_entered(_body):
-	$"Aseprite Sprite/Animation Player".play("Open")
+	$AsepriteSprite/AnimationPlayer.play("Open")
 
 
 func on_body_exited(_body):
-	$"Aseprite Sprite/Animation Player".play("Closed")
+	$AsepriteSprite/AnimationPlayer.play("Closed")

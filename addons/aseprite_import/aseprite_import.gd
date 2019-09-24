@@ -92,12 +92,12 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 		return ERR_INVALID_DATA
 
 	var sprite = Sprite.new()
-	sprite.name = "Aseprite Sprite"
+	sprite.name = "AsepriteSprite"
 	sprite.texture = texture
 	sprite.hframes = json.frames.size()
 
 	var animation_player = AnimationPlayer.new()
-	animation_player.name = "Animation Player"
+	animation_player.name = "AnimationPlayer"
 	sprite.add_child(animation_player)
 	animation_player.owner = sprite
 

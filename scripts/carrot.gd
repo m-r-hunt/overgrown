@@ -23,3 +23,5 @@ func place_on(obj):
 	get_parent().remove_child(self)
 	obj.add_child(self)
 	position = Vector2.ZERO
+	state = State.Growing
+	$AsepriteSprite/AnimationPlayer.play("Grow1")
