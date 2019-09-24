@@ -169,6 +169,16 @@ p4_interact={
 "events": [  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="General"
+2d_physics/layer_2="Player1"
+2d_physics/layer_3="Player2"
+2d_physics/layer_4="Player3"
+2d_physics/layer_5="Player4"
+2d_physics/layer_6="Pickable"
+2d_physics/layer_7="Plots"
+
 [physics]
 
 2d/default_gravity_vector=Vector2( 0, 0 )
