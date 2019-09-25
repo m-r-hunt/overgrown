@@ -19,8 +19,8 @@ func pickable():
 			return false
 
 
-func place(place):
-	assert(place is Place)
+func place(place: Place):
+	assert(place)
 	get_parent().remove_child(self)
 	place.target.add_child(self)
 	position = Vector2.ZERO
