@@ -25,3 +25,5 @@ func place_on(obj):
 	position = Vector2.ZERO
 	state = State.Growing
 	$AsepriteSprite/AnimationPlayer.play("Grow1")
+	var collider = preload("res://scenes/carrot_collider.tscn").instance()
+	add_child(collider)
