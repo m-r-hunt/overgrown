@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/catman_top.gd" type="Script" id=1]
 [ext_resource path="res://scripts/catman.gd" type="Script" id=2]
@@ -6,7 +6,10 @@
 [ext_resource path="res://sprites/catman.json" type="PackedScene" id=4]
 [ext_resource path="res://sprites/catman1.png" type="Texture" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 8.45095
 height = 1.5921
 
@@ -18,17 +21,26 @@ collision_layer = 3
 script = ExtResource( 2 )
 
 [node name="Selector" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 24, 0 )
 texture = ExtResource( 3 )
 
-[node name="RayCast2D" type="RayCast2D" parent="KinematicBody2D/Selector"]
-enabled = true
-cast_to = Vector2( 0, 1 )
-collide_with_areas = true
-collide_with_bodies = false
+[node name="PickableArea" type="Area2D" parent="KinematicBody2D/Selector"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Selector/PickableArea"]
+shape = SubResource( 1 )
+
+[node name="PlotArea" type="Area2D" parent="KinematicBody2D/Selector"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Selector/PlotArea"]
+shape = SubResource( 1 )
 
 [node name="AsepriteSprite" parent="KinematicBody2D" instance=ExtResource( 4 )]
 position = Vector2( 0, -6.897 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
