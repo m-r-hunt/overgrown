@@ -187,7 +187,7 @@ p4_interact={
 
 [my_settings]
 
-auto_full_screen=false
+auto_maximize=false
 
 [physics]
 
