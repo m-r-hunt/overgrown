@@ -21,10 +21,11 @@ func pickable():
 
 func place(place: Place):
 	assert(place)
-	get_parent().remove_child(self)
-	place.target.add_child(self)
-	position = Vector2.ZERO
-	state = State.GROWING
-	$AsepriteSprite/AnimationPlayer.play("Grow1")
-	var collider = preload("res://scenes/carrot_collider.tscn").instance()
-	add_child(collider)
+	if state == State.BAG:
+		get_parent().remove_child(self)
+		place.target.add_child(self)
+		position = Vector2.ZERO
+		state = State.GROWING
+		$AsepriteSprite/AnimationPlayer.play("Grow1")
+		var collider = preload("res://scenes/carrot_collider.tscn").instance()
+		add_child(collider)
