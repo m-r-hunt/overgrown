@@ -46,7 +46,7 @@ func _physics_process(delta):
 		else:
 			var areas = $Selector/PickableArea.get_overlapping_areas()
 			if len(areas) > 0:
-				var obj = areas[0].get_parent()
+				var obj = areas[0]
 				if obj.has_method("pickable") && obj.pickable():
 					obj.get_parent().remove_child(obj)
 					add_child(obj)
