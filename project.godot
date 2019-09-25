@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Reference",
+"class": "Place",
+"language": "GDScript",
+"path": "res://scripts/interactions/place.gd"
+}, {
 "base": "Object",
 "class": "Utils",
 "language": "GDScript",
 "path": "res://scripts/utils.gd"
 } ]
 _global_script_class_icons={
+"Place": "",
 "Utils": ""
 }
 
