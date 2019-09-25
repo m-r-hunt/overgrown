@@ -185,6 +185,10 @@ p4_interact={
 2d_physics/layer_6="Pickable"
 2d_physics/layer_7="Plots"
 
+[my_settings]
+
+auto_full_screen=false
+
 [physics]
 
 2d/default_gravity_vector=Vector2( 0, 0 )

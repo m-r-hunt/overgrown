@@ -2,4 +2,5 @@ extends Node
 
 
 func _ready():
-	OS.window_maximized = true
+	if ProjectSettings.get_setting("my_settings/auto_full_screen"):
+		OS.window_maximized = true

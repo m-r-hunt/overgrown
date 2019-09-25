@@ -9,7 +9,9 @@ enum State {
 	ITEM,
 }
 
+
 export var state := State.BAG
+
 
 func pickable():
 	match state:

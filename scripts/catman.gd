@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
+
 var player_speed := 100.0
 var last_select_dir := Vector2(0, 1)
+
 
 export var down_action := "p1_down"
 export var up_action := "p1_up"
 export var left_action := "p1_left"
 export var right_action := "p1_right"
 export var interact_action := "p1_interact"
+
 
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("Walk")
@@ -27,9 +30,11 @@ func _physics_process(delta):
 		last_select_dir = dx
 	dx *= player_speed * delta
 	Utils.use(move_and_collide(dx))
+
 	var selector_x = 8 + floor(global_position.x / 16)*16 + last_select_dir.x * 16
 	var selector_y = 8 + floor(global_position.y / 16)*16 + last_select_dir.y * 16
 	$"Selector".position = Vector2(selector_x, selector_y) - global_position
+
 	if Input.is_action_just_pressed(interact_action):
 		if has_node("Held"):
 			var areas = $Selector/PlotArea.get_overlapping_areas()
