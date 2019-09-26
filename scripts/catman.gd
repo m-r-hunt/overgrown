@@ -39,7 +39,7 @@ func _physics_process(delta):
 		if has_node("Held"):
 			var areas = $Selector/PlotArea.get_overlapping_areas()
 			if len(areas) > 0:
-				var obj = areas[0].get_parent()
+				var obj = areas[0]
 				if $Held.has_method("place"):
 					print("Placing", $Held, "on", obj)
 					$Held.place(Place.new(obj))
