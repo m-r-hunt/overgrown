@@ -37,12 +37,18 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed(interact_action):
 		if has_node("Held"):
-			var areas = $Selector/PlotArea.get_overlapping_areas()
-			if len(areas) > 0:
-				var obj = areas[0]
+			var plot_areas = $Selector/PlotArea.get_overlapping_areas()
+			var seller_areas = $Selector/SellerArea.get_overlapping_areas()
+			if len(plot_areas) > 0:
+				var obj = plot_areas[0]
 				if $Held.has_method("place"):
 					print("Placing", $Held, "on", obj)
 					$Held.place(Place.new(obj))
+			elif len(seller_areas) > 0:
+				var obj = seller_areas[0]
+				if $Held.has_method("sell"):
+					print("Selling", $Held, "at", obj)
+					$Held.sell(Sell.new(obj, get_parent()))
 			else:
 				var obj = get_node("Held")
 				obj.position = $Selector.global_position - get_parent().position

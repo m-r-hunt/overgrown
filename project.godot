@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interactions/place.gd"
 }, {
+"base": "Reference",
+"class": "Sell",
+"language": "GDScript",
+"path": "res://scripts/interactions/sell.gd"
+}, {
 "base": "Object",
 "class": "Utils",
 "language": "GDScript",
@@ -21,6 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Place": "",
+"Sell": "",
 "Utils": ""
 }
 
@@ -34,6 +40,7 @@ config/icon="res://icon.png"
 
 ScaleControl="*res://scripts/scale_control.gd"
 DebugHelper="*res://scripts/debug_helper.gd"
+PlayerStats="*res://scripts/player_stats.gd"
 
 [debug]
 
@@ -184,6 +191,7 @@ p4_interact={
 2d_physics/layer_5="Player4"
 2d_physics/layer_6="Pickable"
 2d_physics/layer_7="Plots"
+2d_physics/layer_8="Seller"
 
 [my_settings]
 
