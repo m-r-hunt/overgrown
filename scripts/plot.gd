@@ -2,4 +2,6 @@ extends Area2D
 
 
 func water():
-	$"AsepriteSprite/AnimationPlayer".play("Watered")
+	if has_node("Planted"):
+		$"AsepriteSprite/AnimationPlayer".play("Watered")
+		$Planted.water();
