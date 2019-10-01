@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/plot.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/catman.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/watering_can.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sell_box.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -812,7 +813,7 @@ position = Vector2( 168, 72 )
 position = Vector2( 168, 136 )
 
 [node name="Well" parent="." instance=ExtResource( 3 )]
-position = Vector2( 264, 248 )
+position = Vector2( 264, 232 )
 
 [node name="Gates" type="Node2D" parent="."]
 editor/display_folded = true
@@ -833,6 +834,7 @@ position = Vector2( 416, 344 )
 allowed_player = 4
 
 [node name="Players" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Player1" parent="Players" instance=ExtResource( 5 )]
 position = Vector2( 128, 112 )
@@ -855,3 +857,6 @@ z_index = 1
 
 [node name="WateringCan" parent="." instance=ExtResource( 7 )]
 position = Vector2( 40, 184 )
+
+[node name="SellBox" parent="." instance=ExtResource( 8 )]
+position = Vector2( 264, 280 )
