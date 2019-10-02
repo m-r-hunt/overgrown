@@ -51,7 +51,7 @@ func _physics_process(delta):
 					$Held.sell(Sell.new(obj, get_parent()))
 			else:
 				var obj = get_node("Held")
-				obj.position = $Selector.global_position - get_parent().position
+				obj.position = $Selector.global_position - get_parent().global_position
 				remove_child(obj)
 				get_parent().add_child(obj)
 		else:

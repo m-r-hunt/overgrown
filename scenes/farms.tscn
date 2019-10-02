@@ -1,18 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/tilemaps/farms_bgtiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tilemaps/farms_scenery.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/plot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/well.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/gate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/catman.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/watering_can.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/sell_box.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/seed_spawner.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/conveyor_down.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/seed_sink.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/conveyor_up.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/well.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/sell_box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/seed_spawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/conveyor_down.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/seed_sink.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/conveyor_up.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/single_farm.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,1044 +17,237 @@
 
 [node name="Scenery" parent="." instance=ExtResource( 2 )]
 
-[node name="Plots" type="Node2D" parent="."]
-editor/display_folded = true
-z_index = -1
-
-[node name="TopLeft" type="Node2D" parent="Plots"]
-editor/display_folded = true
-
-[node name="Plot1" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 56 )
-
-[node name="Plot57" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 120 )
-
-[node name="Plot2" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 56 )
-
-[node name="Plot58" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 120 )
-
-[node name="Plot3" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 56 )
-
-[node name="Plot64" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 120 )
-
-[node name="Plot4" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 56 )
-
-[node name="Plot52" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 120 )
-
-[node name="Plot5" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 56 )
-
-[node name="Plot55" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 120 )
-
-[node name="Plot6" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 56 )
-
-[node name="Plot50" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 120 )
-
-[node name="Plot7" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 56 )
-
-[node name="Plot59" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 120 )
-
-[node name="Plot8" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 56 )
-
-[node name="Plot53" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 120 )
-
-[node name="Plot9" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 72 )
-
-[node name="Plot56" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 136 )
-
-[node name="Plot17" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 88 )
-
-[node name="Plot33" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 152 )
-
-[node name="Plot18" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 88 )
-
-[node name="Plot34" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 152 )
-
-[node name="Plot19" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 88 )
-
-[node name="Plot35" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 152 )
-
-[node name="Plot20" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 88 )
-
-[node name="Plot37" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 152 )
-
-[node name="Plot21" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 88 )
-
-[node name="Plot42" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 152 )
-
-[node name="Plot22" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 88 )
-
-[node name="Plot45" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 152 )
-
-[node name="Plot23" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 88 )
-
-[node name="Plot49" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 152 )
-
-[node name="Plot24" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 88 )
-
-[node name="Plot40" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 152 )
-
-[node name="Plot25" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 104 )
-
-[node name="Plot41" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 168 )
-
-[node name="Plot26" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 104 )
-
-[node name="Plot43" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 168 )
-
-[node name="Plot27" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 104 )
-
-[node name="Plot44" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 168 )
-
-[node name="Plot28" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 104 )
-
-[node name="Plot48" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 168 )
-
-[node name="Plot29" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 104 )
-
-[node name="Plot47" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 168 )
-
-[node name="Plot30" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 104 )
-
-[node name="Plot46" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 168 )
-
-[node name="Plot31" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 104 )
-
-[node name="Plot38" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 168 )
-
-[node name="Plot32" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 104 )
-
-[node name="Plot39" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 168 )
-
-[node name="Plot10" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 72 )
-
-[node name="Plot60" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 136 )
-
-[node name="Plot12" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 72 )
-
-[node name="Plot61" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 136 )
-
-[node name="Plot13" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 72 )
-
-[node name="Plot54" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 136 )
-
-[node name="Plot14" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 72 )
-
-[node name="Plot62" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 136 )
-
-[node name="Plot15" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 72 )
-
-[node name="Plot63" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 136 )
-
-[node name="Plot16" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 72 )
-
-[node name="Plot36" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 136 )
-
-[node name="Plot11" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 72 )
-
-[node name="Plot51" parent="Plots/TopLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 136 )
-
-[node name="BottomLeft" type="Node2D" parent="Plots"]
-editor/display_folded = true
-position = Vector2( 0, 320 )
-
-[node name="Plot1" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 56 )
-
-[node name="Plot57" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 120 )
-
-[node name="Plot2" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 56 )
-
-[node name="Plot58" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 120 )
-
-[node name="Plot3" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 56 )
-
-[node name="Plot64" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 120 )
-
-[node name="Plot4" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 56 )
-
-[node name="Plot52" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 120 )
-
-[node name="Plot5" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 56 )
-
-[node name="Plot55" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 120 )
-
-[node name="Plot6" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 56 )
-
-[node name="Plot50" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 120 )
-
-[node name="Plot7" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 56 )
-
-[node name="Plot59" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 120 )
-
-[node name="Plot8" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 56 )
-
-[node name="Plot53" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 120 )
-
-[node name="Plot9" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 72 )
-
-[node name="Plot56" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 136 )
-
-[node name="Plot17" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 88 )
-
-[node name="Plot33" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 152 )
-
-[node name="Plot18" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 88 )
-
-[node name="Plot34" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 152 )
-
-[node name="Plot19" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 88 )
-
-[node name="Plot35" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 152 )
-
-[node name="Plot20" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 88 )
-
-[node name="Plot37" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 152 )
-
-[node name="Plot21" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 88 )
-
-[node name="Plot42" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 152 )
-
-[node name="Plot22" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 88 )
-
-[node name="Plot45" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 152 )
-
-[node name="Plot23" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 88 )
-
-[node name="Plot49" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 152 )
-
-[node name="Plot24" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 88 )
-
-[node name="Plot40" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 152 )
-
-[node name="Plot25" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 104 )
-
-[node name="Plot41" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 168 )
-
-[node name="Plot26" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 104 )
-
-[node name="Plot43" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 168 )
-
-[node name="Plot27" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 104 )
-
-[node name="Plot44" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 168 )
-
-[node name="Plot28" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 104 )
-
-[node name="Plot48" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 168 )
-
-[node name="Plot29" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 104 )
-
-[node name="Plot47" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 168 )
-
-[node name="Plot30" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 104 )
-
-[node name="Plot46" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 168 )
-
-[node name="Plot31" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 104 )
-
-[node name="Plot38" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 168 )
-
-[node name="Plot32" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 104 )
-
-[node name="Plot39" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 56, 168 )
-
-[node name="Plot10" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 72 )
-
-[node name="Plot60" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 72, 136 )
-
-[node name="Plot12" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 72 )
-
-[node name="Plot61" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 88, 136 )
-
-[node name="Plot13" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 72 )
-
-[node name="Plot54" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 104, 136 )
-
-[node name="Plot14" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 72 )
-
-[node name="Plot62" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 120, 136 )
-
-[node name="Plot15" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 72 )
-
-[node name="Plot63" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 136, 136 )
-
-[node name="Plot16" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 72 )
-
-[node name="Plot36" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 152, 136 )
-
-[node name="Plot11" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 72 )
-
-[node name="Plot51" parent="Plots/BottomLeft" instance=ExtResource( 3 )]
-position = Vector2( 168, 136 )
-
-[node name="TopRight" type="Node2D" parent="Plots"]
-editor/display_folded = true
-position = Vector2( 304, 0 )
-
-[node name="Plot1" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 56 )
-
-[node name="Plot57" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 120 )
-
-[node name="Plot2" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 56 )
-
-[node name="Plot58" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 120 )
-
-[node name="Plot3" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 56 )
-
-[node name="Plot64" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 120 )
-
-[node name="Plot4" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 56 )
-
-[node name="Plot52" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 120 )
-
-[node name="Plot5" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 56 )
-
-[node name="Plot55" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 120 )
-
-[node name="Plot6" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 56 )
-
-[node name="Plot50" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 120 )
-
-[node name="Plot7" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 56 )
-
-[node name="Plot59" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 120 )
-
-[node name="Plot8" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 56 )
-
-[node name="Plot53" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 120 )
-
-[node name="Plot9" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 72 )
-
-[node name="Plot56" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 136 )
-
-[node name="Plot17" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 88 )
-
-[node name="Plot33" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 152 )
-
-[node name="Plot18" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 88 )
-
-[node name="Plot34" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 152 )
-
-[node name="Plot19" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 88 )
-
-[node name="Plot35" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 152 )
-
-[node name="Plot20" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 88 )
-
-[node name="Plot37" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 152 )
-
-[node name="Plot21" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 88 )
-
-[node name="Plot42" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 152 )
-
-[node name="Plot22" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 88 )
-
-[node name="Plot45" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 152 )
-
-[node name="Plot23" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 88 )
-
-[node name="Plot49" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 152 )
-
-[node name="Plot24" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 88 )
-
-[node name="Plot40" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 152 )
-
-[node name="Plot25" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 104 )
-
-[node name="Plot41" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 168 )
-
-[node name="Plot26" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 104 )
-
-[node name="Plot43" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 168 )
-
-[node name="Plot27" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 104 )
-
-[node name="Plot44" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 168 )
-
-[node name="Plot28" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 104 )
-
-[node name="Plot48" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 168 )
-
-[node name="Plot29" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 104 )
-
-[node name="Plot47" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 168 )
-
-[node name="Plot30" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 104 )
-
-[node name="Plot46" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 168 )
-
-[node name="Plot31" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 104 )
-
-[node name="Plot38" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 168 )
-
-[node name="Plot32" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 104 )
-
-[node name="Plot39" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 168 )
-
-[node name="Plot10" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 72 )
-
-[node name="Plot60" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 136 )
-
-[node name="Plot12" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 72 )
-
-[node name="Plot61" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 136 )
-
-[node name="Plot13" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 72 )
-
-[node name="Plot54" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 136 )
-
-[node name="Plot14" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 72 )
-
-[node name="Plot62" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 136 )
-
-[node name="Plot15" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 72 )
-
-[node name="Plot63" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 136 )
-
-[node name="Plot16" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 72 )
-
-[node name="Plot36" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 136 )
-
-[node name="Plot11" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 72 )
-
-[node name="Plot51" parent="Plots/TopRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 136 )
-
-[node name="BottomRight" type="Node2D" parent="Plots"]
-editor/display_folded = true
-position = Vector2( 304, 320 )
-
-[node name="Plot1" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 56 )
-
-[node name="Plot57" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 120 )
-
-[node name="Plot2" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 56 )
-
-[node name="Plot58" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 120 )
-
-[node name="Plot3" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 56 )
-
-[node name="Plot64" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 120 )
-
-[node name="Plot4" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 56 )
-
-[node name="Plot52" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 120 )
-
-[node name="Plot5" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 56 )
-
-[node name="Plot55" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 120 )
-
-[node name="Plot6" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 56 )
-
-[node name="Plot50" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 120 )
-
-[node name="Plot7" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 56 )
-
-[node name="Plot59" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 120 )
-
-[node name="Plot8" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 56 )
-
-[node name="Plot53" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 120 )
-
-[node name="Plot9" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 72 )
-
-[node name="Plot56" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 136 )
-
-[node name="Plot17" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 88 )
-
-[node name="Plot33" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 152 )
-
-[node name="Plot18" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 88 )
-
-[node name="Plot34" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 152 )
-
-[node name="Plot19" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 88 )
-
-[node name="Plot35" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 152 )
-
-[node name="Plot20" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 88 )
-
-[node name="Plot37" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 152 )
-
-[node name="Plot21" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 88 )
-
-[node name="Plot42" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 152 )
-
-[node name="Plot22" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 88 )
-
-[node name="Plot45" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 152 )
-
-[node name="Plot23" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 88 )
-
-[node name="Plot49" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 152 )
-
-[node name="Plot24" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 88 )
-
-[node name="Plot40" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 152 )
-
-[node name="Plot25" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 104 )
-
-[node name="Plot41" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 168 )
-
-[node name="Plot26" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 104 )
-
-[node name="Plot43" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 168 )
-
-[node name="Plot27" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 104 )
-
-[node name="Plot44" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 168 )
-
-[node name="Plot28" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 104 )
-
-[node name="Plot48" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 168 )
-
-[node name="Plot29" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 104 )
-
-[node name="Plot47" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 168 )
-
-[node name="Plot30" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 104 )
-
-[node name="Plot46" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 168 )
-
-[node name="Plot31" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 104 )
-
-[node name="Plot38" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 168 )
-
-[node name="Plot32" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 104 )
-
-[node name="Plot39" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 56, 168 )
-
-[node name="Plot10" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 72 )
-
-[node name="Plot60" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 72, 136 )
-
-[node name="Plot12" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 72 )
-
-[node name="Plot61" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 88, 136 )
-
-[node name="Plot13" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 72 )
-
-[node name="Plot54" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 104, 136 )
-
-[node name="Plot14" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 72 )
-
-[node name="Plot62" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 120, 136 )
-
-[node name="Plot15" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 72 )
-
-[node name="Plot63" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 136, 136 )
-
-[node name="Plot16" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 72 )
-
-[node name="Plot36" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 152, 136 )
-
-[node name="Plot11" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 72 )
-
-[node name="Plot51" parent="Plots/BottomRight" instance=ExtResource( 3 )]
-position = Vector2( 168, 136 )
-
-[node name="Well" parent="." instance=ExtResource( 4 )]
+[node name="Well" parent="." instance=ExtResource( 3 )]
 position = Vector2( 264, 232 )
 
-[node name="Gates" type="Node2D" parent="."]
-editor/display_folded = true
-
-[node name="Gate1" parent="Gates" instance=ExtResource( 5 )]
-position = Vector2( 112, 200 )
-
-[node name="Gate2" parent="Gates" instance=ExtResource( 5 )]
-position = Vector2( 416, 200 )
-allowed_player = 2
-
-[node name="Gate3" parent="Gates" instance=ExtResource( 5 )]
-position = Vector2( 112, 344 )
-allowed_player = 3
-
-[node name="Gate4" parent="Gates" instance=ExtResource( 5 )]
-position = Vector2( 416, 344 )
-allowed_player = 4
-
-[node name="Players" type="Node2D" parent="."]
-editor/display_folded = true
-
-[node name="Player1" parent="Players" instance=ExtResource( 6 )]
-position = Vector2( 128, 112 )
-
-[node name="Player2" parent="Players" instance=ExtResource( 6 )]
-position = Vector2( 376, 112 )
-player_number = 2
-
-[node name="Player3" parent="Players" instance=ExtResource( 6 )]
-position = Vector2( 72, 408 )
-player_number = 3
-
-[node name="Player4" parent="Players" instance=ExtResource( 6 )]
-position = Vector2( 416, 417.103 )
-player_number = 4
-
-[node name="Carrot" parent="." instance=ExtResource( 7 )]
+[node name="Carrot" parent="." instance=ExtResource( 4 )]
 position = Vector2( 184, 264 )
 z_index = 1
 
-[node name="WateringCan" parent="." instance=ExtResource( 8 )]
-position = Vector2( 40, 184 )
-
-[node name="SellBox" parent="." instance=ExtResource( 9 )]
+[node name="SellBox" parent="." instance=ExtResource( 5 )]
 position = Vector2( 264, 280 )
 
 [node name="ConveyorSystem" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="LeftSide" type="Node2D" parent="ConveyorSystem"]
 editor/display_folded = true
 
-[node name="SeedSpawner" parent="ConveyorSystem/LeftSide" instance=ExtResource( 10 )]
+[node name="SeedSpawner" parent="ConveyorSystem/LeftSide" instance=ExtResource( 6 )]
 position = Vector2( 216, 24 )
 
 [node name="ConveyorDowns" type="Node2D" parent="ConveyorSystem/LeftSide"]
 editor/display_folded = true
 
-[node name="ConveyorDown" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 40 )
 
-[node name="ConveyorDown2" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown2" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 56 )
 
-[node name="ConveyorDown3" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown3" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 72 )
 
-[node name="ConveyorDown4" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown4" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 88 )
 
-[node name="ConveyorDown5" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown5" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 104 )
 
-[node name="ConveyorDown6" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown6" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 120 )
 
-[node name="ConveyorDown7" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown7" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 136 )
 
-[node name="ConveyorDown8" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown8" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 152 )
 
-[node name="ConveyorDown9" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown9" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 168 )
 
-[node name="ConveyorDown10" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown10" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 184 )
 
-[node name="ConveyorDown11" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown11" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 200 )
 
-[node name="ConveyorDown12" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown12" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 216 )
 
-[node name="ConveyorDown13" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown13" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 232 )
 
-[node name="ConveyorDown14" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown14" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 248 )
 
-[node name="ConveyorDown15" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown15" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 264 )
 
-[node name="ConveyorDown16" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown16" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 280 )
 
-[node name="ConveyorDown17" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown17" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 296 )
 
-[node name="ConveyorDown18" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown18" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 312 )
 
-[node name="ConveyorDown19" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown19" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 328 )
 
-[node name="ConveyorDown20" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown20" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 344 )
 
-[node name="ConveyorDown21" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown21" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 360 )
 
-[node name="ConveyorDown22" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown22" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 376 )
 
-[node name="ConveyorDown23" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown23" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 392 )
 
-[node name="ConveyorDown24" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown24" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 408 )
 
-[node name="ConveyorDown25" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown25" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 424 )
 
-[node name="ConveyorDown26" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown26" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 440 )
 
-[node name="ConveyorDown27" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown27" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 456 )
 
-[node name="ConveyorDown28" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown28" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 472 )
 
-[node name="ConveyorDown29" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown29" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 488 )
 
-[node name="ConveyorDown30" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 11 )]
+[node name="ConveyorDown30" parent="ConveyorSystem/LeftSide/ConveyorDowns" instance=ExtResource( 7 )]
 position = Vector2( 216, 504 )
 
-[node name="SeedSink" parent="ConveyorSystem/LeftSide" instance=ExtResource( 12 )]
+[node name="SeedSink" parent="ConveyorSystem/LeftSide" instance=ExtResource( 8 )]
 position = Vector2( 216, 520 )
 rotation = -3.14159
 
 [node name="RightSide" type="Node2D" parent="ConveyorSystem"]
 
-[node name="SeedSpawner" parent="ConveyorSystem/RightSide" instance=ExtResource( 10 )]
+[node name="SeedSpawner" parent="ConveyorSystem/RightSide" instance=ExtResource( 6 )]
 position = Vector2( 312, 520 )
 rotation = -3.14159
 
 [node name="ConveyorUps" type="Node2D" parent="ConveyorSystem/RightSide"]
 
-[node name="ConveyorUp" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 504 )
 
-[node name="ConveyorUp2" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp2" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 488 )
 
-[node name="ConveyorUp3" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp3" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 472 )
 
-[node name="ConveyorUp4" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp4" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 456 )
 
-[node name="ConveyorUp5" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp5" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 440 )
 
-[node name="ConveyorUp6" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp6" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 424 )
 
-[node name="ConveyorUp7" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp7" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 408 )
 
-[node name="ConveyorUp8" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp8" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 392 )
 
-[node name="ConveyorUp9" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp9" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 376 )
 
-[node name="ConveyorUp10" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp10" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 360 )
 
-[node name="ConveyorUp11" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp11" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 344 )
 
-[node name="ConveyorUp12" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp12" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 328 )
 
-[node name="ConveyorUp13" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp13" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 312 )
 
-[node name="ConveyorUp14" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp14" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 296 )
 
-[node name="ConveyorUp15" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp15" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 280 )
 
-[node name="ConveyorUp16" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp16" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 264 )
 
-[node name="ConveyorUp17" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp17" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 248 )
 
-[node name="ConveyorUp18" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp18" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 232 )
 
-[node name="ConveyorUp19" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp19" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 216 )
 
-[node name="ConveyorUp20" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp20" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 200 )
 
-[node name="ConveyorUp21" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp21" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 184 )
 
-[node name="ConveyorUp22" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp22" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 168 )
 
-[node name="ConveyorUp23" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp23" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 152 )
 
-[node name="ConveyorUp24" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp24" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 136 )
 
-[node name="ConveyorUp25" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp25" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 120 )
 
-[node name="ConveyorUp26" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp26" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 104 )
 
-[node name="ConveyorUp27" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp27" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 88 )
 
-[node name="ConveyorUp28" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp28" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 72 )
 
-[node name="ConveyorUp29" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp29" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 56 )
 
-[node name="ConveyorUp30" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 13 )]
+[node name="ConveyorUp30" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 40 )
 
-[node name="SeedSink" parent="ConveyorSystem/RightSide" instance=ExtResource( 12 )]
+[node name="SeedSink" parent="ConveyorSystem/RightSide" instance=ExtResource( 8 )]
 position = Vector2( 312, 24 )
+
+[node name="Farms" type="Node2D" parent="."]
+
+[node name="TopLeft" parent="Farms" instance=ExtResource( 10 )]
+
+[node name="TopRight" parent="Farms" instance=ExtResource( 10 )]
+position = Vector2( 304, 0 )
+player_number = 2
+
+[node name="BottomRight" parent="Farms" instance=ExtResource( 10 )]
+position = Vector2( 304, 320 )
+player_number = 4
+top_gate = true
+
+[node name="BottomLeft" parent="Farms" instance=ExtResource( 10 )]
+position = Vector2( 0, 320 )
+player_number = 3
+top_gate = true

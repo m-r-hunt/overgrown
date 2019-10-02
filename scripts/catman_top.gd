@@ -11,6 +11,7 @@ func _ready():
 
 
 func set_player_number(n):
+	$KinematicBody2D.collision_layer &= ~(1 << player_number)
 	player_number = n
 	$KinematicBody2D.collision_layer |= (1 << player_number)
 	$KinematicBody2D.up_action = str("p", player_number, "_up")

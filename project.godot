@@ -118,19 +118,23 @@ scale_down={
 }
 p2_left={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
 }
 p2_right={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
 }
 p2_down={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
 }
 p2_up={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+ ]
 }
 p3_left={
 "deadzone": 0.5,
@@ -171,7 +175,8 @@ p1_interact={
 }
 p2_interact={
 "deadzone": 0.5,
-"events": [  ]
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
 }
 p3_interact={
 "deadzone": 0.5,
