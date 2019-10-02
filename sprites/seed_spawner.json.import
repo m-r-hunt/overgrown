@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/seed_spawner.json-06cd42096fcfcbbae51a46701d4a52bf.scn"
+
+[deps]
+
+source_file="res://sprites/seed_spawner.json"
+dest_files=[ "res://.import/seed_spawner.json-06cd42096fcfcbbae51a46701d4a52bf.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

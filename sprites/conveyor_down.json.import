@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/conveyor_down.json-8d009ee914f9381e3ff580173cd48707.scn"
+
+[deps]
+
+source_file="res://sprites/conveyor_down.json"
+dest_files=[ "res://.import/conveyor_down.json-8d009ee914f9381e3ff580173cd48707.scn" ]
+
+[params]
+
+autoplay_animation="Running"
+constant_frame_rate=100
+default_animation_looping=true
