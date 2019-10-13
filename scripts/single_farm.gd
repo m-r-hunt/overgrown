@@ -16,6 +16,7 @@ func set_player_number(p):
 	player_number = p
 	$Gate.allowed_player = player_number
 	$Catman.player_number = player_number
+	$MoneySign.player_number = player_number
 
 
 func set_top_gate(tg):
