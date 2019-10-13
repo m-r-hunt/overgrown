@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/tilemaps/farms_bgtiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tilemaps/farms_scenery.tscn" type="PackedScene" id=2]
@@ -7,20 +7,9 @@
 [ext_resource path="res://scenes/seed_spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/conveyor_down.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/seed_sink.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scripts/seed_carrier.gd" type="Script" id=8]
-[ext_resource path="res://scenes/carrot.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/conveyor_up.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/single_farm.tscn" type="PackedScene" id=11]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 216, 24, 0, 0, 0, 0, 216, 520 )
-}
-
-[sub_resource type="Curve2D" id=2]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 312, 520, 0, 0, 0, 0, 312, 24 )
-}
+[ext_resource path="res://scenes/seed_path.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/conveyor_up.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/single_farm.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -141,17 +130,7 @@ position = Vector2( 216, 504 )
 position = Vector2( 216, 520 )
 rotation = -3.14159
 
-[node name="Path2D" type="Path2D" parent="ConveyorSystem/LeftSide"]
-curve = SubResource( 1 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="ConveyorSystem/LeftSide/Path2D"]
-position = Vector2( 216, 24 )
-rotation = 1.5708
-script = ExtResource( 8 )
-
-[node name="Carrot" parent="ConveyorSystem/LeftSide/Path2D/PathFollow2D" instance=ExtResource( 9 )]
-rotation = -1.5708
-z_index = 1
+[node name="SeedPath" parent="ConveyorSystem/LeftSide" instance=ExtResource( 8 )]
 
 [node name="RightSide" type="Node2D" parent="ConveyorSystem"]
 
@@ -162,116 +141,117 @@ rotation = -3.14159
 [node name="ConveyorUps" type="Node2D" parent="ConveyorSystem/RightSide"]
 editor/display_folded = true
 
-[node name="ConveyorUp" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 504 )
 
-[node name="ConveyorUp2" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp2" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 488 )
 
-[node name="ConveyorUp3" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp3" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 472 )
 
-[node name="ConveyorUp4" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp4" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 456 )
 
-[node name="ConveyorUp5" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp5" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 440 )
 
-[node name="ConveyorUp6" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp6" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 424 )
 
-[node name="ConveyorUp7" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp7" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 408 )
 
-[node name="ConveyorUp8" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp8" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 392 )
 
-[node name="ConveyorUp9" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp9" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 376 )
 
-[node name="ConveyorUp10" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp10" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 360 )
 
-[node name="ConveyorUp11" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp11" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 344 )
 
-[node name="ConveyorUp12" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp12" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 328 )
 
-[node name="ConveyorUp13" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp13" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 312 )
 
-[node name="ConveyorUp14" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp14" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 296 )
 
-[node name="ConveyorUp15" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp15" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 280 )
 
-[node name="ConveyorUp16" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp16" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 264 )
 
-[node name="ConveyorUp17" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp17" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 248 )
 
-[node name="ConveyorUp18" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp18" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 232 )
 
-[node name="ConveyorUp19" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp19" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 216 )
 
-[node name="ConveyorUp20" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp20" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 200 )
 
-[node name="ConveyorUp21" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp21" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 184 )
 
-[node name="ConveyorUp22" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp22" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 168 )
 
-[node name="ConveyorUp23" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp23" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 152 )
 
-[node name="ConveyorUp24" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp24" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 136 )
 
-[node name="ConveyorUp25" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp25" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 120 )
 
-[node name="ConveyorUp26" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp26" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 104 )
 
-[node name="ConveyorUp27" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp27" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 88 )
 
-[node name="ConveyorUp28" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp28" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 72 )
 
-[node name="ConveyorUp29" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp29" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 56 )
 
-[node name="ConveyorUp30" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 10 )]
+[node name="ConveyorUp30" parent="ConveyorSystem/RightSide/ConveyorUps" instance=ExtResource( 9 )]
 position = Vector2( 312, 40 )
 
 [node name="SeedSink" parent="ConveyorSystem/RightSide" instance=ExtResource( 7 )]
 position = Vector2( 312, 24 )
 
-[node name="Path2D" type="Path2D" parent="ConveyorSystem/RightSide"]
-curve = SubResource( 2 )
+[node name="SeedPath" parent="ConveyorSystem/RightSide" instance=ExtResource( 8 )]
+position = Vector2( 528, 544 )
+rotation = 3.14159
 
 [node name="Farms" type="Node2D" parent="."]
 
-[node name="TopLeft" parent="Farms" instance=ExtResource( 11 )]
+[node name="TopLeft" parent="Farms" instance=ExtResource( 10 )]
 
-[node name="TopRight" parent="Farms" instance=ExtResource( 11 )]
+[node name="TopRight" parent="Farms" instance=ExtResource( 10 )]
 position = Vector2( 304, 0 )
 player_number = 2
 
-[node name="BottomRight" parent="Farms" instance=ExtResource( 11 )]
+[node name="BottomRight" parent="Farms" instance=ExtResource( 10 )]
 position = Vector2( 304, 320 )
 player_number = 4
 top_gate = true
 
-[node name="BottomLeft" parent="Farms" instance=ExtResource( 11 )]
+[node name="BottomLeft" parent="Farms" instance=ExtResource( 10 )]
 position = Vector2( 0, 320 )
 player_number = 3
 top_gate = true

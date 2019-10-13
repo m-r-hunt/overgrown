@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/tomato.json-7202d1a9e3642a8e7e11dda003513b71.scn"
+
+[deps]
+
+source_file="res://sprites/tomato.json"
+dest_files=[ "res://.import/tomato.json-7202d1a9e3642a8e7e11dda003513b71.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

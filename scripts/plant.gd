@@ -1,6 +1,16 @@
 extends Area2D
 
 
+class_name Plant
+
+
+enum PlantType {
+	CARROT,
+	TOMATO
+	MAX,
+}
+
+
 enum State {
 	BAG,
 	GROWING,
@@ -10,12 +20,21 @@ enum State {
 }
 
 
+export var plant_type := PlantType.CARROT
 export var state := State.BAG
 export var price := 10
 
 
 func _ready():
 	Utils.e_connect($Timer, "timeout", self, "on_timeout")
+	var sprite
+	match plant_type:
+		PlantType.CARROT:
+			sprite = preload("res://sprites/carrot.json").instance()
+		PlantType.TOMATO:
+			sprite = preload("res://sprites/tomato.json").instance()
+	sprite.name = "AsepriteSprite"
+	add_child(sprite)
 
 
 func pickable():

@@ -59,7 +59,8 @@ func _physics_process(delta):
 			if len(areas) > 0:
 				var obj = areas[0]
 				if obj.has_method("pickable") && obj.pickable():
-					obj.get_parent().remove_child(obj)
+					var old_parent = obj.get_parent()
+					old_parent.remove_child(obj)
 					add_child(obj)
 					obj.position = Vector2(0.0, -32.0)
 					obj.name = "Held"
