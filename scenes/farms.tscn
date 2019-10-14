@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/tilemaps/farms_bgtiles.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tilemaps/farms_scenery.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scripts/conveyor_push.gd" type="Script" id=9]
 [ext_resource path="res://scenes/conveyor_up.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/single_farm.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/timer.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 236 )
@@ -30,6 +31,7 @@ position = Vector2( 264, 280 )
 [node name="ConveyorSystem" type="Node2D" parent="."]
 
 [node name="LeftSide" type="Node2D" parent="ConveyorSystem"]
+editor/display_folded = true
 
 [node name="SeedSpawner" parent="ConveyorSystem/LeftSide" instance=ExtResource( 5 )]
 position = Vector2( 216, 24 )
@@ -149,6 +151,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="RightSide" type="Node2D" parent="ConveyorSystem"]
+editor/display_folded = true
 
 [node name="SeedSpawner" parent="ConveyorSystem/RightSide" instance=ExtResource( 5 )]
 position = Vector2( 312, 520 )
@@ -284,3 +287,5 @@ top_gate = true
 position = Vector2( 0, 320 )
 player_number = 3
 top_gate = true
+
+[node name="Timer" parent="." instance=ExtResource( 12 )]
