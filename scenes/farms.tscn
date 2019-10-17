@@ -277,11 +277,13 @@ shape = SubResource( 1 )
 [node name="TopRight" parent="Farms" instance=ExtResource( 11 )]
 position = Vector2( 304, 0 )
 player_number = 2
+left_flag = true
 
 [node name="BottomRight" parent="Farms" instance=ExtResource( 11 )]
 position = Vector2( 304, 320 )
 player_number = 4
 top_gate = true
+left_flag = true
 
 [node name="BottomLeft" parent="Farms" instance=ExtResource( 11 )]
 position = Vector2( 0, 320 )
