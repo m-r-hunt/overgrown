@@ -152,7 +152,7 @@ func on_start_pressed():
 		$ConnectionPopup.text = "Need at least 2 players"
 		$ConnectionPopup/Timer.start()
 		return
-	var farms = preload("res://scenes/farms.tscn").instance()
+	var farms = preload("res://scenes/screens/farms.tscn").instance()
 	for i in range(0, len(players)):
 		var ct = players[i]
 		if ct == CONTROL_TYPE.UNSET:

@@ -59,7 +59,7 @@ func place(place: Place):
 		position = Vector2.ZERO
 		state = State.GROWING
 		$AsepriteSprite/AnimationPlayer.play("Grow1")
-		var collider = preload("res://scenes/carrot_collider.tscn").instance()
+		var collider = preload("res://scenes/objects/carrot_collider.tscn").instance()
 		add_child(collider)
 		collider.name = "CarrotCollider"
 		name = "Planted"
