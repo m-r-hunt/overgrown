@@ -292,4 +292,15 @@ position = Vector2( 0, 320 )
 player_number = 3
 top_gate = true
 
-[node name="Timer" parent="." instance=ExtResource( 13 )]
+[node name="RoundTimer" parent="." instance=ExtResource( 13 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 232.0
+margin_top = 120.0
+margin_right = 296.0
+margin_bottom = 144.0
+align = 1
+valign = 1
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 2.0

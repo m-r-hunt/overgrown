@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-export var speed = 10.0
+export var speed = 20.0
 
 
 func _ready():
