@@ -10,6 +10,57 @@ enum CONTROL_TYPE {
 	JOY4,
 }
 
+func key_press(key):
+	var ev = InputEventKey.new()
+	ev.scancode = key
+	ev.pressed = true
+	return ev
+
+func joy_press(device, button):
+	var ev = InputEventJoypadButton.new()
+	ev.device = device
+	ev.button_index = button
+	ev.pressed = true
+	return ev
+
+const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact"]
+var inputs := {
+	CONTROL_TYPE.KEYBOARD: {
+		"p%s_left": key_press(KEY_A), 
+		"p%s_right": key_press(KEY_D), 
+		"p%s_up": key_press(KEY_W), 
+		"p%s_down": key_press(KEY_S), 
+		"p%s_interact": key_press(KEY_J),
+	},
+	CONTROL_TYPE.JOY1: {
+		"p%s_left": joy_press(0, JOY_DPAD_LEFT), 
+		"p%s_right": joy_press(0, JOY_DPAD_RIGHT), 
+		"p%s_up": joy_press(0, JOY_DPAD_UP), 
+		"p%s_down": joy_press(0, JOY_DPAD_DOWN), 
+		"p%s_interact": joy_press(0, JOY_XBOX_A),
+	},
+	CONTROL_TYPE.JOY2: {
+		"p%s_left": joy_press(1, JOY_DPAD_LEFT), 
+		"p%s_right": joy_press(1, JOY_DPAD_RIGHT), 
+		"p%s_up": joy_press(1, JOY_DPAD_UP), 
+		"p%s_down": joy_press(1, JOY_DPAD_DOWN), 
+		"p%s_interact": joy_press(1, JOY_XBOX_A),
+	},
+	CONTROL_TYPE.JOY3: {
+		"p%s_left": joy_press(2, JOY_DPAD_LEFT), 
+		"p%s_right": joy_press(2, JOY_DPAD_RIGHT), 
+		"p%s_up": joy_press(2, JOY_DPAD_UP), 
+		"p%s_down": joy_press(2, JOY_DPAD_DOWN), 
+		"p%s_interact": joy_press(2, JOY_XBOX_A),
+	},
+	CONTROL_TYPE.JOY4: {
+		"p%s_left": joy_press(3, JOY_DPAD_LEFT), 
+		"p%s_right": joy_press(3, JOY_DPAD_RIGHT), 
+		"p%s_up": joy_press(3, JOY_DPAD_UP), 
+		"p%s_down": joy_press(3, JOY_DPAD_DOWN), 
+		"p%s_interact": joy_press(3, JOY_XBOX_A),
+	},
+}
 
 var players := [CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET]
 
@@ -100,4 +151,13 @@ func on_start_pressed():
 		if ct == CONTROL_TYPE.UNSET:
 			farms.remove_player(i)
 	get_parent().add_child(farms)
+	
+	for i in range(0, len(players)):
+		for ev in events:
+			InputMap.action_erase_events(ev % (i+1))
+		if players[i] != CONTROL_TYPE.UNSET:
+			for ev in events:
+				InputMap.action_add_event(ev % (i+1), inputs[players[i]][ev])
+			
+	
 	get_parent().remove_child(self)
