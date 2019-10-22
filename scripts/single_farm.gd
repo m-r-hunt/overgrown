@@ -8,6 +8,14 @@ export var top_gate := false setget set_top_gate
 export var left_flag = false setget set_left_flag
 
 
+func gate_only():
+	$Plots.queue_free()
+	$WateringCan.queue_free()
+	$Catman.queue_free()
+	$Flag.queue_free()
+	$MoneySign.queue_free()
+
+
 func _ready():
 	set_player_number(player_number)
 	set_top_gate(top_gate)

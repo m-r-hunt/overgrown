@@ -40,3 +40,10 @@ margin_top = 232.0
 margin_right = 596.0
 margin_bottom = 245.0
 text = "Player 4: Press any key"
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 146.586
+margin_top = 459.968
+margin_right = 430.586
+margin_bottom = 520.968
+text = "START"

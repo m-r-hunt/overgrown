@@ -22,7 +22,7 @@ func on_quit_button_pressed():
 
 
 func play():
-	var ret = get_tree().change_scene("res://scenes/farms.tscn")
+	var ret = get_tree().change_scene("res://scenes/player_select.tscn")
 	assert(ret == OK)
 
 

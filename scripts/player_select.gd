@@ -17,8 +17,9 @@ var players := [CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONT
 func _ready():
 	Utils.e_connect(Input, "joy_connection_changed", self, "on_joy_connection_changed")
 	Utils.e_connect($ConnectionPopup/Timer, "timeout", self, "on_timeout")
-	
-	
+	Utils.e_connect($StartButton, "pressed", self, "on_start_pressed")
+
+
 func control_type_string(ct):
 	match ct:
 		CONTROL_TYPE.UNSET: return "UNSET"
@@ -78,3 +79,25 @@ func on_joy_connection_changed(device, connected):
 
 func on_timeout():
 	$ConnectionPopup.text = ""
+
+
+func active_players():
+	var total = 0
+	for p in players:
+		if p != CONTROL_TYPE.UNSET:
+			total += 1
+	return total
+
+
+func on_start_pressed():
+	if active_players() < 2:
+		$ConnectionPopup.text = "Need at least 2 players"
+		$ConnectionPopup/Timer.start()
+		return
+	var farms = preload("res://scenes/farms.tscn").instance()
+	for i in range(0, len(players)):
+		var ct = players[i]
+		if ct == CONTROL_TYPE.UNSET:
+			farms.remove_player(i)
+	get_parent().add_child(farms)
+	get_parent().remove_child(self)
