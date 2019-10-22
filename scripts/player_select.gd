@@ -22,43 +22,50 @@ func joy_press(device, button):
 	ev.button_index = button
 	ev.pressed = true
 	return ev
+	
+func joy_axis(device, axis, value): # value = +-1 for direction
+	var ev = InputEventJoypadMotion.new()
+	ev.device = device
+	ev.axis = axis
+	ev.axis_value = value
+	return ev
 
 const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact"]
 var inputs := {
 	CONTROL_TYPE.KEYBOARD: {
-		"p%s_left": key_press(KEY_A), 
-		"p%s_right": key_press(KEY_D), 
-		"p%s_up": key_press(KEY_W), 
-		"p%s_down": key_press(KEY_S), 
-		"p%s_interact": key_press(KEY_J),
+		"p%s_left": [key_press(KEY_A), key_press(KEY_LEFT)], 
+		"p%s_right": [key_press(KEY_D), key_press(KEY_RIGHT)], 
+		"p%s_up": [key_press(KEY_W), key_press(KEY_UP)], 
+		"p%s_down": [key_press(KEY_S), key_press(KEY_DOWN)], 
+		"p%s_interact": [key_press(KEY_J)],
 	},
 	CONTROL_TYPE.JOY1: {
-		"p%s_left": joy_press(0, JOY_DPAD_LEFT), 
-		"p%s_right": joy_press(0, JOY_DPAD_RIGHT), 
-		"p%s_up": joy_press(0, JOY_DPAD_UP), 
-		"p%s_down": joy_press(0, JOY_DPAD_DOWN), 
-		"p%s_interact": joy_press(0, JOY_XBOX_A),
+		"p%s_left": [joy_press(0, JOY_DPAD_LEFT), joy_axis(0, JOY_AXIS_0, -1)], 
+		"p%s_right": [joy_press(0, JOY_DPAD_RIGHT), joy_axis(0, JOY_AXIS_0, 1)], 
+		"p%s_up": [joy_press(0, JOY_DPAD_UP), joy_axis(0, JOY_AXIS_1, -1)], 
+		"p%s_down": [joy_press(0, JOY_DPAD_DOWN), joy_axis(0, JOY_AXIS_1, 1)], 
+		"p%s_interact": [joy_press(0, JOY_XBOX_A)],
 	},
 	CONTROL_TYPE.JOY2: {
-		"p%s_left": joy_press(1, JOY_DPAD_LEFT), 
-		"p%s_right": joy_press(1, JOY_DPAD_RIGHT), 
-		"p%s_up": joy_press(1, JOY_DPAD_UP), 
-		"p%s_down": joy_press(1, JOY_DPAD_DOWN), 
-		"p%s_interact": joy_press(1, JOY_XBOX_A),
+		"p%s_left": [joy_press(1, JOY_DPAD_LEFT), joy_axis(1, JOY_AXIS_0, -1)], 
+		"p%s_right": [joy_press(1, JOY_DPAD_RIGHT), joy_axis(1, JOY_AXIS_0, 1)], 
+		"p%s_up": [joy_press(1, JOY_DPAD_UP), joy_axis(1, JOY_AXIS_1, -1)], 
+		"p%s_down": [joy_press(1, JOY_DPAD_DOWN), joy_axis(1, JOY_AXIS_1, 1)], 
+		"p%s_interact": [joy_press(1, JOY_XBOX_A)],
 	},
 	CONTROL_TYPE.JOY3: {
-		"p%s_left": joy_press(2, JOY_DPAD_LEFT), 
-		"p%s_right": joy_press(2, JOY_DPAD_RIGHT), 
-		"p%s_up": joy_press(2, JOY_DPAD_UP), 
-		"p%s_down": joy_press(2, JOY_DPAD_DOWN), 
-		"p%s_interact": joy_press(2, JOY_XBOX_A),
+		"p%s_left": [joy_press(2, JOY_DPAD_LEFT), joy_axis(2, JOY_AXIS_0, -1)], 
+		"p%s_right": [joy_press(2, JOY_DPAD_RIGHT), joy_axis(2, JOY_AXIS_0, 1)], 
+		"p%s_up": [joy_press(2, JOY_DPAD_UP), joy_axis(2, JOY_AXIS_1, -1)], 
+		"p%s_down": [joy_press(2, JOY_DPAD_DOWN), joy_axis(2, JOY_AXIS_1, 1)], 
+		"p%s_interact": [joy_press(2, JOY_XBOX_A)],
 	},
 	CONTROL_TYPE.JOY4: {
-		"p%s_left": joy_press(3, JOY_DPAD_LEFT), 
-		"p%s_right": joy_press(3, JOY_DPAD_RIGHT), 
-		"p%s_up": joy_press(3, JOY_DPAD_UP), 
-		"p%s_down": joy_press(3, JOY_DPAD_DOWN), 
-		"p%s_interact": joy_press(3, JOY_XBOX_A),
+		"p%s_left": [joy_press(3, JOY_DPAD_LEFT), joy_axis(3, JOY_AXIS_0, -1)], 
+		"p%s_right": [joy_press(3, JOY_DPAD_RIGHT), joy_axis(3, JOY_AXIS_0, 1)], 
+		"p%s_up": [joy_press(3, JOY_DPAD_UP), joy_axis(3, JOY_AXIS_1, -1)], 
+		"p%s_down": [joy_press(3, JOY_DPAD_DOWN), joy_axis(3, JOY_AXIS_1, 1)], 
+		"p%s_interact": [joy_press(3, JOY_XBOX_A)],
 	},
 }
 
@@ -157,7 +164,8 @@ func on_start_pressed():
 			InputMap.action_erase_events(ev % (i+1))
 		if players[i] != CONTROL_TYPE.UNSET:
 			for ev in events:
-				InputMap.action_add_event(ev % (i+1), inputs[players[i]][ev])
+				for input in inputs[players[i]][ev]:
+					InputMap.action_add_event(ev % (i+1), input)
 			
 	
 	get_parent().remove_child(self)
