@@ -1,5 +1,4 @@
 extends EditorImportPlugin
-
 tool
 
 # Import plugin for Aseprite sprites and animations.
