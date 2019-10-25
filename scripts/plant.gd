@@ -69,7 +69,7 @@ func sell(sell: Sell):
 	assert(sell)
 	assert(state == State.BAG || state == State.ITEM)
 	if state == State.ITEM:
-		get_node("/root/PlayerStats").add_money(price, sell.selling_player.player_number)
+		PlayerStats.add_money(price, sell.selling_player.player_number)
 		get_parent().remove_child(self)
 		queue_free()
 

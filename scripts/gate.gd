@@ -8,7 +8,7 @@ var locked := true
 func _ready():
 	Utils.e_connect($Area2D, "body_entered", self, "on_body_entered")
 	Utils.e_connect($Area2D, "body_exited", self, "on_body_exited")
-	Utils.e_connect($"/root/PlayerStats", "time_started", self, "on_time_started")
+	Utils.e_connect(PlayerStats, "time_started", self, "on_time_started")
 	set_allowed_player(allowed_player)
 
 

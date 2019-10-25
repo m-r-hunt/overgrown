@@ -26,7 +26,7 @@ func on_timeout():
 		$Label.text = str(count)
 	elif count == 0:
 		$Label.text = "GO!"
-		$"/root/PlayerStats".start()
+		PlayerStats.start()
 	else:
 		$Label.text = ""
 		$CountdownTimer.stop()
