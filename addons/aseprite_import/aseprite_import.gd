@@ -59,6 +59,12 @@ func get_import_options(_preset):
 	return options
 
 
+func get_import_order():
+	# We need to run *after* the png has been imported as a texture.
+	# Higher order = later, so return a high number?
+	return 100
+
+
 func import(src, target_path, import_options, _r_platform_variants, _r_gen_files):
 	var json_path = src
 	target_path = target_path + "." + get_save_extension()
