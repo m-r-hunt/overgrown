@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/player_select.gd" type="Script" id=1]
+[ext_resource path="res://sprites/catman1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/catman2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/catman3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/catman4.png" type="Texture" id=5]
+[ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -47,3 +52,31 @@ margin_top = 459.968
 margin_right = 430.586
 margin_bottom = 520.968
 text = "START"
+
+[node name="catman1" type="Sprite" parent="."]
+position = Vector2( 88, 184 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="catman2" type="Sprite" parent="."]
+position = Vector2( 232, 184 )
+texture = ExtResource( 3 )
+hframes = 4
+
+[node name="catman3" type="Sprite" parent="."]
+position = Vector2( 392, 184 )
+texture = ExtResource( 4 )
+hframes = 4
+
+[node name="catman4" type="Sprite" parent="."]
+position = Vector2( 536, 184 )
+texture = ExtResource( 5 )
+hframes = 4
+
+[node name="Label" type="Label" parent="."]
+margin_left = 232.0
+margin_top = 72.0
+margin_right = 386.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 6 )
+text = "PLAYER SELECT"

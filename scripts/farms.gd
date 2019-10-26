@@ -16,9 +16,15 @@ func remove_player(i):
 
 func _ready():
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
-	$CountdownTimer.start()
 	$Label.text = str(count)
 	Utils.e_connect(PlayerStats, "time_up", self, "on_time_up")
+
+
+func _process(_delta):
+	if Input.is_action_just_pressed("p1_interact") or Input.is_action_just_pressed("p2_interact") or Input.is_action_just_pressed("p3_interact") or Input.is_action_just_pressed("p4_interact"):
+		$CountdownTimer.start()
+		$Instructions.queue_free()
+
 
 func on_timeout():
 	count -= 1
