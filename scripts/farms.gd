@@ -18,7 +18,7 @@ func _ready():
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
 	$CountdownTimer.start()
 	$Label.text = str(count)
-	
+	Utils.e_connect(PlayerStats, "time_up", self, "on_time_up")
 
 func on_timeout():
 	count -= 1
@@ -30,3 +30,7 @@ func on_timeout():
 	else:
 		$Label.text = ""
 		$CountdownTimer.stop()
+
+
+func on_time_up():
+	assert(get_tree().change_scene("res://scenes/screens/round_end.tscn") == OK)
