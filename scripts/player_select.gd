@@ -157,6 +157,9 @@ func on_start_pressed():
 		var ct = players[i]
 		if ct == CONTROL_TYPE.UNSET:
 			farms.remove_player(i)
+			PlayerStats.active_players[i] = false
+		else:
+			PlayerStats.active_players[i] = true
 	get_parent().add_child(farms)
 	
 	for i in range(0, len(players)):

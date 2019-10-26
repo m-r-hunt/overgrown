@@ -5,6 +5,7 @@ var player_moneys := [0, 0, 0, 0]
 var time := 0.0
 var max_time := 120.0
 var started := false
+var active_players := [false, false, false, false]
 
 
 signal time_started
@@ -12,6 +13,7 @@ signal time_up
 
 
 func start():
+	Utils.use(active_players)
 	started = true
 	emit_signal("time_started")
 
