@@ -26,15 +26,18 @@ func _process(_delta):
 		$CountdownTimer.start()
 		$Instructions.queue_free()
 		started = true
+		$CountdownBeep.play()
 
 
 func on_timeout():
 	count -= 1
 	if count >= 1:
 		$Label.text = str(count)
+		$CountdownBeep.play()
 	elif count == 0:
 		$Label.text = "GO!"
 		PlayerStats.start()
+		$GoBeep.play()
 	else:
 		$Label.text = ""
 		$CountdownTimer.stop()

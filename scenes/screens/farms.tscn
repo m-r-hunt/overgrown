@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/farms.gd" type="Script" id=1]
 [ext_resource path="res://scenes/tilemaps/farms_bgtiles.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://scenes/objects/timer.tscn" type="PackedScene" id=13]
 [ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=14]
 [ext_resource path="res://sprites/instructions.png" type="Texture" id=15]
+[ext_resource path="res://sounds/countdown_beep.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds/go_beep.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 236 )
@@ -312,3 +314,9 @@ wait_time = 2.0
 position = Vector2( 300, 270 )
 z_index = 200
 texture = ExtResource( 15 )
+
+[node name="CountdownBeep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="GoBeep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
