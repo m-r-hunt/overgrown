@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/end_gong.wav-c5a0c973577d11572e54dd3c17061414.sample"
+
+[deps]
+
+source_file="res://sounds/end_gong.wav"
+dest_files=[ "res://.import/end_gong.wav-c5a0c973577d11572e54dd3c17061414.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=0

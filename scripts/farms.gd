@@ -44,5 +44,6 @@ func on_timeout():
 
 
 func on_time_up():
+	$EndGong.play()
 	assert(get_tree().change_scene("res://scenes/screens/round_end.tscn") == OK)
 	queue_free()
