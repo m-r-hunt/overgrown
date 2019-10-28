@@ -19,7 +19,8 @@ func start():
 
 
 func add_money(amount, player):
-	player_moneys[player-1] += amount
+	if started:
+		player_moneys[player-1] += amount
 
 
 func _process(delta):
@@ -27,6 +28,7 @@ func _process(delta):
 		time += delta
 		if time > max_time:
 			emit_signal("time_up")
+			started = false
 
 
 func get_time_portion():
