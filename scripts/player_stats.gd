@@ -16,6 +16,8 @@ func start():
 	Utils.use(active_players)
 	started = true
 	emit_signal("time_started")
+	if ProjectSettings.get_setting("my_settings/short_rounds"):
+		max_time = 20
 
 
 func add_money(amount, player):

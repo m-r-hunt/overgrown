@@ -16,6 +16,8 @@ func remove_player(i):
 			$Farms/BottomRight.gate_only()
 
 func _ready():
+	if ProjectSettings.get_setting("my_settings/short_rounds"):
+		count = 3
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
 	$Label.text = str(count)
 	Utils.e_connect(PlayerStats, "time_up", self, "on_time_up")
