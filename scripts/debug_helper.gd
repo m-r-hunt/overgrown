@@ -3,15 +3,15 @@ extends Node
 
 # Must be bools. Should turn on/off all permanent debug features this way.
 const debug_settings = [
-	"my_settings/auto_maximize",
-	"my_settings/short_rounds",
+	"my_settings/debug/auto_maximize",
+	"my_settings/debug/short_rounds",
 ]
 
 
 func _ready():
 	if OS.is_debug_build():
 		print("I'm a debug build")
-		if ProjectSettings.get_setting("my_settings/auto_maximize"):
+		if ProjectSettings.get_setting("my_settings/debug/auto_maximize"):
 			OS.window_maximized = true
 	else:
 		# Ensure debug settings are disabled for release builds

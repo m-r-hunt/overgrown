@@ -16,7 +16,7 @@ func start():
 	Utils.use(active_players)
 	started = true
 	emit_signal("time_started")
-	if ProjectSettings.get_setting("my_settings/short_rounds"):
+	if ProjectSettings.get_setting("my_settings/debug/short_rounds"):
 		max_time = 20
 
 

@@ -232,8 +232,8 @@ joy4_select={
 
 [my_settings]
 
-short_rounds=false
-auto_maximize=false
+debug/short_rounds=false
+debug/auto_maximize=false
 
 [physics]
 
