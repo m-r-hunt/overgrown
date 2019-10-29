@@ -114,3 +114,5 @@ margin_bottom = 466.0
 custom_fonts/font = ExtResource( 6 )
 align = 1
 valign = 1
+
+[node name="Tween" type="Tween" parent="."]
