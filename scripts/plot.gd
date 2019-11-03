@@ -9,3 +9,7 @@ func water():
 
 func reset_after_pick():
 	$AsepriteSprite/AnimationPlayer.play("Fallow")
+
+
+func is_empty() -> bool:
+	return not has_node("Planted")

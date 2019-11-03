@@ -53,7 +53,7 @@ func pickable():
 func place(place: Place):
 	assert(place)
 	assert(state == State.BAG || state == State.ITEM)
-	if state == State.BAG:
+	if state == State.BAG and place.target.is_empty():
 		get_parent().remove_child(self)
 		place.target.add_child(self)
 		position = Vector2.ZERO
