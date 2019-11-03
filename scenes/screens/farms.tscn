@@ -28,6 +28,7 @@ script = ExtResource( 1 )
 [node name="BGTiles" parent="." instance=ExtResource( 2 )]
 
 [node name="Scenery" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Well" parent="." instance=ExtResource( 4 )]
 position = Vector2( 264, 232 )
