@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/bold_text.gd" type="Script" id=1]
+[ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=2]
+
+[node name="Label" type="Label"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "hello world"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+bold_text = "hello world"
+custom_font = ExtResource( 2 )
+
+[node name="Outline1" type="Label" parent="."]
+show_behind_parent = true
+margin_left = -1.0
+margin_right = 39.0
+margin_bottom = 40.0
+text = "hello world"
+align = 1
+valign = 1
+
+[node name="Outline2" type="Label" parent="."]
+show_behind_parent = true
+margin_left = 1.0
+margin_right = 41.0
+margin_bottom = 40.0
+text = "hello world"
+align = 1
+valign = 1
+
+[node name="Outline3" type="Label" parent="."]
+show_behind_parent = true
+margin_top = 1.0
+margin_right = 40.0
+margin_bottom = 41.0
+text = "hello world"
+align = 1
+valign = 1
+
+[node name="Outline4" type="Label" parent="."]
+show_behind_parent = true
+margin_top = -1.0
+margin_right = 40.0
+margin_bottom = 39.0
+text = "hello world"
+align = 1
+valign = 1
