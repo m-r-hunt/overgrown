@@ -50,10 +50,12 @@ func _physics_process(delta):
 					print("Selling", $Held, "at", obj)
 					$Held.sell(Sell.new(obj, get_parent()))
 			else:
-				var obj = get_node("Held")
-				obj.position = $Selector.global_position - get_parent().global_position
-				remove_child(obj)
-				get_parent().add_child(obj)
+				var areas = $Selector/PickableArea.get_overlapping_areas()
+				if len(areas) == 0:
+					var obj = get_node("Held")
+					obj.position = $Selector.global_position - get_parent().global_position
+					remove_child(obj)
+					get_parent().add_child(obj)
 		else:
 			var areas = $Selector/PickableArea.get_overlapping_areas()
 			if len(areas) > 0:
