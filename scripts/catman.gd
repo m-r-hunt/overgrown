@@ -31,8 +31,8 @@ func _physics_process(_delta):
 	dx *= player_speed
 	Utils.use(move_and_slide(dx))
 
-	var selector_x = 8 + floor(global_position.x / 16)*16 + last_select_dir.x * 16
-	var selector_y = 8 + floor(global_position.y / 16)*16 + last_select_dir.y * 16
+	var selector_x = 8 + floor($CollisionShape2D.global_position.x / 16)*16 + last_select_dir.x * 16
+	var selector_y = 8 + floor($CollisionShape2D.global_position.y / 16)*16 + last_select_dir.y * 16
 	$"Selector".position = Vector2(selector_x, selector_y) - global_position
 
 	if Input.is_action_just_pressed(interact_action):
