@@ -84,3 +84,9 @@ func on_timeout():
 	assert(state == State.GROWING)
 	$AsepriteSprite/AnimationPlayer.play("Grown")
 	state = State.GROWN
+
+
+func hold_interact():
+	queue_free()
+	if get_parent().has_method("reset_after_pick"):
+		get_parent().reset_after_pick()

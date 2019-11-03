@@ -12,11 +12,16 @@ export var right_action := "p1_right"
 export var interact_action := "p1_interact"
 
 
+var holding_on_something = false
+var held_obj = null
+var hold_time = 0
+var selector_pos = Vector2(0, 0)
+
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("Walk")
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	var dx = Vector2()
 	if Input.is_action_pressed(down_action):
 		dx.y = 1
@@ -31,11 +36,23 @@ func _physics_process(_delta):
 	dx *= player_speed
 	Utils.use(move_and_slide(dx))
 
-	var selector_x = 8 + floor($CollisionShape2D.global_position.x / 16)*16 + last_select_dir.x * 16
-	var selector_y = 8 + floor($CollisionShape2D.global_position.y / 16)*16 + last_select_dir.y * 16
-	$"Selector".position = Vector2(selector_x, selector_y) - global_position
+	if !holding_on_something:
+		var selector_x = 8 + floor($CollisionShape2D.global_position.x / 16)*16 + last_select_dir.x * 16
+		var selector_y = 8 + floor($CollisionShape2D.global_position.y / 16)*16 + last_select_dir.y * 16
+		selector_pos = Vector2(selector_x, selector_y)
+	$"Selector".position = selector_pos - global_position
 
-	if Input.is_action_just_pressed(interact_action):
+	if holding_on_something:
+		if !Input.is_action_pressed(interact_action):
+			holding_on_something = false
+		else:
+			hold_time += delta
+			if hold_time >= 1.0:
+				if held_obj.has_method("hold_interact"):
+					held_obj.hold_interact()
+				holding_on_something = false
+
+	if !holding_on_something and Input.is_action_just_pressed(interact_action):
 		if has_node("Held"):
 			var plot_areas = $Selector/PlotArea.get_overlapping_areas()
 			var seller_areas = $Selector/SellerArea.get_overlapping_areas()
@@ -68,3 +85,7 @@ func _physics_process(_delta):
 					add_child(obj)
 					obj.position = Vector2(0.0, -32.0)
 					obj.name = "Held"
+				else:
+					holding_on_something = true
+					held_obj = obj
+					hold_time = 0
