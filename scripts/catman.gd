@@ -1,8 +1,20 @@
 extends KinematicBody2D
 
 
-var player_speed := 100.0
+enum STATE {
+	NORMAL,
+	HOLDING
+	DASHING,
+}
+
+var state = STATE.NORMAL
+
 var last_select_dir := Vector2(0, 1)
+var held_obj = null
+var hold_time = 0
+var selector_pos = Vector2(0, 0)
+
+const player_speed := 100.0
 
 
 export var down_action := "p1_down"
@@ -12,16 +24,21 @@ export var right_action := "p1_right"
 export var interact_action := "p1_interact"
 
 
-var holding_on_something = false
-var held_obj = null
-var hold_time = 0
-var selector_pos = Vector2(0, 0)
-
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("Walk")
 
 
 func _physics_process(delta):
+	match state:
+		STATE.NORMAL:
+			update_normal()
+		STATE.HOLDING:
+			update_holding(delta)
+		STATE.DASHING:
+			update_dashing()
+
+
+func process_movement():
 	var dx = Vector2()
 	if Input.is_action_pressed(down_action):
 		dx.y = 1
@@ -36,23 +53,19 @@ func _physics_process(delta):
 	dx *= player_speed
 	Utils.use(move_and_slide(dx))
 
-	if !holding_on_something:
+
+func process_selector(update_position: bool):
+	if update_position:
 		var selector_x = 8 + floor($CollisionShape2D.global_position.x / 16)*16 + last_select_dir.x * 16
 		var selector_y = 8 + floor($CollisionShape2D.global_position.y / 16)*16 + last_select_dir.y * 16
 		selector_pos = Vector2(selector_x, selector_y)
 	$"Selector".position = selector_pos - global_position
 
-	if holding_on_something:
-		if !Input.is_action_pressed(interact_action):
-			holding_on_something = false
-		else:
-			hold_time += delta
-			if hold_time >= 1.0:
-				if held_obj.has_method("hold_interact"):
-					held_obj.hold_interact()
-				holding_on_something = false
 
-	if !holding_on_something and Input.is_action_just_pressed(interact_action):
+func update_normal():
+	process_movement()
+	process_selector(true)
+	if Input.is_action_just_pressed(interact_action):
 		if has_node("Held"):
 			var plot_areas = $Selector/PlotArea.get_overlapping_areas()
 			var seller_areas = $Selector/SellerArea.get_overlapping_areas()
@@ -86,6 +99,26 @@ func _physics_process(delta):
 					obj.position = Vector2(0.0, -32.0)
 					obj.name = "Held"
 				else:
-					holding_on_something = true
-					held_obj = obj
+					state = STATE.HOLDING
+					held_obj = get_path_to(obj)
 					hold_time = 0
+
+
+func update_holding(delta):
+	process_movement()
+	process_selector(false)
+	if !has_node(held_obj):
+		print("Cancelling hold")
+		state = STATE.NORMAL
+	if !Input.is_action_pressed(interact_action):
+		state = STATE.NORMAL
+	else:
+		hold_time += delta
+		if hold_time >= 1.0:
+			if get_node(held_obj).has_method("hold_interact"):
+				get_node(held_obj).hold_interact()
+			state = STATE.NORMAL
+
+
+func update_dashing():
+	pass
