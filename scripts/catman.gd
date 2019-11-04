@@ -100,14 +100,14 @@ func update_normal():
 					obj.name = "Held"
 				else:
 					state = STATE.HOLDING
-					held_obj = get_path_to(obj)
+					held_obj = obj
 					hold_time = 0
 
 
 func update_holding(delta):
 	process_movement()
 	process_selector(false)
-	if !has_node(held_obj):
+	if !is_instance_valid(held_obj):
 		print("Cancelling hold")
 		state = STATE.NORMAL
 	if !Input.is_action_pressed(interact_action):
@@ -115,8 +115,8 @@ func update_holding(delta):
 	else:
 		hold_time += delta
 		if hold_time >= 1.0:
-			if get_node(held_obj).has_method("hold_interact"):
-				get_node(held_obj).hold_interact()
+			if held_obj.has_method("hold_interact"):
+				held_obj.hold_interact()
 			state = STATE.NORMAL
 
 
