@@ -19,4 +19,5 @@ func set_player_number(n):
 	$KinematicBody2D.left_action = str("p", player_number, "_left")
 	$KinematicBody2D.right_action = str("p", player_number, "_right")
 	$KinematicBody2D.interact_action = str("p", player_number, "_interact")
+	$KinematicBody2D.dash_action = str("p", player_number, "_dash")
 	$"KinematicBody2D/AsepriteSprite".texture = load(str("res://sprites/catman", player_number, ".png"))

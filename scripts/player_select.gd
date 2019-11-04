@@ -30,7 +30,7 @@ func joy_axis(device, axis, value): # value = +-1 for direction
 	ev.axis_value = value
 	return ev
 
-const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact"]
+const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact", "p%s_dash"]
 var inputs := {
 	CONTROL_TYPE.KEYBOARD: {
 		"p%s_left": [key_press(KEY_A), key_press(KEY_LEFT)], 
@@ -38,6 +38,7 @@ var inputs := {
 		"p%s_up": [key_press(KEY_W), key_press(KEY_UP)], 
 		"p%s_down": [key_press(KEY_S), key_press(KEY_DOWN)], 
 		"p%s_interact": [key_press(KEY_J)],
+		"p%s_dash": [key_press(KEY_K)],
 	},
 	CONTROL_TYPE.JOY1: {
 		"p%s_left": [joy_press(0, JOY_DPAD_LEFT), joy_axis(0, JOY_AXIS_0, -1)], 
@@ -45,6 +46,7 @@ var inputs := {
 		"p%s_up": [joy_press(0, JOY_DPAD_UP), joy_axis(0, JOY_AXIS_1, -1)], 
 		"p%s_down": [joy_press(0, JOY_DPAD_DOWN), joy_axis(0, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(0, JOY_XBOX_A)],
+		"p%s_dash": [joy_press(0, JOY_XBOX_B)],
 	},
 	CONTROL_TYPE.JOY2: {
 		"p%s_left": [joy_press(1, JOY_DPAD_LEFT), joy_axis(1, JOY_AXIS_0, -1)], 
@@ -52,6 +54,7 @@ var inputs := {
 		"p%s_up": [joy_press(1, JOY_DPAD_UP), joy_axis(1, JOY_AXIS_1, -1)], 
 		"p%s_down": [joy_press(1, JOY_DPAD_DOWN), joy_axis(1, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(1, JOY_XBOX_A)],
+		"p%s_dash": [joy_press(1, JOY_XBOX_B)],
 	},
 	CONTROL_TYPE.JOY3: {
 		"p%s_left": [joy_press(2, JOY_DPAD_LEFT), joy_axis(2, JOY_AXIS_0, -1)], 
@@ -59,6 +62,7 @@ var inputs := {
 		"p%s_up": [joy_press(2, JOY_DPAD_UP), joy_axis(2, JOY_AXIS_1, -1)], 
 		"p%s_down": [joy_press(2, JOY_DPAD_DOWN), joy_axis(2, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(2, JOY_XBOX_A)],
+		"p%s_dash": [joy_press(2, JOY_XBOX_B)],
 	},
 	CONTROL_TYPE.JOY4: {
 		"p%s_left": [joy_press(3, JOY_DPAD_LEFT), joy_axis(3, JOY_AXIS_0, -1)], 
@@ -66,6 +70,7 @@ var inputs := {
 		"p%s_up": [joy_press(3, JOY_DPAD_UP), joy_axis(3, JOY_AXIS_1, -1)], 
 		"p%s_down": [joy_press(3, JOY_DPAD_DOWN), joy_axis(3, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(3, JOY_XBOX_A)],
+		"p%s_dash": [joy_press(3, JOY_XBOX_B)],
 	},
 }
 

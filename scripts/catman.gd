@@ -13,8 +13,11 @@ var last_select_dir := Vector2(0, 1)
 var held_obj = null
 var hold_time = 0
 var selector_pos = Vector2(0, 0)
+var dash_time = 0
 
 const player_speed := 100.0
+const DASH_LENGTH := 0.33
+const DASH_SPEED := 200.0
 
 
 export var down_action := "p1_down"
@@ -22,6 +25,7 @@ export var up_action := "p1_up"
 export var left_action := "p1_left"
 export var right_action := "p1_right"
 export var interact_action := "p1_interact"
+export var dash_action := "p1_dash"
 
 
 func _ready():
@@ -35,7 +39,7 @@ func _physics_process(delta):
 		STATE.HOLDING:
 			update_holding(delta)
 		STATE.DASHING:
-			update_dashing()
+			update_dashing(delta)
 
 
 func process_movement():
@@ -102,6 +106,9 @@ func update_normal():
 					state = STATE.HOLDING
 					held_obj = obj
 					hold_time = 0
+	if Input.is_action_just_pressed(dash_action):
+		state = STATE.DASHING
+		dash_time = 0.0
 
 
 func update_holding(delta):
@@ -120,5 +127,9 @@ func update_holding(delta):
 			state = STATE.NORMAL
 
 
-func update_dashing():
-	pass
+func update_dashing(delta):
+	dash_time += delta
+	if dash_time >= DASH_LENGTH:
+		state = STATE.NORMAL
+	var dx = last_select_dir * DASH_SPEED
+	Utils.use(move_and_slide(dx))
