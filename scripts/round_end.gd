@@ -4,8 +4,11 @@ var bar_height = 200
 var animation_time = 4.0
 
 func _ready():
+	Utils.e_connect($MainMenuButton, "pressed", self, "on_main_menu")
+	Utils.e_connect($ReplayButton, "pressed", self, "on_replay")
+
 	# Test Data
-	#PlayerStats.active_players = [true, true, true, true]
+	#PlayerStats.active_players = [true, true, false, true]
 	#PlayerStats.player_moneys = [4, 20, 14, 20]
 	
 	var max_money := 0.0
@@ -52,3 +55,14 @@ func _ready():
 		$WinnerLabel.text = "Player " + str(winner+1) + " Wins!"
 	else:
 		$WinnerLabel.text = "It's a tie!"
+
+
+func on_main_menu():
+	assert(get_tree().change_scene("res://scenes/screens/title_screen.tscn") == OK)
+
+
+func on_replay():
+	PlayerStats.reset()
+	var farms = PlayerStats.make_farms_scene()
+	get_parent().add_child(farms)
+	get_parent().remove_child(self)

@@ -12,6 +12,12 @@ signal time_started
 signal time_up
 
 
+func reset():
+	player_moneys = [0, 0, 0, 0]
+	time = 0.0
+	started = false
+
+
 func start():
 	Utils.use(active_players)
 	started = true
@@ -35,3 +41,11 @@ func _process(delta):
 
 func get_time_portion():
 	return time / max_time
+
+
+func make_farms_scene():
+	var farms = preload("res://scenes/screens/farms.tscn").instance()
+	for i in range(0, 4):
+		if !PlayerStats.active_players[i]:
+			farms.remove_player(i)
+	return farms

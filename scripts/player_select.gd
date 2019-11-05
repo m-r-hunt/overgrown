@@ -157,15 +157,15 @@ func on_start_pressed():
 		$ConnectionPopup.text = "Need at least 2 players"
 		$ConnectionPopup/Timer.start()
 		return
-	var farms = preload("res://scenes/screens/farms.tscn").instance()
+
+	PlayerStats.reset()
 	for i in range(0, len(players)):
 		var ct = players[i]
 		if ct == CONTROL_TYPE.UNSET:
-			farms.remove_player(i)
 			PlayerStats.active_players[i] = false
 		else:
 			PlayerStats.active_players[i] = true
-	get_parent().add_child(farms)
+	get_parent().add_child(PlayerStats.make_farm_scene())
 	
 	for i in range(0, len(players)):
 		for ev in events:
@@ -174,6 +174,5 @@ func on_start_pressed():
 			for ev in events:
 				for input in inputs[players[i]][ev]:
 					InputMap.action_add_event(ev % (i+1), input)
-			
-	
+
 	get_parent().remove_child(self)
