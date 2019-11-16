@@ -165,7 +165,7 @@ func on_start_pressed():
 			PlayerStats.active_players[i] = false
 		else:
 			PlayerStats.active_players[i] = true
-	get_parent().add_child(PlayerStats.make_farm_scene())
+	get_parent().add_child(PlayerStats.make_farms_scene())
 	
 	for i in range(0, len(players)):
 		for ev in events:

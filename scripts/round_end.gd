@@ -25,7 +25,7 @@ func _ready():
 		if !PlayerStats.active_players[i]:
 			get_node("catman" + str(i+1)).queue_free()
 			get_node("Bar" + str(i+1)).queue_free()
-		else:
+		elif PlayerStats.player_moneys[i] > 0:
 			var catman_node = get_node("catman" + str(i+1))
 			var fraction = PlayerStats.player_moneys[i] / max_money
 			var target_height = fraction * bar_height
@@ -50,7 +50,7 @@ func _ready():
 	for i in range(0, 4):
 		if PlayerStats.active_players[i]:
 			get_node("Money" + str(i+1)).text = "$" + str(PlayerStats.player_moneys[i])
-	
+
 	if not tie:
 		$WinnerLabel.text = "Player " + str(winner+1) + " Wins!"
 	else:
