@@ -45,6 +45,7 @@ func place(place: Place):
 		count -= 1
 		$Label.text = str(count)
 		var planted = preload("res://scenes/objects/plant_planted.tscn").instance()
+		planted.plant_type = plant_type
 		place.target.add_child(planted)
 		planted.position = Vector2.ZERO
 		planted.get_node("AsepriteSprite/AnimationPlayer").play("Grow1")

@@ -27,8 +27,12 @@ func _ready():
 	match plant_type:
 		PlantType.CARROT:
 			sprite = preload("res://sprites/carrot.json").instance()
+			price = 10
+			$Timer.wait_time = 3
 		PlantType.TOMATO:
 			sprite = preload("res://sprites/tomato.json").instance()
+			price = 20
+			$Timer.wait_time = 8
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
 
