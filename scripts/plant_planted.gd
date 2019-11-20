@@ -1,9 +1,6 @@
 extends Area2D
 
 
-class_name Plant
-
-
 enum PlantType {
 	CARROT,
 	TOMATO
@@ -12,7 +9,6 @@ enum PlantType {
 
 
 enum State {
-	BAG,
 	GROWING,
 	GROWN,
 	WILTED,
@@ -20,8 +16,8 @@ enum State {
 }
 
 
+export var state := State.GROWING
 export var plant_type := PlantType.CARROT
-export var state := State.BAG
 export var price := 10
 
 
@@ -39,7 +35,7 @@ func _ready():
 
 func pickable():
 	match state:
-		State.BAG, State.ITEM:
+		State.ITEM:
 			return true
 		State.GROWN:
 			state = State.ITEM
@@ -50,24 +46,9 @@ func pickable():
 			return false
 
 
-func place(place: Place):
-	assert(place)
-	assert(state == State.BAG || state == State.ITEM)
-	if state == State.BAG and place.target.is_empty():
-		get_parent().remove_child(self)
-		place.target.add_child(self)
-		position = Vector2.ZERO
-		state = State.GROWING
-		$AsepriteSprite/AnimationPlayer.play("Grow1")
-		var collider = preload("res://scenes/objects/carrot_collider.tscn").instance()
-		add_child(collider)
-		collider.name = "CarrotCollider"
-		name = "Planted"
-
-
 func sell(sell: Sell):
 	assert(sell)
-	assert(state == State.BAG || state == State.ITEM)
+	assert(state == State.ITEM)
 	if state == State.ITEM:
 		PlayerStats.add_money(price, sell.selling_player.player_number)
 		get_parent().remove_child(self)
