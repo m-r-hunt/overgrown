@@ -5,6 +5,7 @@ enum STATE {
 	NORMAL,
 	HOLDING
 	DASHING,
+	BASHED,
 }
 
 var state = STATE.NORMAL
@@ -40,6 +41,8 @@ func _physics_process(delta):
 			update_holding(delta)
 		STATE.DASHING:
 			update_dashing(delta)
+		STATE.BASHED:
+			update_bashed(delta)
 
 
 func process_movement():
@@ -128,8 +131,29 @@ func update_holding(delta):
 
 
 func update_dashing(delta):
+	process_selector(true)
 	dash_time += delta
 	if dash_time >= DASH_LENGTH:
 		state = STATE.NORMAL
 	var dx = last_select_dir * DASH_SPEED
-	Utils.use(move_and_slide(dx))
+	var coll = move_and_collide(dx*delta)
+	if coll:
+		bash()
+		if coll.collider.has_method("bash"):
+			coll.collider.bash()
+
+
+func update_bashed(delta):
+	dash_time += delta
+	if dash_time >= DASH_LENGTH:
+		state = STATE.NORMAL
+
+
+func bash():
+	state = STATE.BASHED
+	var areas = $Selector/PickableArea.get_overlapping_areas()
+	if len(areas) == 0:
+		var obj = get_node("Held")
+		obj.position = $Selector.global_position - get_parent().global_position
+		remove_child(obj)
+		get_parent().add_child(obj)
