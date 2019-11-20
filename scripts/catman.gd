@@ -138,9 +138,9 @@ func update_dashing(delta):
 	var dx = last_select_dir * DASH_SPEED
 	var coll = move_and_collide(dx*delta)
 	if coll:
-		bash()
+		bash(dash_time)
 		if coll.collider.has_method("bash"):
-			coll.collider.bash()
+			coll.collider.bash(dash_time)
 
 
 func update_bashed(delta):
@@ -149,7 +149,8 @@ func update_bashed(delta):
 		state = STATE.NORMAL
 
 
-func bash():
+func bash(t):
+	dash_time = t
 	state = STATE.BASHED
 	var areas = $Selector/PickableArea.get_overlapping_areas()
 	if len(areas) == 0:
