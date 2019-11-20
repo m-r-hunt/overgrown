@@ -16,7 +16,6 @@ export var count := 9
 
 
 func _ready():
-	Utils.e_connect($Timer, "timeout", self, "on_timeout")
 	var sprite
 	match plant_type:
 		PlantType.CARROT:
@@ -25,6 +24,15 @@ func _ready():
 			sprite = preload("res://sprites/tomato.json").instance()
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
+	$Label.text = str(count)
+	$Label.set_as_toplevel(true)
+
+
+func _process(_delta):
+	$Label.margin_left = global_position.x-1
+	$Label.margin_right = global_position.x+7
+	$Label.margin_top = global_position.y-7
+	$Label.margin_bottom = global_position.y+7
 
 
 func pickable():
@@ -35,6 +43,7 @@ func place(place: Place):
 	assert(place)
 	if place.target.is_empty():
 		count -= 1
+		$Label.text = str(count)
 		var planted = preload("res://scenes/objects/plant_planted.tscn").instance()
 		place.target.add_child(planted)
 		planted.position = Vector2.ZERO
