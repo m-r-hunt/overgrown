@@ -30,7 +30,7 @@ export var dash_action := "p1_dash"
 
 
 func _ready():
-	$AsepriteSprite/AnimationPlayer.play("Walk")
+	$AsepriteSprite/AnimationPlayer.play("Idle")
 
 
 func _physics_process(delta):
@@ -57,9 +57,20 @@ func process_movement():
 		dx.x = 1
 	if dx != Vector2(0, 0):
 		last_select_dir = dx
+
+	if dx.y == 1:
+		$AsepriteSprite/AnimationPlayer.play("WalkDown")
+	elif dx.y == -1:
+		$AsepriteSprite/AnimationPlayer.play("WalkUp")
+	elif dx.x == -1:
+		$AsepriteSprite/AnimationPlayer.play("WalkLeft")
+	elif dx.x == 1:
+		$AsepriteSprite/AnimationPlayer.play("WalkRight")
+	else:
+		$AsepriteSprite/AnimationPlayer.play("Idle")
+
 	dx *= player_speed
 	Utils.use(move_and_slide(dx))
-
 
 func process_selector(update_position: bool):
 	if update_position:
