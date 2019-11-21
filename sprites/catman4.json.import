@@ -12,5 +12,5 @@ dest_files=[ "res://.import/catman4.json-ea6da294e8886a25ea9b524f0d23b4d2.scn" ]
 [params]
 
 autoplay_animation=""
-constant_frame_rate=100
+constant_frame_rate=150
 default_animation_looping=true
