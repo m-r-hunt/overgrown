@@ -20,7 +20,7 @@ func _process(_delta):
 	scale -= 1
 	if scale != pixel_scale:
 		pixel_scale = int(max(1, scale))
-		window_resize()
+	window_resize()
 
 
 
@@ -28,7 +28,6 @@ func window_resize():
 	var width = ProjectSettings.get_setting("display/window/size/width")
 	var height = ProjectSettings.get_setting("display/window/size/height")
 	assert(pixel_scale > 0 && typeof(pixel_scale) == TYPE_INT)
-	get_viewport().set_size_override(true, OS.get_window_size() / pixel_scale)
 	var x_diff = OS.window_size.x - width*pixel_scale
 	var y_diff = OS.window_size.y - height*pixel_scale
-	get_viewport().canvas_transform = Transform2D(0, Vector2(floor(x_diff/(2*pixel_scale)), floor(y_diff/(2*pixel_scale))))
+	get_viewport().global_canvas_transform = Transform2D(0, Vector2(floor(x_diff/(2*pixel_scale)), floor(y_diff/(2*pixel_scale)))).scaled(Vector2(pixel_scale, pixel_scale))
