@@ -1,5 +1,8 @@
 extends Node2D
 
+# This script applies pixel perfect scaling at the maximum possible size fitting the width/height from project settings on screen.
+# Also centers that area of the screen in the view.
+
 
 export var pixel_scale := 1
 
@@ -7,7 +10,6 @@ export var pixel_scale := 1
 func _ready():
 	window_resize()
 	Utils.e_connect(get_viewport(), "size_changed", self, "window_resize")
-	
 
 
 func _process(_delta):
@@ -20,6 +22,7 @@ func _process(_delta):
 	scale -= 1
 	if scale != pixel_scale:
 		pixel_scale = int(max(1, scale))
+	# Resize (set global_canvas_transform) every frame. Seems to be necessary as Windows release is weird
 	window_resize()
 
 
