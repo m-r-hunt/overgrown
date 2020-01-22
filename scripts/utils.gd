@@ -7,8 +7,8 @@ class_name Utils
 # abbreviated for shortness on commonly used function
 # requires explicitly passing signaller rather than implicitly passing as receiver
 # as far as I know this is best solution as we cannot monkey patch Object or write a macro
-static func e_connect(signaller, signal_name, object, method):
-	assert(signaller.connect(signal_name, object, method) == OK)
+static func e_connect(signaller, signal_name, object, method, binds=[]):
+	assert_ok(signaller.connect(signal_name, object, method, binds))
 
 
 # Allow "using" a variable to silence a warning
@@ -19,3 +19,7 @@ static func use(_arg):
 static func resource_exists(path):
 	var directory = Directory.new()
 	return directory.file_exists(path)
+
+
+static func assert_ok(v):
+	assert(v == OK)
