@@ -60,7 +60,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "aseprite_import" )
+enabled=PoolStringArray( "aseprite_import", "tiled_import" )
 
 [gui]
 
