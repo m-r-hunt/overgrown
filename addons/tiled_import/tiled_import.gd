@@ -330,7 +330,7 @@ class TiledObjectGroup:
 			var instance = object_scene.instance()
 			node.add_child(instance)
 			instance.owner = owner
-			node.position = Vector2(int(object["x"]), int(object["y"]))
+			instance.position = Vector2(int(object["x"]), int(object["y"]))
 		return node
 
 class TiledLayer:

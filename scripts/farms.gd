@@ -29,7 +29,6 @@ func _process(_delta):
 		$Instructions.queue_free()
 		started = true
 		$CountdownBeep.play()
-		$Scenery.visible = true
 
 
 func on_timeout():

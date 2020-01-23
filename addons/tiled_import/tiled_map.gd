@@ -6,5 +6,6 @@ extends TileMap
 
 func _ready():
 	for node in get_children():
-		node.collision_layer = collision_layer
-		node.collision_mask = collision_mask
+		if node.has_method("set_collision_layer"):
+			node.collision_layer = collision_layer
+			node.collision_mask = collision_mask
