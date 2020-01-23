@@ -26,15 +26,17 @@ extents = Vector2( 10, 236 )
 script = ExtResource( 1 )
 
 [node name="TiledMap" parent="." instance=ExtResource( 2 )]
+position = Vector2( -16, -16 )
 script = ExtResource( 3 )
 
 [node name="Well" parent="." instance=ExtResource( 4 )]
-position = Vector2( 264, 232 )
+position = Vector2( 238, 92 )
 
 [node name="SellBox" parent="." instance=ExtResource( 5 )]
-position = Vector2( 264, 280 )
+position = Vector2( 238, 142 )
 
 [node name="ConveyorSystem" type="Node2D" parent="."]
+position = Vector2( -32, 0 )
 
 [node name="LeftSide" type="Node2D" parent="ConveyorSystem"]
 
@@ -155,6 +157,7 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="RightSide" type="Node2D" parent="ConveyorSystem"]
+position = Vector2( 16, 0 )
 
 [node name="SeedSpawner" parent="ConveyorSystem/RightSide" instance=ExtResource( 6 )]
 position = Vector2( 312, 520 )
@@ -291,6 +294,7 @@ player_number = 3
 top_gate = true
 
 [node name="RoundTimer" parent="." instance=ExtResource( 13 )]
+position = Vector2( 472, 270 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 232.0

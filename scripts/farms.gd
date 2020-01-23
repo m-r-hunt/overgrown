@@ -7,7 +7,7 @@ var started = false
 func remove_player(i):
 	match i:
 		0:
-			$Farms/TopLeft.gate_only()
+			$TiledMap.gate_only("TopLeft")
 		1:
 			$Farms/TopRight.gate_only()
 		2:
