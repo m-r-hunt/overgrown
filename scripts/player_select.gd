@@ -8,6 +8,7 @@ enum CONTROL_TYPE {
 	JOY2,
 	JOY3,
 	JOY4,
+	JOY5,
 }
 
 func key_press(key):
@@ -72,6 +73,14 @@ var inputs := {
 		"p%s_interact": [joy_press(3, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(3, JOY_XBOX_B)],
 	},
+	CONTROL_TYPE.JOY5: {
+		"p%s_left": [joy_press(4, JOY_DPAD_LEFT), joy_axis(4, JOY_AXIS_0, -1)], 
+		"p%s_right": [joy_press(4, JOY_DPAD_RIGHT), joy_axis(4, JOY_AXIS_0, 1)], 
+		"p%s_up": [joy_press(4, JOY_DPAD_UP), joy_axis(4, JOY_AXIS_1, -1)], 
+		"p%s_down": [joy_press(4, JOY_DPAD_DOWN), joy_axis(4, JOY_AXIS_1, 1)], 
+		"p%s_interact": [joy_press(4, JOY_XBOX_A)],
+		"p%s_dash": [joy_press(4, JOY_XBOX_B)],
+	},
 }
 
 var players := [CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET, CONTROL_TYPE.UNSET]
@@ -91,6 +100,7 @@ func control_type_string(ct):
 		CONTROL_TYPE.JOY2: return "JOY2"
 		CONTROL_TYPE.JOY3: return "JOY3"
 		CONTROL_TYPE.JOY4: return "JOY4"
+		CONTROL_TYPE.JOY5: return "JOY5"
 
 
 func assign_player(control_type):
