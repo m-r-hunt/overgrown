@@ -1,0 +1,13 @@
+[remap]
+
+importer="Tiled Import"
+type="PackedScene"
+path="res://.import/farms.tmx-0c47fd251d8975dc56a9a7c88c99a1d5.scn"
+
+[deps]
+
+source_file="res://scenes/tilemaps/farms.tmx"
+dest_files=[ "res://.import/farms.tmx-0c47fd251d8975dc56a9a7c88c99a1d5.scn" ]
+
+[params]
+

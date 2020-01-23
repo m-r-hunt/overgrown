@@ -93,6 +93,7 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 
 	var tilesets = []
 	var layers = []
+	var object_groups = []
 	while true:
 		error = parser.read()
 		if error == ERR_FILE_EOF:
@@ -115,6 +116,10 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 						var attributes = get_attribute_dict(parser)
 						var data = parse_layer(parser)
 						layers.append(TiledLayer.new(attributes["name"], data, int(attributes["width"]), int(attributes["height"])))
+					"objectgroup":
+						var attributes = get_attribute_dict(parser)
+						var data = parse_object_group(parser)
+						object_groups.append(TiledObjectGroup.new(attributes["name"], data))
 					_:
 						if !parser.is_empty():
 							# Unknown node type, just skip contentsb
@@ -131,9 +136,12 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 		ts.add_to_godot_tileset(tileset)
 	
 	for layer in layers:
-		var map = layer.make_godot_tilemap(tileset)
+		var map = layer.make_godot_tilemap(tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
 		root_node.add_child(map)
 		map.owner = root_node
+	
+	for group in object_groups:
+		var g = group.make_godot_node(root_node)
 
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(root_node)
@@ -287,6 +295,44 @@ func parse_layer(parser):
 					break
 	return layer_data
 
+func parse_object_group(parser):
+	var objects = []
+	while true:
+		parser.read()
+		match parser.get_node_type():
+			XMLParser.NODE_ELEMENT:
+				match parser.get_node_name():
+					"object":
+						print("Parsing object")
+						var attributes = get_attribute_dict(parser)
+						objects.append(attributes)
+			XMLParser.NODE_ELEMENT_END:
+				if parser.get_node_name() == "objectgroup":
+					break
+	return objects
+
+class TiledObjectGroup:
+	var name
+	var objects
+	
+	func _init(_name, _objects):
+		name = _name
+		objects = _objects
+	
+	func make_godot_node(owner):
+		var node = Node2D.new()
+		node.name = name
+		owner.add_child(node)
+		node.owner = owner
+		for object in objects:
+			print("loading object")
+			var object_scene = load("res://scenes/objects/" + object["type"] + ".tscn")
+			var instance = object_scene.instance()
+			node.add_child(instance)
+			instance.owner = owner
+			node.position = Vector2(int(object["x"]), int(object["y"]))
+		return node
+
 class TiledLayer:
 	var name
 	var layer_data #CSV
@@ -299,12 +345,12 @@ class TiledLayer:
 		width = _width
 		height = _height
 	
-	func make_godot_tilemap(tileset):
+	func make_godot_tilemap(tileset, tilewidth, tileheight):
 		var node = TileMap.new()
 		node.name = name
 		node.tile_set = tileset
 		node.cell_tile_origin = TileMap.TILE_ORIGIN_CENTER
-		node.cell_size = Vector2(32, 32) #TODO Pass in
+		node.cell_size = Vector2(tilewidth, tileheight)
 		var buf = ""
 		var idata = PoolIntArray()
 		for i in range(0, len(layer_data)):
