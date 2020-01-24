@@ -9,6 +9,7 @@ enum PlantType {
 
 
 enum State {
+	PLANTED,
 	GROWING,
 	GROWN,
 	WILTED,
@@ -16,7 +17,7 @@ enum State {
 }
 
 
-export var state := State.GROWING
+export var state := State.PLANTED
 export var plant_type := PlantType.CARROT
 export var price := 10
 
@@ -60,9 +61,11 @@ func sell(sell: Sell):
 
 
 func water():
-	assert(state == State.GROWING)
-	$AsepriteSprite/AnimationPlayer.play("Grow2")
-	$Timer.start()
+	assert(state == State.PLANTED || state == State.GROWING || state == State.GROWN)
+	if state == State.PLANTED:
+		$AsepriteSprite/AnimationPlayer.play("Grow2")
+		$Timer.start()
+		state = State.GROWING
 
 
 func on_timeout():
