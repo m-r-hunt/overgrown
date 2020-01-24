@@ -5,7 +5,7 @@ var player_moneys := [0, 0, 0, 0]
 var time := 0.0
 var max_time := 240.0
 var started := false
-var active_players := [false, false, false, false]
+var active_players := [true, true, false, false]
 
 
 signal time_started
