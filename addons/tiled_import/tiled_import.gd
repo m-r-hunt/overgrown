@@ -52,7 +52,7 @@ func get_import_order():
 	return 101
 
 
-func import(src, target_path, import_options, _r_platform_variants, _r_gen_files):
+func import(src, target_path, _import_options, _r_platform_variants, _r_gen_files):
 	var tmx_path = src
 	var tmx_dir = src.get_base_dir()
 	target_path = target_path + "." + get_save_extension()
@@ -141,7 +141,7 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 		map.owner = root_node
 	
 	for group in object_groups:
-		var g = group.make_godot_node(root_node)
+		group.make_godot_node(root_node)
 
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(root_node)
