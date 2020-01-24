@@ -3,6 +3,7 @@ extends Node
 ## Near TODOs
 # Use autoload to store level info rather than injecting directly into farms scene instance
 # Move instructions to seperate screen
+# Fix title screen art/buttons
 
 ## Far TODOs
 # Truck to sell seeds
