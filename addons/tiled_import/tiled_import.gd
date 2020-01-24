@@ -153,21 +153,25 @@ func import(src, target_path, _import_options, _r_platform_variants, _r_gen_file
 
 	return OK
 
-func get_attribute_dict(parser):
+
+func get_attribute_dict(parser: XMLParser):
 	var out = {}
 	for i in range(0, parser.get_attribute_count()):
 		out[parser.get_attribute_name(i)] = parser.get_attribute_value(i)
 	return out
 
+
 class TiledSet:
-	var firstgid
-	var tile_count
-	var image_source
-	var tiles
-	var columns
-	var tile_width
-	var tile_height
-	func _init(_firstgid, _tile_count, _image_source, _tiles, _columns, _tile_width, _tile_height):
+	var firstgid: int
+	var tile_count: int
+	var image_source: String
+	var tiles: Dictionary
+	var columns: int
+	var tile_width: int
+	var tile_height: int
+
+
+	func _init(_firstgid: int, _tile_count: int, _image_source: String, _tiles: Dictionary, _columns: int, _tile_width: int, _tile_height: int):
 		firstgid = _firstgid
 		tile_count = _tile_count
 		image_source = _image_source
@@ -175,8 +179,9 @@ class TiledSet:
 		columns = _columns
 		tile_width = _tile_width
 		tile_height = _tile_height
-	
-	func add_to_godot_tileset(ts):
+
+
+	func add_to_godot_tileset(ts: TileSet):
 		var tx = load(image_source)
 		for i in range(0, tile_count):
 			var tid = i + firstgid
@@ -188,7 +193,8 @@ class TiledSet:
 				shape.extents = Vector2(tile_width / 2, tile_height / 2)
 				ts.tile_add_shape(tid, shape, Transform2D(0, Vector2(tile_width / 2, tile_height / 2)))
 
-func parse_tileset(firstgid, source, base_dir):
+
+func parse_tileset(firstgid: int, source: String, base_dir: String):
 	var tsx_path = base_dir + "/" + source
 	var parser = XMLParser.new()
 	var error
@@ -248,7 +254,7 @@ func parse_tileset(firstgid, source, base_dir):
 		int(tileset_attributes["tileheight"])
 	)
 
-func parse_tile(parser):
+func parse_tile(parser: XMLParser):
 	var tile_properties = {}
 	while true:
 		parser.read()
@@ -263,7 +269,7 @@ func parse_tile(parser):
 	return tile_properties
 
 
-func parse_tile_properties(parser):
+func parse_tile_properties(parser: XMLParser):
 	var properties = {}
 	while true:
 		parser.read()
@@ -277,7 +283,8 @@ func parse_tile_properties(parser):
 					break
 	return properties
 
-func parse_layer(parser):
+
+func parse_layer(parser: XMLParser):
 	var layer_data = null
 	while true:
 		parser.read()
@@ -295,7 +302,8 @@ func parse_layer(parser):
 					break
 	return layer_data
 
-func parse_object_group(parser):
+
+func parse_object_group(parser: XMLParser):
 	var objects = []
 	while true:
 		parser.read()
@@ -310,15 +318,18 @@ func parse_object_group(parser):
 					break
 	return objects
 
+
 class TiledObjectGroup:
-	var name
-	var objects
-	
-	func _init(_name, _objects):
+	var name: String
+	var objects: Array
+
+
+	func _init(_name: String, _objects: Array):
 		name = _name
 		objects = _objects
-	
-	func make_godot_node(owner):
+
+
+	func make_godot_node(owner: Node):
 		var node = Node2D.new()
 		node.name = name
 		owner.add_child(node)
@@ -331,19 +342,22 @@ class TiledObjectGroup:
 			instance.position = Vector2(int(object["x"]), int(object["y"]))
 		return node
 
+
 class TiledLayer:
-	var name
-	var layer_data #CSV
-	var width
-	var height
-	
-	func _init(_name, _layer_data, _width, _height):
+	var name: String
+	var layer_data: String #CSV
+	var width: int
+	var height: int
+
+
+	func _init(_name: String, _layer_data: String, _width: int, _height: int):
 		name = _name
 		layer_data = _layer_data
 		width = _width
 		height = _height
-	
-	func make_godot_tilemap(tileset, tilewidth, tileheight):
+
+
+	func make_godot_tilemap(tileset: TileSet, tilewidth: int, tileheight: int):
 		var node = TileMap.new()
 		node.name = name
 		node.tile_set = tileset
