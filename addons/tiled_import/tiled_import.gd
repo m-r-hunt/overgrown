@@ -303,7 +303,6 @@ func parse_object_group(parser):
 			XMLParser.NODE_ELEMENT:
 				match parser.get_node_name():
 					"object":
-						print("Parsing object")
 						var attributes = get_attribute_dict(parser)
 						objects.append(attributes)
 			XMLParser.NODE_ELEMENT_END:
@@ -325,7 +324,6 @@ class TiledObjectGroup:
 		owner.add_child(node)
 		node.owner = owner
 		for object in objects:
-			print("loading object")
 			var object_scene = load("res://scenes/objects/" + object["type"] + ".tscn")
 			var instance = object_scene.instance()
 			node.add_child(instance)
