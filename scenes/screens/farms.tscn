@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/farms.gd" type="Script" id=1]
 [ext_resource path="res://scenes/tilemaps/farms.tmx" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://scenes/objects/conveyor_up.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/objects/timer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=13]
-[ext_resource path="res://sprites/instructions.png" type="Texture" id=14]
 [ext_resource path="res://sounds/countdown_beep.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds/go_beep.wav" type="AudioStream" id=16]
 [ext_resource path="res://sounds/end_gong.wav" type="AudioStream" id=17]
@@ -291,12 +290,6 @@ __meta__ = {
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 2.0
-
-[node name="Instructions" type="Sprite" parent="."]
-visible = false
-position = Vector2( 300, 270 )
-z_index = 200
-texture = ExtResource( 14 )
 
 [node name="CountdownBeep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )

@@ -1,7 +1,6 @@
 extends Node
 
 ## Near TODOs
-# Use autoload to store level info rather than injecting directly into farms scene instance
 # Move instructions to seperate screen
 # Fix title screen art/buttons
 
@@ -15,6 +14,7 @@ extends Node
 # Done
 # Decide screen dimensions
 # Finish rebuilding farms in Tiled
+# Use autoload to store level info rather than injecting directly into farms scene instance
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

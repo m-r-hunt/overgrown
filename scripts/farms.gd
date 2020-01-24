@@ -2,7 +2,6 @@ extends Node2D
 
 
 var count := 8
-var started = false
 
 func remove_player(i):
 	match i:
@@ -24,14 +23,8 @@ func _ready():
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
 	$Label.text = str(count)
 	Utils.e_connect(PlayerStats, "time_up", self, "on_time_up")
-
-
-func _process(_delta):
-	if not started and (Input.is_action_just_pressed("p1_interact") or Input.is_action_just_pressed("p2_interact") or Input.is_action_just_pressed("p3_interact") or Input.is_action_just_pressed("p4_interact")):
-		$CountdownTimer.start()
-		$Instructions.queue_free()
-		started = true
-		$CountdownBeep.play()
+	$CountdownTimer.start()
+	$CountdownBeep.play()
 
 
 func on_timeout():
