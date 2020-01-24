@@ -9,13 +9,16 @@ func remove_player(i):
 		0:
 			$TiledMap.gate_only("TopLeft")
 		1:
-			$Farms/TopRight.gate_only()
+			$TiledMap.gate_only("TopRight")
 		2:
-			$Farms/BottomLeft.gate_only()
+			$TiledMap.gate_only("BottomLeft")
 		3:
-			$Farms/BottomRight.gate_only()
+			$TiledMap.gate_only("BottomRight")
 
 func _ready():
+	for i in range(0, 4):
+		if !PlayerStats.active_players[i]:
+			remove_player(i)
 	if ProjectSettings.get_setting("my_settings/debug/short_rounds"):
 		count = 3
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
