@@ -184,4 +184,4 @@ func on_start_pressed():
 				for input in inputs[players[i]][ev]:
 					InputMap.action_add_event(ev % (i+1), input)
 
-	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/farms.tscn"))
+	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/instructions.tscn"))
