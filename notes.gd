@@ -1,11 +1,10 @@
 extends Node
 
 ## Near TODOs
-# Move instructions to seperate screen
+# Truck to sell seeds
 # Fix title screen art/buttons
 
 ## Far TODOs
-# Truck to sell seeds
 # Wandering pedestrians through middle
 # Wandering buyers in with pedestrians
 # Refill watering can
@@ -15,6 +14,7 @@ extends Node
 # Decide screen dimensions
 # Finish rebuilding farms in Tiled
 # Use autoload to store level info rather than injecting directly into farms scene instance
+# Move instructions to seperate screen
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
