@@ -41,11 +41,3 @@ func _process(delta):
 
 func get_time_portion():
 	return time / max_time
-
-
-func make_farms_scene():
-	var farms = preload("res://scenes/screens/farms.tscn").instance()
-	for i in range(0, 4):
-		if !PlayerStats.active_players[i]:
-			farms.remove_player(i)
-	return farms

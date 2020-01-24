@@ -175,7 +175,6 @@ func on_start_pressed():
 			PlayerStats.active_players[i] = false
 		else:
 			PlayerStats.active_players[i] = true
-	get_parent().add_child(PlayerStats.make_farms_scene())
 	
 	for i in range(0, len(players)):
 		for ev in events:
@@ -185,4 +184,4 @@ func on_start_pressed():
 				for input in inputs[players[i]][ev]:
 					InputMap.action_add_event(ev % (i+1), input)
 
-	get_parent().remove_child(self)
+	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/farms.tscn"))

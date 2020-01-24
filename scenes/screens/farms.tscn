@@ -11,12 +11,12 @@
 [ext_resource path="res://scenes/objects/seed_path.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/conveyor_push.gd" type="Script" id=10]
 [ext_resource path="res://scenes/objects/conveyor_up.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/objects/timer.tscn" type="PackedScene" id=13]
-[ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=14]
-[ext_resource path="res://sprites/instructions.png" type="Texture" id=15]
-[ext_resource path="res://sounds/countdown_beep.wav" type="AudioStream" id=16]
-[ext_resource path="res://sounds/go_beep.wav" type="AudioStream" id=17]
-[ext_resource path="res://sounds/end_gong.wav" type="AudioStream" id=18]
+[ext_resource path="res://scenes/objects/timer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=13]
+[ext_resource path="res://sprites/instructions.png" type="Texture" id=14]
+[ext_resource path="res://sounds/countdown_beep.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/go_beep.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds/end_gong.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 236 )
@@ -35,9 +35,11 @@ position = Vector2( 238, 92 )
 position = Vector2( 238, 142 )
 
 [node name="ConveyorSystem" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -32, 0 )
 
 [node name="LeftSide" type="Node2D" parent="ConveyorSystem"]
+editor/display_folded = true
 
 [node name="SeedSpawner" parent="ConveyorSystem/LeftSide" instance=ExtResource( 6 )]
 position = Vector2( 216, 24 )
@@ -274,7 +276,7 @@ direction = Vector2( 0, -1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorSystem/RightSide/Area2D"]
 shape = SubResource( 1 )
 
-[node name="RoundTimer" parent="." instance=ExtResource( 13 )]
+[node name="RoundTimer" parent="." instance=ExtResource( 12 )]
 position = Vector2( 472, 270 )
 
 [node name="Label" type="Label" parent="."]
@@ -282,7 +284,7 @@ margin_left = 232.0
 margin_top = 120.0
 margin_right = 296.0
 margin_bottom = 144.0
-custom_fonts/font = ExtResource( 14 )
+custom_fonts/font = ExtResource( 13 )
 align = 1
 valign = 1
 __meta__ = {
@@ -296,16 +298,16 @@ wait_time = 2.0
 visible = false
 position = Vector2( 300, 270 )
 z_index = 200
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="CountdownBeep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 
 [node name="GoBeep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 16 )
 
 [node name="EndGong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 18 )
+stream = ExtResource( 17 )
 
 [node name="EndTimer" type="Timer" parent="."]
 wait_time = 5.0

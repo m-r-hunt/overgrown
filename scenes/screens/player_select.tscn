@@ -19,56 +19,56 @@ wait_time = 3.0
 one_shot = true
 
 [node name="P1Label" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 232.0
-margin_right = 148.0
-margin_bottom = 245.0
+margin_left = 88.0
+margin_top = 104.0
+margin_right = 212.0
+margin_bottom = 117.0
 text = "Player 1: Press any key"
 
 [node name="P2Label" type="Label" parent="."]
-margin_left = 168.0
-margin_top = 232.0
-margin_right = 292.0
-margin_bottom = 245.0
+margin_left = 232.0
+margin_top = 104.0
+margin_right = 356.0
+margin_bottom = 117.0
 text = "Player 2: Press any key"
 
 [node name="P3Label" type="Label" parent="."]
-margin_left = 328.0
-margin_top = 232.0
-margin_right = 452.0
-margin_bottom = 245.0
+margin_left = 88.0
+margin_top = 200.0
+margin_right = 212.0
+margin_bottom = 213.0
 text = "Player 3: Press any key"
 
 [node name="P4Label" type="Label" parent="."]
-margin_left = 472.0
-margin_top = 232.0
-margin_right = 596.0
-margin_bottom = 245.0
+margin_left = 232.0
+margin_top = 200.0
+margin_right = 356.0
+margin_bottom = 213.0
 text = "Player 4: Press any key"
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 146.586
-margin_top = 459.968
-margin_right = 430.586
-margin_bottom = 520.968
+margin_left = 152.0
+margin_top = 232.0
+margin_right = 296.0
+margin_bottom = 261.0
 text = "START"
 
 [node name="catman1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88, 184 )
+position = Vector2( 152, 56 )
 
 [node name="catman2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 232, 184 )
+position = Vector2( 296, 56 )
 
 [node name="catman3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 392, 184 )
+position = Vector2( 152, 152 )
 
 [node name="catman4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 536, 184 )
+position = Vector2( 296, 152 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 232.0
-margin_top = 72.0
-margin_right = 386.0
-margin_bottom = 98.0
+margin_left = 146.586
+margin_top = 8.0
+margin_right = 300.586
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 6 )
 text = "PLAYER SELECT"
