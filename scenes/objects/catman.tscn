@@ -21,6 +21,7 @@ script = ExtResource( 2 )
 
 [node name="Selector" type="Sprite" parent="KinematicBody2D"]
 position = Vector2( 24, 0 )
+z_index = 1000
 texture = ExtResource( 3 )
 
 [node name="PickableArea" type="Area2D" parent="KinematicBody2D/Selector"]

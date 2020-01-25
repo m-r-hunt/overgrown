@@ -15,6 +15,10 @@ export var plant_type := PlantType.CARROT
 export var count := 9
 
 
+func randomise_type():
+	plant_type = randi() % PlantType.MAX
+
+
 func _ready():
 	var sprite
 	match plant_type:
