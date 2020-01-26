@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/pedestrian.json-7506e32e4c29448284aab115d031a68d.scn"
+
+[deps]
+
+source_file="res://sprites/pedestrian.json"
+dest_files=[ "res://.import/pedestrian.json-7506e32e4c29448284aab115d031a68d.scn" ]
+
+[params]
+
+autoplay_animation="WalkRight"
+constant_frame_rate=100
+default_animation_looping=true

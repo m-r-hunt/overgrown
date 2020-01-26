@@ -1,7 +1,7 @@
 extends Node
 
 
-var player_moneys := [0, 0, 0, 0]
+var player_moneys := [5, 5, 5, 5]
 var time := 0.0
 var max_time := 240.0
 var started := false
@@ -13,7 +13,7 @@ signal time_up
 
 
 func reset():
-	player_moneys = [0, 0, 0, 0]
+	player_moneys = [5, 5, 5, 5]
 	time = 0.0
 	started = false
 
@@ -29,6 +29,11 @@ func start():
 func add_money(amount, player):
 	if started:
 		player_moneys[player-1] += amount
+
+
+func spend_money(amount, player):
+	if started:
+		player_moneys[player-1] -= amount
 
 
 func _process(delta):

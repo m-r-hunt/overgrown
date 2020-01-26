@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var count := 8
+var count := 3
 
 func remove_player(i):
 	match i:
@@ -18,8 +18,6 @@ func _ready():
 	for i in range(0, 4):
 		if !PlayerStats.active_players[i]:
 			remove_player(i)
-	if ProjectSettings.get_setting("my_settings/debug/short_rounds"):
-		count = 3
 	Utils.e_connect($CountdownTimer, "timeout", self, "on_timeout")
 	$Label.text = str(count)
 	Utils.e_connect(PlayerStats, "time_up", self, "on_time_up")

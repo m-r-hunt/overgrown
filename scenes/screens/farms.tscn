@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/farms.gd" type="Script" id=1]
 [ext_resource path="res://scenes/tilemaps/farms.tmx" type="PackedScene" id=2]
 [ext_resource path="res://scripts/tiled_farms.gd" type="Script" id=3]
 [ext_resource path="res://scenes/objects/well.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objects/sell_box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/pedestrian_spawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/timer.tscn" type="PackedScene" id=12]
 [ext_resource path="res://m5x7_big.tres" type="DynamicFont" id=13]
 [ext_resource path="res://scenes/objects/seed_truck.tscn" type="PackedScene" id=14]
@@ -20,10 +21,10 @@ position = Vector2( -16, -16 )
 script = ExtResource( 3 )
 
 [node name="Well" parent="." instance=ExtResource( 4 )]
-position = Vector2( 238, 92 )
+position = Vector2( 220, 160 )
 
 [node name="SellBox" parent="." instance=ExtResource( 5 )]
-position = Vector2( 238, 142 )
+position = Vector2( 256, 176 )
 
 [node name="RoundTimer" parent="." instance=ExtResource( 12 )]
 position = Vector2( 472, 270 )
@@ -57,3 +58,6 @@ wait_time = 5.0
 
 [node name="SeedTruck" parent="." instance=ExtResource( 14 )]
 position = Vector2( 238, 0 )
+
+[node name="PedestrianSpawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 136 )

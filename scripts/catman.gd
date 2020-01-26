@@ -116,6 +116,8 @@ func update_normal():
 					add_child(obj)
 					obj.position = Vector2(0.0, -32.0)
 					obj.name = "Held"
+					if obj.has_method("pick"):
+						obj.pick(get_parent().player_number)
 				else:
 					state = STATE.HOLDING
 					held_obj = obj

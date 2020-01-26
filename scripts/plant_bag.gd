@@ -14,6 +14,8 @@ enum PlantType {
 export var plant_type := PlantType.CARROT
 export var count := 9
 
+var bought := false
+
 
 func randomise_type():
 	plant_type = randi() % PlantType.MAX
@@ -41,6 +43,12 @@ func _process(_delta):
 
 func pickable():
 	return true
+
+
+func pick(player_number):
+	if not bought:
+		PlayerStats.spend_money(player_number, 1)
+		bought = true
 
 
 func place(place: Place):
