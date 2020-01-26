@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/buyer.json-e6cce14abc89d02233c2952084dc76fa.scn"
+
+[deps]
+
+source_file="res://sprites/buyer.json"
+dest_files=[ "res://.import/buyer.json-e6cce14abc89d02233c2952084dc76fa.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
