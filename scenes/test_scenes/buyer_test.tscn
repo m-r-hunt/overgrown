@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/objects/plant_bag.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/plot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/buyer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/watering_can.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/catman.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 21.1588, 9.78049 )
+
+[node name="Plot" parent="." instance=ExtResource( 2 )]
+position = Vector2( 70.9669, 11.0999 )
+
+[node name="WateringCan" parent="." instance=ExtResource( 4 )]
+position = Vector2( 78.8834, 37.2904 )
+
+[node name="Plant" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48.5368, 35.0474 )
+
+[node name="Catman" parent="." instance=ExtResource( 5 )]
+position = Vector2( 106.261, 12.1554 )

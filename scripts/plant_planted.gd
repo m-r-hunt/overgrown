@@ -55,7 +55,10 @@ func sell(sell: Sell):
 	assert(sell)
 	assert(state == State.ITEM)
 	if state == State.ITEM:
-		PlayerStats.add_money(price, sell.selling_player.player_number)
+		var multiplier := 1
+		if sell.target.has_method("sell_multiplier"):
+			multiplier = sell.target.sell_multiplier()
+		PlayerStats.add_money(price * multiplier, sell.selling_player.player_number)
 		get_parent().remove_child(self)
 		queue_free()
 
