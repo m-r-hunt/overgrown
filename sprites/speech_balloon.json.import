@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/speech_balloon.json-733d37c7b32399a53d72b8f8515b744b.scn"
+
+[deps]
+
+source_file="res://sprites/speech_balloon.json"
+dest_files=[ "res://.import/speech_balloon.json-733d37c7b32399a53d72b8f8515b744b.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

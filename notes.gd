@@ -2,13 +2,14 @@ extends Node
 
 ## Near TODOs
 # Fix title screen art/buttons
-# Make buyers discriminate on goods and ui for this
 # Redo tile arts
 # Fix ysort
+# Use signals in buyer to free it on sell
 
 ## Polish Needed
 # Truck
 # Pedestrians
+# Buyers
 # Balance
 
 ## Far TODOs
@@ -24,6 +25,7 @@ extends Node
 # Wandering pedestrians through middle
 # Truck to sell seeds
 # Wandering buyers in with pedestrians
+# Make buyers discriminate on goods and ui for this
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

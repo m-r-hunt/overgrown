@@ -8,6 +8,11 @@ var wander_direction = 0
 
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("WalkRight")
+	var wanted_product = Plant.random_type()
+	$Area2D.wanted_product = wanted_product
+	var sprite = Plant.get_sprite(wanted_product)
+	sprite.position = Vector2(0, -2)
+	$SpeechBalloon.add_child(sprite)
 
 
 func _physics_process(delta):

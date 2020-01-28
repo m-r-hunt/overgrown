@@ -19,6 +19,7 @@ position = Vector2( 78.8834, 37.2904 )
 
 [node name="Plant" parent="." instance=ExtResource( 1 )]
 position = Vector2( 48.5368, 35.0474 )
+plant_type = 1
 
 [node name="Catman" parent="." instance=ExtResource( 5 )]
 position = Vector2( 106.261, 12.1554 )

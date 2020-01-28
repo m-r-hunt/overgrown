@@ -57,7 +57,9 @@ func sell(sell: Sell):
 	if state == State.ITEM:
 		var multiplier := 1
 		if sell.target.has_method("sell_multiplier"):
-			multiplier = sell.target.sell_multiplier()
+			multiplier = sell.target.sell_multiplier(plant_type)
+		if multiplier == 0:
+			return
 		PlayerStats.add_money(price * multiplier, sell.selling_player.player_number)
 		get_parent().remove_child(self)
 		queue_free()

@@ -17,17 +17,24 @@ export var count := 9
 var bought := false
 
 
+static func random_type():
+	return randi() % PlantType.MAX
+
+
 func randomise_type():
-	plant_type = randi() % PlantType.MAX
+	plant_type = random_type()
+
+
+static func get_sprite(type):
+	match type:
+		PlantType.CARROT:
+			return preload("res://sprites/carrot.json").instance()
+		PlantType.TOMATO:
+			return preload("res://sprites/tomato.json").instance()
 
 
 func _ready():
-	var sprite
-	match plant_type:
-		PlantType.CARROT:
-			sprite = preload("res://sprites/carrot.json").instance()
-		PlantType.TOMATO:
-			sprite = preload("res://sprites/tomato.json").instance()
+	var sprite = get_sprite(plant_type)
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
 	$Label.text = str(count)
