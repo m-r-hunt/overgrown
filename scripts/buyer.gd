@@ -13,6 +13,7 @@ func _ready():
 	var sprite = Plant.get_sprite(wanted_product)
 	sprite.position = Vector2(0, -2)
 	$SpeechBalloon.add_child(sprite)
+	sprite.get_node("AnimationPlayer").play("Item")
 
 
 func _physics_process(delta):
