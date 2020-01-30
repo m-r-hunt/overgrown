@@ -1,21 +1,23 @@
 extends Node
 
 ## Near TODOs
-# Fix title screen art/buttons
 # Redo tile arts
 # Fix ysort
 # Use signals in buyer to free it on sell
+# A few different seeds
+# Refill watering can
+# Buying feedback and no negative money
+# Replace buttons with new texture buttons
 
 ## Polish Needed
 # Truck
 # Pedestrians
 # Buyers
 # Balance
+# Perfect title screen
 
 ## Far TODOs
-# Refill watering can
 # Inject plot positions for different levels somehow
-# A few different seeds
 
 # Done
 # Decide screen dimensions
@@ -26,6 +28,7 @@ extends Node
 # Truck to sell seeds
 # Wandering buyers in with pedestrians
 # Make buyers discriminate on goods and ui for this
+# Fix title screen art/buttons
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
