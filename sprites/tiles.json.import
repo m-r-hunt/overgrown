@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/tiles.json-c5030223beccf54fa4a41f98e6fa5919.scn"
+
+[deps]
+
+source_file="res://sprites/tiles.json"
+dest_files=[ "res://.import/tiles.json-c5030223beccf54fa4a41f98e6fa5919.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

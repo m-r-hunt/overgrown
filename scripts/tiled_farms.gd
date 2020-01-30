@@ -33,7 +33,7 @@ func place_plots(xmin, xmax, ymin, ymax):
 		while y <= ymax*TILE_SIZE + HALF_TILE_SIZE:
 			var plot = plot_prefab.instance()
 			plot.position = Vector2(x, y)
-			plot.z_index = -1
+			plot.z_index = 1
 			add_child(plot)
 			y += 16
 		x += 16

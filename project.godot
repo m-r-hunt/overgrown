@@ -246,12 +246,11 @@ p4_dash={
 2d_physics/layer_6="Pickable"
 2d_physics/layer_7="Plots"
 2d_physics/layer_8="Seller"
-2d_physics/layer_9="PedestrianControl"
 
 [my_settings]
 
 debug/short_rounds=false
-debug/auto_maximize=false
+debug/auto_maximize=true
 
 [physics]
 

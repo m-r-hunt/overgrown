@@ -13,6 +13,7 @@ extents = Vector2( 4, 4 )
 extents = Vector2( 6, 4 )
 
 [node name="Catman" type="Node2D"]
+z_index = 2
 script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
