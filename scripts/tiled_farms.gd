@@ -5,12 +5,19 @@ extends TileMap
 const TILE_SIZE = 16
 const HALF_TILE_SIZE = TILE_SIZE / 2
 
+var object_layers = [
+	"TopLeft",
+	"TopRight",
+	"BottomLeft",
+	"BottomRight",
+]
+
 
 func gate_only(farm):
-	get_node(farm + "/WateringCan").queue_free()
-	get_node(farm + "/Catman").queue_free()
-	get_node(farm + "/Flag").queue_free()
-	get_node(farm + "/MoneySign").queue_free()
+	get_node("Tile Layer 1/" + farm + "WateringCan").queue_free()
+	get_node("Tile Layer 1/" + farm + "Catman").queue_free()
+	get_node("Tile Layer 1/" + farm + "Flag").queue_free()
+	get_node("Tile Layer 1/" + farm + "MoneySign").queue_free()
 
 
 func _ready():
@@ -23,6 +30,18 @@ func _ready():
 	place_plots(22, 29, 2, 5)
 	place_plots(2, 9, 13, 16)
 	place_plots(22, 29, 13, 16)
+	
+	for node in get_children():
+		if node is TileMap:
+			continue
+		elif node.name in object_layers:
+			for child in node.get_children():
+				child.name = node.name + child.name
+				node.remove_child(child)
+				$"Tile Layer 1".add_child(child)
+		else:
+			remove_child(node)
+			$"Tile Layer 1".add_child(node)
 
 
 func place_plots(xmin, xmax, ymin, ymax):
@@ -33,8 +52,7 @@ func place_plots(xmin, xmax, ymin, ymax):
 		while y <= ymax*TILE_SIZE + HALF_TILE_SIZE:
 			var plot = plot_prefab.instance()
 			plot.position = Vector2(x, y)
-			plot.z_index = 1
-			add_child(plot)
+			$"Tile Layer 1".add_child(plot)
 			y += 16
 		x += 16
 	

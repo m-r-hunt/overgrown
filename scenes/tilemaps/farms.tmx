@@ -54,7 +54,7 @@
   <object id="3" type="gate" x="112" y="120">
    <point/>
   </object>
-  <object id="4" type="flag" x="184" y="104">
+  <object id="4" type="flag" x="184" y="113">
    <point/>
   </object>
   <object id="5" type="catman" x="111.748" y="79.8645">
@@ -71,7 +71,7 @@
   <object id="12" type="gate" x="112" y="184">
    <point/>
   </object>
-  <object id="15" type="flag" x="184" y="172">
+  <object id="15" type="flag" x="184" y="177">
    <point/>
   </object>
   <object id="18" type="watering_can" x="166" y="200">
@@ -88,7 +88,7 @@
   <object id="13" type="gate" x="400" y="120">
    <point/>
   </object>
-  <object id="16" type="flag" x="328" y="104">
+  <object id="16" type="flag" x="328" y="113">
    <point/>
   </object>
   <object id="19" type="watering_can" x="344" y="104">
@@ -105,7 +105,7 @@
   <object id="14" type="gate" x="400" y="184">
    <point/>
   </object>
-  <object id="17" type="flag" x="328" y="170">
+  <object id="17" type="flag" x="328" y="176">
    <point/>
   </object>
   <object id="20" type="watering_can" x="344" y="198">

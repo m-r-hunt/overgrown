@@ -18,8 +18,8 @@ func _process(delta):
 			new_ped = preload("res://scenes/objects/buyer.tscn").instance()
 		else:
 			new_ped = preload("res://scenes/objects/pedestrian.tscn").instance()
-		new_ped.position = Vector2(8, rand_range(-16, 16))
-		add_child(new_ped)
+		new_ped.position = position + Vector2(8, rand_range(-16, 16))
+		get_parent().add_child(new_ped)
 		next_spawn_time = rand_range(min_spawn_time, max_spawn_time)
 
 

@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+export(int, 1, 4) var player_number := 1 setget set_player_number
+
 enum STATE {
 	NORMAL,
 	HOLDING
@@ -31,7 +33,19 @@ export var dash_action := "p1_dash"
 
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("Idle")
+	set_player_number(player_number)
 
+func set_player_number(n):
+	collision_layer &= ~(1 << player_number)
+	player_number = n
+	collision_layer |= (1 << player_number)
+	up_action = str("p", player_number, "_up")
+	down_action = str("p", player_number, "_down")
+	left_action = str("p", player_number, "_left")
+	right_action = str("p", player_number, "_right")
+	interact_action = str("p", player_number, "_interact")
+	dash_action = str("p", player_number, "_dash")
+	$AsepriteSprite.texture = load(str("res://sprites/catman", player_number, ".png"))
 
 func _physics_process(delta):
 	match state:

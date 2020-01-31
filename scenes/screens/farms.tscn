@@ -20,11 +20,17 @@ script = ExtResource( 1 )
 position = Vector2( -16, -16 )
 script = ExtResource( 3 )
 
-[node name="Well" parent="." instance=ExtResource( 4 )]
-position = Vector2( 220, 160 )
+[node name="SellBox" parent="TiledMap" instance=ExtResource( 5 )]
+position = Vector2( 272, 192 )
 
-[node name="SellBox" parent="." instance=ExtResource( 5 )]
-position = Vector2( 256, 176 )
+[node name="Well" parent="TiledMap" instance=ExtResource( 4 )]
+position = Vector2( 236, 176 )
+
+[node name="SeedTruck" parent="TiledMap" instance=ExtResource( 14 )]
+position = Vector2( 254, 16 )
+
+[node name="PedestrianSpawner" parent="TiledMap" instance=ExtResource( 6 )]
+position = Vector2( 16, 152 )
 
 [node name="RoundTimer" parent="." instance=ExtResource( 12 )]
 position = Vector2( 472, 270 )
@@ -55,9 +61,3 @@ stream = ExtResource( 17 )
 
 [node name="EndTimer" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="SeedTruck" parent="." instance=ExtResource( 14 )]
-position = Vector2( 238, 0 )
-
-[node name="PedestrianSpawner" parent="." instance=ExtResource( 6 )]
-position = Vector2( 0, 136 )

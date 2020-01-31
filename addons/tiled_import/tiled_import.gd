@@ -363,6 +363,7 @@ class TiledLayer:
 		node.tile_set = tileset
 		node.cell_tile_origin = TileMap.TILE_ORIGIN_CENTER
 		node.cell_size = Vector2(tilewidth, tileheight)
+		node.cell_y_sort = true
 		var buf = ""
 		var idata = PoolIntArray()
 		for i in range(0, len(layer_data)):
