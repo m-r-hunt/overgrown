@@ -6,7 +6,7 @@ extends Node
 # Refill watering can
 # Buying feedback and no negative money
 # Replace buttons with new texture buttons
-# Fix ysort
+
 
 ## Polish Needed
 # Truck
@@ -31,6 +31,7 @@ extends Node
 # Make buyers discriminate on goods and ui for this
 # Fix title screen art/buttons
 # Use signals in buyer to free it on sell
+# Fix ysort
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
