@@ -110,7 +110,7 @@ func update_normal():
 				var obj = seller_areas[0]
 				if $Held.has_method("sell"):
 					print("Selling", $Held, "at", obj)
-					$Held.sell(Sell.new(obj, get_parent()))
+					$Held.sell(Sell.new(obj, self))
 			else:
 				var areas = $Selector/PickableArea.get_overlapping_areas()
 				if len(areas) == 0:
@@ -131,7 +131,7 @@ func update_normal():
 					obj.position = Vector2(0.0, -32.0)
 					obj.name = "Held"
 					if obj.has_method("pick"):
-						obj.pick(get_parent().player_number)
+						obj.pick(player_number)
 				else:
 					state = STATE.HOLDING
 					held_obj = obj

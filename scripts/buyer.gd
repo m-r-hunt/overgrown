@@ -14,6 +14,7 @@ func _ready():
 	sprite.position = Vector2(0, -2)
 	$SpeechBalloon.add_child(sprite)
 	sprite.get_node("AnimationPlayer").play("Item")
+	Utils.e_connect($Area2D, "bought", self, "on_bought")
 
 
 func _physics_process(delta):
@@ -33,3 +34,7 @@ func _physics_process(delta):
 			vec = Vector2(0, -1)
 	vec *= speed * delta
 	Utils.use(move_and_collide(vec))
+
+
+func on_bought():
+	queue_free()
