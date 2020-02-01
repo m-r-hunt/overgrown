@@ -7,6 +7,8 @@ extends Node
 # Buying feedback and no negative money
 # Replace buttons with new texture buttons
 # Don't place stuff offscreen or on top of stuff
+# Stop forced drops
+# Restrict placement of items to inside farms
 
 
 ## Polish Needed
