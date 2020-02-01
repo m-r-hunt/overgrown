@@ -8,7 +8,8 @@ extents = Vector2( 16, 16 )
 [node name="Well" type="StaticBody2D"]
 
 [node name="AsepriteSprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 16 )
+position = Vector2( 0, -16 )
 shape = SubResource( 1 )

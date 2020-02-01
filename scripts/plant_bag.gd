@@ -37,6 +37,7 @@ func _ready():
 	var sprite = get_sprite(plant_type)
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
+	sprite.position.y = -8
 	$Label.text = str(count)
 	$Label.set_as_toplevel(true)
 
@@ -66,11 +67,11 @@ func place(place: Place):
 		var planted = preload("res://scenes/objects/plant_planted.tscn").instance()
 		planted.plant_type = plant_type
 		place.target.add_child(planted)
-		planted.position = Vector2.ZERO
+		planted.position = Vector2(0, 16)
 		planted.get_node("AsepriteSprite/AnimationPlayer").play("Grow1")
-		var collider = preload("res://scenes/objects/carrot_collider.tscn").instance()
+		var collider = preload("res://scenes/objects/planted_plant_collider.tscn").instance()
 		planted.add_child(collider)
-		collider.name = "CarrotCollider"
+		collider.name = "Collider"
 		planted.name = "Planted"
 
 		if count == 0:

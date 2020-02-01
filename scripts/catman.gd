@@ -115,7 +115,7 @@ func update_normal():
 				var areas = $Selector/PickableArea.get_overlapping_areas()
 				if len(areas) == 0:
 					var obj = get_node("Held")
-					obj.position = $Selector.global_position - get_parent().global_position
+					obj.position = $Selector.global_position - get_parent().global_position + Vector2(0, 8)
 					remove_child(obj)
 					get_parent().add_child(obj)
 		else:

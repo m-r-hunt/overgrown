@@ -14,9 +14,11 @@ extends Node
 # Buyers
 # Balance
 # Perfect title screen
+# Buyer speech bubble flip position
 
 ## Far TODOs
 # Inject plot positions for different levels somehow
+# Improve walk cycles
 
 # Done
 # Decide screen dimensions

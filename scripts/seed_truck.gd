@@ -2,7 +2,7 @@ extends Node2D
 
 
 var seeds_in_stock := 0
-var seed_base_pos := Vector2(-24, 40)
+var seed_base_pos := Vector2(-24, 48)
 
 
 func _ready():

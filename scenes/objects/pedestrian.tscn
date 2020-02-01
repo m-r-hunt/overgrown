@@ -12,7 +12,8 @@ collision_mask = 256
 script = ExtResource( 2 )
 
 [node name="AsepriteSprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 12 )
+position = Vector2( 0, -4 )
 shape = SubResource( 1 )

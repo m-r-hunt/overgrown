@@ -35,6 +35,7 @@ func _ready():
 			price = 20
 			$Timer.wait_time = 8
 	sprite.name = "AsepriteSprite"
+	sprite.position.y = -8
 	add_child(sprite)
 
 

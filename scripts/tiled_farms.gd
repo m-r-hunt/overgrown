@@ -48,14 +48,13 @@ func place_plots(xmin, xmax, ymin, ymax):
 	var plot_prefab = preload("res://scenes/objects/plot.tscn")
 	var x = xmin*TILE_SIZE + HALF_TILE_SIZE
 	while x <= xmax*TILE_SIZE + HALF_TILE_SIZE:
-		var y = ymin*TILE_SIZE + HALF_TILE_SIZE
-		while y <= ymax*TILE_SIZE + HALF_TILE_SIZE:
+		var y = ymin*TILE_SIZE
+		while y <= ymax*TILE_SIZE:
 			var plot = plot_prefab.instance()
 			plot.position = Vector2(x, y)
 			$"Tile Layer 1".add_child(plot)
 			y += 16
 		x += 16
-	
 
 
 func set_player_number(farm, p):
