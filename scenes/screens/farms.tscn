@@ -21,10 +21,10 @@ position = Vector2( -16, -16 )
 script = ExtResource( 3 )
 
 [node name="SellBox" parent="TiledMap" instance=ExtResource( 5 )]
-position = Vector2( 272, 192 )
+position = Vector2( 272, 223 )
 
 [node name="Well" parent="TiledMap" instance=ExtResource( 4 )]
-position = Vector2( 236, 176 )
+position = Vector2( 236, 223 )
 
 [node name="SeedTruck" parent="TiledMap" instance=ExtResource( 14 )]
 position = Vector2( 254, 16 )

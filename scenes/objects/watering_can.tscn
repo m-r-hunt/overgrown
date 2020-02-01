@@ -17,3 +17,12 @@ shape = SubResource( 1 )
 
 [node name="AsepriteSprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -7.0
+margin_top = -2.0
+margin_right = 7.0
+color = Color( 0.180392, 0.537255, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

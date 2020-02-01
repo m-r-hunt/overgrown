@@ -1,11 +1,12 @@
 extends Node
 
+
 ## Near TODOs
 # Redo tile arts
 # A few different seeds
-# Refill watering can
 # Buying feedback and no negative money
 # Replace buttons with new texture buttons
+# Don't place stuff offscreen or on top of stuff
 
 
 ## Polish Needed
@@ -15,10 +16,13 @@ extends Node
 # Balance
 # Perfect title screen
 # Buyer speech bubble flip position
+# Watering can
+
 
 ## Far TODOs
 # Inject plot positions for different levels somehow
 # Improve walk cycles
+
 
 # Done
 # Decide screen dimensions
@@ -32,6 +36,7 @@ extends Node
 # Fix title screen art/buttons
 # Use signals in buyer to free it on sell
 # Fix ysort
+# Refill watering can
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

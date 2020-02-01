@@ -46,7 +46,7 @@ func pickable():
 		State.GROWN:
 			state = State.ITEM
 			$AsepriteSprite/AnimationPlayer.play("Item")
-			remove_child(get_node("CarrotCollider"))
+			remove_child(get_node("Collider"))
 			return true
 		_:
 			return false
