@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "CustomResource",
+"language": "GDScript",
+"path": "res://scripts/custom_resource.gd"
+}, {
 "base": "Reference",
 "class": "Place",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://scripts/utils.gd"
 } ]
 _global_script_class_icons={
+"CustomResource": "",
 "Place": "",
 "Plant": "",
 "Sell": "",
