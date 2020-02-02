@@ -1,6 +1,6 @@
 extends Node2D
 
-var bar_height = 200
+var bar_height = 100
 var animation_time = 4.0
 
 func _ready():
