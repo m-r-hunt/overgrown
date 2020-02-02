@@ -179,9 +179,3 @@ func update_bashed(delta):
 func bash(t):
 	dash_time = t
 	state = STATE.BASHED
-	var areas = $Selector/PickableArea.get_overlapping_areas()
-	if len(areas) == 0 and has_node("Held"):
-		var obj = get_node("Held")
-		obj.position = $Selector.global_position - get_parent().global_position
-		remove_child(obj)
-		get_parent().add_child(obj)

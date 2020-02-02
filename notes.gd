@@ -5,9 +5,7 @@ extends Node
 # Redo tile arts
 # A few different seeds
 # Buying feedback and no negative money
-# Replace buttons with new texture buttons
 # Don't place stuff offscreen or on top of stuff
-# Stop forced drops
 # Restrict placement of items to inside farms
 
 
@@ -39,6 +37,8 @@ extends Node
 # Use signals in buyer to free it on sell
 # Fix ysort
 # Refill watering can
+# Replace buttons with new texture buttons
+# Stop forced drops
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
