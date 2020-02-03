@@ -17,7 +17,7 @@ export var count := 9
 var bought := false
 
 
-static func random_type():
+static func random_type() -> int:
 	return randi() % PlantType.MAX
 
 
@@ -25,12 +25,15 @@ func randomise_type():
 	plant_type = random_type()
 
 
-static func get_sprite(type):
+static func get_sprite(type: int) -> Node:
 	match type:
 		PlantType.CARROT:
 			return preload("res://sprites/carrot.json").instance()
 		PlantType.TOMATO:
 			return preload("res://sprites/tomato.json").instance()
+		_:
+			assert(false)
+			return null
 
 
 func _ready():

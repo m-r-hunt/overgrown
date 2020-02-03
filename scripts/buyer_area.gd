@@ -2,12 +2,13 @@ extends Area2D
 
 
 export var multiplier := 2
-var wanted_product
+var wanted_product: int
+
 
 signal bought                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
 
-func sell_multiplier(plant):
+func sell_multiplier(plant: int) -> int:
 	if plant == wanted_product:
 		emit_signal("bought")
 		return multiplier

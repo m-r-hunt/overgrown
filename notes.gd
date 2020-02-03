@@ -7,6 +7,7 @@ extends Node
 # Buying feedback and no negative money
 # Don't place stuff offscreen or on top of stuff
 # Restrict placement of items to inside farms
+# Stop buyers walking through gates
 
 
 ## Polish Needed
@@ -22,6 +23,7 @@ extends Node
 ## Far TODOs
 # Inject plot positions for different levels somehow
 # Improve walk cycles
+# Allow swapping items with floor items
 
 
 # Done

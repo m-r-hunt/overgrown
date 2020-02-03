@@ -3,7 +3,8 @@ extends Node2D
 
 var count := 3
 
-func remove_player(i):
+
+func remove_player(i: int):
 	match i:
 		0:
 			$TiledMap.gate_only("TopLeft")
@@ -13,6 +14,9 @@ func remove_player(i):
 			$TiledMap.gate_only("BottomLeft")
 		3:
 			$TiledMap.gate_only("BottomRight")
+		_:
+			assert(false)
+
 
 func _ready():
 	for i in range(0, 4):
@@ -43,5 +47,5 @@ func on_time_up():
 	$EndGong.play()
 	$EndTimer.start()
 	yield($EndTimer, "timeout")
-	assert(get_tree().change_scene("res://scenes/screens/round_end.tscn") == OK)
+	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/round_end.tscn"))
 	queue_free()
