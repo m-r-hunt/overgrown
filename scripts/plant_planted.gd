@@ -45,7 +45,7 @@ func sell(sell: Sell):
 			multiplier = sell.target.sell_multiplier(plant_type)
 		if multiplier == 0:
 			return
-		PlayerStats.add_money(plant_type.price * multiplier, sell.selling_player.player_number)
+		PlayerStats.add_money(plant_type.sell_price * multiplier, sell.selling_player.player_number)
 		get_parent().remove_child(self)
 		queue_free()
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/grape.json-ee71902bab56fdf8cc93b71edfd9be87.scn"
+
+[deps]
+
+source_file="res://sprites/grape.json"
+dest_files=[ "res://.import/grape.json-ee71902bab56fdf8cc93b71edfd9be87.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
