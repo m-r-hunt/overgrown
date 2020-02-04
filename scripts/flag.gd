@@ -10,6 +10,6 @@ func _ready():
 	set_player_number(player_number)
 
 
-func set_player_number(n):
+func set_player_number(n: int):
 	player_number = n
-	$"flag".texture = load(str("res://sprites/flag", player_number, ".png"))
+	$Sprite.texture = load(str("res://sprites/flag", player_number, ".png"))

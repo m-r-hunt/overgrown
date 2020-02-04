@@ -1,5 +1,6 @@
 extends Node2D
 
+
 export var max_spawn_time := 10.0
 export var min_spawn_time := 2.0
 
@@ -10,10 +11,10 @@ func _ready():
 	Utils.e_connect($Area2D, "body_entered", self, "on_body_entered")
 
 
-func _process(delta):
+func _process(delta: float):
 	next_spawn_time -= delta
 	if next_spawn_time < 0:
-		var new_ped = null
+		var new_ped: Node2D = null
 		if rand_range(0.0, 1.0) > 0.9:
 			new_ped = preload("res://scenes/objects/buyer.tscn").instance()
 		else:

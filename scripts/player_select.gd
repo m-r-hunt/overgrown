@@ -11,20 +11,20 @@ enum CONTROL_TYPE {
 	JOY5,
 }
 
-func key_press(key):
+func key_press(key: int):
 	var ev = InputEventKey.new()
 	ev.scancode = key
 	ev.pressed = true
 	return ev
 
-func joy_press(device, button):
+func joy_press(device: int, button: int):
 	var ev = InputEventJoypadButton.new()
 	ev.device = device
 	ev.button_index = button
 	ev.pressed = true
 	return ev
 	
-func joy_axis(device, axis, value): # value = +-1 for direction
+func joy_axis(device: int, axis: int, value: float): # value = +-1 for direction
 	var ev = InputEventJoypadMotion.new()
 	ev.device = device
 	ev.axis = axis
@@ -92,7 +92,7 @@ func _ready():
 	Utils.e_connect($StartButton, "pressed", self, "on_start_pressed")
 
 
-func control_type_string(ct):
+func control_type_string(ct: int):
 	match ct:
 		CONTROL_TYPE.UNSET: return "UNSET"
 		CONTROL_TYPE.KEYBOARD: return "KEYBOARD"
@@ -103,7 +103,7 @@ func control_type_string(ct):
 		CONTROL_TYPE.JOY5: return "JOY5"
 
 
-func assign_player(control_type):
+func assign_player(control_type: int):
 	for i in range(0, 4):
 		if players[i] == CONTROL_TYPE.UNSET:
 			players[i] = control_type
@@ -112,7 +112,7 @@ func assign_player(control_type):
 			return
 
 
-func remove_player(control_type):
+func remove_player(control_type: int):
 	for i in range(0, 4):
 		if players[i] == control_type:
 			players[i] = CONTROL_TYPE.UNSET
@@ -120,7 +120,7 @@ func remove_player(control_type):
 			get_node("P"+str(i+1)+"Label").text = "Player " + str(i+1) + ": " + "Press any key"
 
 
-func _input(event):
+func _input(event: InputEvent):
 	if event is InputEventKey:
 		if event.scancode == KEY_ESCAPE:
 			if CONTROL_TYPE.KEYBOARD in players:
@@ -129,7 +129,7 @@ func _input(event):
 			if not CONTROL_TYPE.KEYBOARD in players:
 				assign_player(CONTROL_TYPE.KEYBOARD)
 	elif event is InputEventJoypadButton:
-		var ct = CONTROL_TYPE.JOY1+event.device
+		var ct: int = CONTROL_TYPE.JOY1+event.device
 		if event.button_index == JOY_SELECT:
 			if ct in players:
 				remove_player(ct)
@@ -138,8 +138,8 @@ func _input(event):
 				assign_player(ct)
 
 
-func on_joy_connection_changed(device, connected):
-	var ct = CONTROL_TYPE.JOY1+device
+func on_joy_connection_changed(device: int, connected: bool):
+	var ct: int = CONTROL_TYPE.JOY1+device
 	if not connected and ct in players:
 		remove_player(ct)
 	
@@ -155,7 +155,7 @@ func on_timeout():
 
 
 func active_players():
-	var total = 0
+	var total := 0
 	for p in players:
 		if p != CONTROL_TYPE.UNSET:
 			total += 1
@@ -170,7 +170,7 @@ func on_start_pressed():
 
 	PlayerStats.reset()
 	for i in range(0, len(players)):
-		var ct = players[i]
+		var ct: int = players[i]
 		if ct == CONTROL_TYPE.UNSET:
 			PlayerStats.active_players[i] = false
 		else:

@@ -12,7 +12,7 @@ func _ready():
 	set_allowed_player(allowed_player)
 
 
-func set_allowed_player(p):
+func set_allowed_player(p: int):
 	$Area2D.collision_mask &= ~(1 << allowed_player)
 	$StaticBody2D.collision_mask = 30
 	allowed_player = p
@@ -20,12 +20,12 @@ func set_allowed_player(p):
 	$StaticBody2D.collision_mask &= ~(1 << allowed_player)
 
 
-func on_body_entered(_body):
+func on_body_entered(_body: Node):
 	if not locked:
 		$AsepriteSprite/AnimationPlayer.play("Open")
 
 
-func on_body_exited(_body):
+func on_body_exited(_body: Node):
 	$AsepriteSprite/AnimationPlayer.play("Closed")
 
 

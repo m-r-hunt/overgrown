@@ -1,13 +1,6 @@
 extends Area2D
 
 
-enum PlantType {
-	CARROT,
-	TOMATO
-	MAX,
-}
-
-
 enum State {
 	PLANTED,
 	GROWING,
@@ -18,19 +11,19 @@ enum State {
 
 
 export var state := State.PLANTED
-export var plant_type := PlantType.CARROT
+export var plant_type := Plant.PlantType.CARROT
 export var price := 10
 
 
 func _ready():
 	Utils.e_connect($Timer, "timeout", self, "on_timeout")
-	var sprite
+	var sprite: Node2D
 	match plant_type:
-		PlantType.CARROT:
+		Plant.PlantType.CARROT:
 			sprite = preload("res://sprites/carrot.json").instance()
 			price = 10
 			$Timer.wait_time = 3
-		PlantType.TOMATO:
+		Plant.PlantType.TOMATO:
 			sprite = preload("res://sprites/tomato.json").instance()
 			price = 20
 			$Timer.wait_time = 8
