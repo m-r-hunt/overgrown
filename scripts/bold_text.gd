@@ -4,7 +4,7 @@ tool
 
 
 export var bold_text := "" setget set_text
-export(Font) var custom_font := preload("res://m5x7.tres") as Font setget set_font
+export(Font) var custom_font := preload("res://fonts/m5x7.tres") as Font setget set_font
 
 
 var ready := false

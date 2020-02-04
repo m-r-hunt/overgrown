@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://m5x7.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/m5x7.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/bold_text.gd" type="Script" id=2]
+
 
 [node name="Label" type="Label"]
 margin_right = 40.0

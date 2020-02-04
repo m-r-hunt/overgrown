@@ -66,7 +66,7 @@ enabled=PoolStringArray( "aseprite_import", "tiled_import" )
 
 [gui]
 
-theme/custom_font="res://m5x7.tres"
+theme/custom_font="res://fonts/m5x7.tres"
 
 [importer_defaults]
 
