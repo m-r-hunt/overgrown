@@ -29,7 +29,7 @@ func pickable() -> bool:
 
 func pick(player_number: int):
 	if not bought:
-		PlayerStats.spend_money(player_number, 1)
+		PlayerStats.spend_money(plant_type.bag_cost, player_number)
 		bought = true
 
 

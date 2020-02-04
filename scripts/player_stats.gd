@@ -26,12 +26,12 @@ func start():
 		max_time = 20
 
 
-func add_money(amount, player):
+func add_money(amount: int, player: int):
 	if started:
 		player_moneys[player-1] += amount
 
 
-func spend_money(amount, player):
+func spend_money(amount: int, player: int):
 	if started:
 		player_moneys[player-1] -= amount
 
@@ -44,5 +44,5 @@ func _process(delta: float):
 			started = false
 
 
-func get_time_portion():
+func get_time_portion() -> float:
 	return time / max_time
