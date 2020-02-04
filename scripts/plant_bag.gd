@@ -1,43 +1,14 @@
 extends Area2D
 
 
-class_name Plant
-
-
-enum PlantType {
-	CARROT,
-	TOMATO
-	MAX,
-}
-
-
-export var plant_type := PlantType.CARROT
+var plant_type: PlantResource
 export var count := 9
 
 var bought := false
 
 
-static func random_type() -> int:
-	return randi() % PlantType.MAX
-
-
-func randomise_type():
-	plant_type = random_type()
-
-
-static func get_sprite(type: int) -> Node:
-	match type:
-		PlantType.CARROT:
-			return preload("res://sprites/carrot.json").instance()
-		PlantType.TOMATO:
-			return preload("res://sprites/tomato.json").instance()
-		_:
-			assert(false)
-			return null
-
-
 func _ready():
-	var sprite := get_sprite(plant_type)
+	var sprite := plant_type.sprite.instance()
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
 	sprite.position.y = -8

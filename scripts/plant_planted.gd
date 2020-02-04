@@ -11,22 +11,13 @@ enum State {
 
 
 export var state := State.PLANTED
-export var plant_type: int = Plant.PlantType.CARROT
-export var price := 10
+var plant_type: PlantResource
 
 
 func _ready():
 	Utils.e_connect($Timer, "timeout", self, "on_timeout")
-	var sprite: Node2D
-	match plant_type:
-		Plant.PlantType.CARROT:
-			sprite = load("res://sprites/carrot.json").instance()
-			price = 10
-			$Timer.wait_time = 3
-		Plant.PlantType.TOMATO:
-			sprite = load("res://sprites/tomato.json").instance()
-			price = 20
-			$Timer.wait_time = 8
+	var sprite := plant_type.sprite.instance()
+	$Timer.wait_time = plant_type.growth_time
 	sprite.name = "AsepriteSprite"
 	sprite.position.y = -8
 	add_child(sprite)
@@ -54,7 +45,7 @@ func sell(sell: Sell):
 			multiplier = sell.target.sell_multiplier(plant_type)
 		if multiplier == 0:
 			return
-		PlayerStats.add_money(price * multiplier, sell.selling_player.player_number)
+		PlayerStats.add_money(plant_type.price * multiplier, sell.selling_player.player_number)
 		get_parent().remove_child(self)
 		queue_free()
 

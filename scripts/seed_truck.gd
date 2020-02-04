@@ -13,7 +13,7 @@ func restock():
 	for i in range(4):
 		var seeds := preload("res://scenes/objects/plant_bag.tscn").instance()
 		seeds.position = seed_base_pos + Vector2(i*16, 0)
-		seeds.randomise_type()
+		seeds.plant_type = PlantManager.random_plant()
 		add_child(seeds)
 	seeds_in_stock = 4
 	$AsepriteSprite/AnimationPlayer.play("Idle")

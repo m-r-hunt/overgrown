@@ -8,9 +8,9 @@ var wander_direction := 0
 
 func _ready():
 	$AsepriteSprite/AnimationPlayer.play("WalkRight")
-	var wanted_product := Plant.random_type()
+	var wanted_product := PlantManager.random_plant()
 	$Area2D.wanted_product = wanted_product
-	var sprite := Plant.get_sprite(wanted_product)
+	var sprite := wanted_product.sprite.instance()
 	sprite.position = Vector2(0, -2)
 	$SpeechBalloon.add_child(sprite)
 	sprite.get_node("AnimationPlayer").play("Item")

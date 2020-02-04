@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/interactions/place.gd"
 }, {
-"base": "Area2D",
-"class": "Plant",
+"base": "Resource",
+"class": "PlantResource",
 "language": "GDScript",
-"path": "res://scripts/plant_bag.gd"
+"path": "res://scripts/plant_resource.gd"
 }, {
 "base": "Reference",
 "class": "Sell",
@@ -31,7 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Place": "",
-"Plant": "",
+"PlantResource": "",
 "Sell": "",
 "Utils": ""
 }
@@ -46,6 +46,7 @@ config/icon="res://icon.png"
 
 DebugHelper="*res://scripts/debug_helper.gd"
 PlayerStats="*res://scripts/player_stats.gd"
+PlantManager="*res://scripts/plant_manager.gd"
 
 [debug]
 
