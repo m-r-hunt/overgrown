@@ -36,7 +36,7 @@ func spend_money(amount, player):
 		player_moneys[player-1] -= amount
 
 
-func _process(delta):
+func _process(delta: float):
 	if started:
 		time += delta
 		if time > max_time:

@@ -24,5 +24,5 @@ func _process(delta: float):
 		next_spawn_time = rand_range(min_spawn_time, max_spawn_time)
 
 
-func on_body_entered(body):
+func on_body_entered(body: Node):
 	body.queue_free()

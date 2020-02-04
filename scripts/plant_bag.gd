@@ -67,7 +67,7 @@ func place(place: Place):
 	if place.target.is_empty():
 		count -= 1
 		$Label.text = str(count)
-		var planted := preload("res://scenes/objects/plant_planted.tscn").instance()
+		var planted := load("res://scenes/objects/plant_planted.tscn").instance() as Node2D
 		planted.plant_type = plant_type
 		place.target.add_child(planted)
 		planted.position = Vector2(0, 16)

@@ -11,7 +11,7 @@ enum State {
 
 
 export var state := State.PLANTED
-export var plant_type := Plant.PlantType.CARROT
+export var plant_type: int = Plant.PlantType.CARROT
 export var price := 10
 
 
@@ -20,11 +20,11 @@ func _ready():
 	var sprite: Node2D
 	match plant_type:
 		Plant.PlantType.CARROT:
-			sprite = preload("res://sprites/carrot.json").instance()
+			sprite = load("res://sprites/carrot.json").instance()
 			price = 10
 			$Timer.wait_time = 3
 		Plant.PlantType.TOMATO:
-			sprite = preload("res://sprites/tomato.json").instance()
+			sprite = load("res://sprites/tomato.json").instance()
 			price = 20
 			$Timer.wait_time = 8
 	sprite.name = "AsepriteSprite"

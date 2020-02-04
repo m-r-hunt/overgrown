@@ -1,7 +1,11 @@
 extends Node2D
 
-var bar_height = 100
-var animation_time = 4.0
+
+const bar_height := 100
+
+
+var animation_time := 4.0
+
 
 func _ready():
 	Utils.e_connect($MainMenuButton, "pressed", self, "on_main_menu")
@@ -11,14 +15,15 @@ func _ready():
 	#PlayerStats.active_players = [true, true, false, true]
 	#PlayerStats.player_moneys = [4, 20, 14, 20]
 	
-	var max_money := 0.0
-	var winner = 0
-	var tie = false
+	var max_money := -1
+	var winner := 0
+	var tie := false
 	for i in range(0, 4):
 		if PlayerStats.player_moneys[i] > max_money:
 			max_money = PlayerStats.player_moneys[i]
 			winner = i
-		elif max_money > 0 and PlayerStats.player_moneys[i] == max_money:
+			tie = false
+		elif max_money > -1 and PlayerStats.player_moneys[i] == max_money:
 			tie = true
 	
 	for i in range(0, 4):
@@ -26,9 +31,9 @@ func _ready():
 			get_node("catman" + str(i+1)).queue_free()
 			get_node("Bar" + str(i+1)).queue_free()
 		elif PlayerStats.player_moneys[i] > 0:
-			var catman_node = get_node("catman" + str(i+1))
-			var fraction = PlayerStats.player_moneys[i] / max_money
-			var target_height = fraction * bar_height
+			var catman_node := get_node("catman" + str(i+1))
+			var fraction := PlayerStats.player_moneys[i] as float / max_money
+			var target_height := fraction * bar_height
 			$Tween.interpolate_property(
 				catman_node, 
 				"position:y", 
@@ -36,7 +41,7 @@ func _ready():
 				fraction*animation_time,
 				Tween.TRANS_LINEAR, Tween.EASE_OUT
 			)
-			var bar_node = get_node("Bar" + str(i+1))
+			var bar_node := get_node("Bar" + str(i+1))
 			$Tween.interpolate_property(
 				bar_node, 
 				"margin_top", 
@@ -63,6 +68,4 @@ func on_main_menu():
 
 func on_replay():
 	PlayerStats.reset()
-	var farms = PlayerStats.make_farms_scene()
-	get_parent().add_child(farms)
-	get_parent().remove_child(self)
+	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/farms.tscn"))

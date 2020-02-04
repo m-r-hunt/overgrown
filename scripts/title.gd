@@ -6,7 +6,7 @@ func _ready():
 	Utils.e_connect($QuitButton, "pressed", self, "on_quit_button_pressed")
 
 
-func _process(_delta):
+func _process(_delta: float):
 	if Input.is_action_just_pressed("ui_accept"):
 		play()
 	elif Input.is_action_just_pressed("ui_cancel"):
@@ -22,8 +22,7 @@ func on_quit_button_pressed():
 
 
 func play():
-	var ret = get_tree().change_scene("res://scenes/screens/player_select.tscn")
-	assert(ret == OK)
+	Utils.assert_ok(get_tree().change_scene("res://scenes/screens/player_select.tscn"))
 
 
 func quit():

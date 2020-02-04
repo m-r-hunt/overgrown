@@ -11,7 +11,7 @@ func _ready():
 
 func restock():
 	for i in range(4):
-		var seeds = preload("res://scenes/objects/plant_bag.tscn").instance()
+		var seeds := preload("res://scenes/objects/plant_bag.tscn").instance()
 		seeds.position = seed_base_pos + Vector2(i*16, 0)
 		seeds.randomise_type()
 		add_child(seeds)
