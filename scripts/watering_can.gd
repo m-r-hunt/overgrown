@@ -22,9 +22,10 @@ func place(place: Place):
 	assert(place)
 	if place.target.has_method("water"):
 		if water_level > 0:
-			place.target.water()
-			water_level -= 1
-			update_water_meter()
+			var watered: bool = place.target.water()
+			if watered:
+				water_level -= 1
+				update_water_meter()
 		else:
 			# TODO Feedback on no water
 			pass

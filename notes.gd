@@ -2,7 +2,6 @@ extends Node
 
 
 ## Near TODOs
-# Redo tile arts
 # A few different seeds
 # Buying feedback and no negative money
 # Don't place stuff offscreen or on top of stuff
@@ -41,6 +40,7 @@ extends Node
 # Refill watering can
 # Replace buttons with new texture buttons
 # Stop forced drops
+# Redo tile arts
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

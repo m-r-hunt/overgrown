@@ -1,10 +1,12 @@
 extends Area2D
 
 
-func water():
+func water() -> bool:
 	if has_node("Planted"):
 		$AsepriteSprite/AnimationPlayer.play("Watered")
-		$Planted.water();
+		return $Planted.water()
+	else:
+		return false
 
 
 func reset_after_pick():

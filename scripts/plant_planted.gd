@@ -50,12 +50,15 @@ func sell(sell: Sell):
 		queue_free()
 
 
-func water():
+func water() -> bool:
 	assert(state == State.PLANTED || state == State.GROWING || state == State.GROWN)
 	if state == State.PLANTED:
 		$AsepriteSprite/AnimationPlayer.play("Grow2")
 		$Timer.start()
 		state = State.GROWING
+		return true
+	else:
+		return false
 
 
 func on_timeout():

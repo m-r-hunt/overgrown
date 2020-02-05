@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/wheat.json-e95ab644bed68f141404c9d8072e4a30.scn"
+
+[deps]
+
+source_file="res://sprites/wheat.json"
+dest_files=[ "res://.import/wheat.json-e95ab644bed68f141404c9d8072e4a30.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
