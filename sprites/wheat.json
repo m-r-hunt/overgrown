@@ -82,7 +82,8 @@
   "frameTags": [
    { "name": "Seedbag", "from": 0, "to": 0, "direction": "forward" },
    { "name": "Grow1", "from": 1, "to": 1, "direction": "forward" },
-   { "name": "Grow3", "from": 2, "to": 3, "direction": "forward" },
+   { "name": "Grow2", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "Grow3", "from": 3, "to": 3, "direction": "forward" },
    { "name": "Grown", "from": 4, "to": 4, "direction": "forward" },
    { "name": "WIlted", "from": 5, "to": 5, "direction": "forward" },
    { "name": "Item", "from": 6, "to": 6, "direction": "forward" },
