@@ -5,7 +5,8 @@ export var multiplier := 2
 var wanted_product: PlantResource
 
 
-signal bought                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+signal bought
+signal buy_rejected
 
 
 func sell_multiplier(plant: PlantResource) -> int:
@@ -13,4 +14,5 @@ func sell_multiplier(plant: PlantResource) -> int:
 		emit_signal("bought")
 		return multiplier
 	else:
+		emit_signal("buy_rejected")
 		return 0

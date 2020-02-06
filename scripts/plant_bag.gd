@@ -1,14 +1,15 @@
 extends Area2D
 
 
-var plant_type: PlantResource
+export var plant_type: Resource
 export var count := 9
 
 var bought := false
 
 
 func _ready():
-	var sprite := plant_type.sprite.instance()
+	assert(plant_type is PlantResource)
+	var sprite := (plant_type as PlantResource).sprite.instance()
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
 	sprite.position.y = -8

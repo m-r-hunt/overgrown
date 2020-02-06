@@ -2,7 +2,6 @@ extends Node
 
 
 ## Near TODOs
-# A few different seeds
 # Buying feedback and no negative money
 # Don't place stuff offscreen or on top of stuff
 # Restrict placement of items to inside farms
@@ -41,6 +40,7 @@ extends Node
 # Replace buttons with new texture buttons
 # Stop forced drops
 # Redo tile arts
+# A few different seeds
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

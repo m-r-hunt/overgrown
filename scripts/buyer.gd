@@ -15,6 +15,7 @@ func _ready():
 	$SpeechBalloon.add_child(sprite)
 	sprite.get_node("AnimationPlayer").play("Item")
 	Utils.e_connect($Area2D, "bought", self, "on_bought")
+	Utils.e_connect($Area2D, "buy_rejected", self, "on_buy_rejected")
 
 
 func _physics_process(delta: float):
@@ -29,3 +30,11 @@ func _physics_process(delta: float):
 
 func on_bought():
 	queue_free()
+
+
+func on_buy_rejected():
+	$SpeechBalloon/cross.visible = true
+	$SpeechBalloon/AsepriteSprite.visible = false
+	yield(get_tree().create_timer(1.0), "timeout")
+	$SpeechBalloon/cross.visible = false
+	$SpeechBalloon/AsepriteSprite.visible = true
