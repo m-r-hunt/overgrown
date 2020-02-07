@@ -23,7 +23,7 @@ func _ready():
 	add_child(sprite)
 
 
-func pickable():
+func pickable(_player_number: int) -> bool:
 	match state:
 		State.ITEM:
 			return true

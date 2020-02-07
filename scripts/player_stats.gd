@@ -26,14 +26,21 @@ func start():
 		max_time = 20
 
 
+func has_money(amount: int, player: int) -> bool:
+	return player_moneys[player-1] >= amount
+
+
 func add_money(amount: int, player: int):
 	if started:
 		player_moneys[player-1] += amount
 
 
-func spend_money(amount: int, player: int):
+func spend_money(amount: int, player: int) -> bool:
 	if started:
-		player_moneys[player-1] -= amount
+		if player_moneys[player-1] >= amount:
+			player_moneys[player-1] -= amount
+			return true
+	return false
 
 
 func _process(delta: float):

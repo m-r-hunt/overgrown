@@ -145,7 +145,7 @@ func try_pick():
 	var areas := pickable_detector.get_overlapping_areas()
 	if len(areas) > 0:
 		var obj := areas[0] as Node2D
-		if obj.has_method("pickable") && obj.pickable():
+		if obj.has_method("pickable") && obj.pickable(player_number):
 			var old_parent := obj.get_parent()
 			old_parent.remove_child(obj)
 			if old_parent.has_method("reset_after_pick"):

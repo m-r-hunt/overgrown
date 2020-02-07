@@ -6,7 +6,7 @@ var water_level := WATER_MAX
 const WATER_MAX = 5
 
 
-func pickable():
+func pickable(_player_number: int) -> bool:
 	return true
 
 

@@ -24,13 +24,13 @@ func _process(_delta: float):
 	$Label.margin_bottom = global_position.y+7
 
 
-func pickable() -> bool:
-	return true
+func pickable(player_number: int) -> bool:
+	return bought || PlayerStats.has_money(plant_type.bag_cost, player_number)
 
 
 func pick(player_number: int):
 	if not bought:
-		PlayerStats.spend_money(plant_type.bag_cost, player_number)
+		assert(PlayerStats.spend_money(plant_type.bag_cost, player_number))
 		bought = true
 
 
