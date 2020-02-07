@@ -14,7 +14,7 @@ func _ready():
 
 func set_allowed_player(p: int):
 	$Area2D.collision_mask &= ~(1 << allowed_player)
-	$StaticBody2D.collision_mask = 30
+	$StaticBody2D.collision_mask = 286
 	allowed_player = p
 	$Area2D.collision_mask |= (1 << allowed_player)
 	$StaticBody2D.collision_mask &= ~(1 << allowed_player)

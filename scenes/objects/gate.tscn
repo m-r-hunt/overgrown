@@ -24,7 +24,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
-collision_mask = 30
+collision_mask = 286
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0, -8 )
@@ -32,7 +32,7 @@ shape = SubResource( 2 )
 
 [node name="LockingBody" type="StaticBody2D" parent="."]
 collision_layer = 0
-collision_mask = 30
+collision_mask = 286
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LockingBody"]
 position = Vector2( 0, -8 )

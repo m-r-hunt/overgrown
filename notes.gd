@@ -2,10 +2,8 @@ extends Node
 
 
 ## Near TODOs
-# Buying feedback and no negative money
 # Don't place stuff offscreen or on top of stuff
 # Restrict placement of items to inside farms
-# Stop buyers walking through gates
 
 
 ## Polish Needed
@@ -41,6 +39,8 @@ extends Node
 # Stop forced drops
 # Redo tile arts
 # A few different seeds
+# Buying feedback and no negative money
+# Stop buyers walking through gates
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
