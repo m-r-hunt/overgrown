@@ -7,6 +7,10 @@ tool
 # Somewhat cribbed from https://github.com/leonkrause/aseprite-import/tree/master/addons/eska.aseprite_importer (MIT License)
 # - mainly the import plugin structure and basic import flow. Actual scene construction is totally new and custom for my needs.
 
+# Possible improvements:
+#  Parse Tiled tile collision data into Godot TileSet collision shapes
+#  Pass tile custom properties into custom layer functions
+#  Pass object custom properties into scene construction somehow
 
 func get_importer_name():
 	return "Tiled Import"
@@ -42,7 +46,14 @@ func get_preset_name(_preset):
 
 func get_import_options(_preset):
 	var options = [
+		# On Object layers, objects will be loaded from the path object_folder + Tiled object type + ".tscn"
 		{"name": "object_folder", "default_value": "res://scenes/objects/"},
+		
+		# Dictionary mapping layer name to script path (string) used to load that layer.
+		# Given script should have a function:
+		# static func run(_tiled_layer, _tileset, _tilewidth, _tileheight) -> Node:
+		# This should process layer data (given via _tiled_layer) to produce a node inserted in the scene
+		# The intent is to allow "tile object" layers - painted as tile layers but loaded into nodes via custom logic
 		{"name": "custom_layers", "default_value": {}},
 	]
 	return options
