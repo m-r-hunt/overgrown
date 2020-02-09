@@ -2,23 +2,40 @@ extends Node
 
 
 ## Near TODOs
+# New control scheme
+# Allow swapping items with floor items
 
 
 ## Polish Needed
 # Truck
-# Pedestrians
-# Buyers
-# Balance
+## Animated open/close
+## Animated drive away/come back
+## Some kind of indication of prices for seeds
+# Pedestrians/Buyers
+## Spawn on the right
+## Fix y positioning
+## Hide entry/exit better
+## Fade out buyers when leaving
+## Buyer speech bubble flip position
+## More animations for buyers
 # Perfect title screen
-# Buyer speech bubble flip position
+## Button/title locations
+## Add border foliage
 # Watering can
+## Animations for watering/refilling
+## Freeze catmans for a time when watering/refilling
 # Redo Timer
+## Needs redesign
+# Balance
+## Playtest?
+# Sound
+## SFX
+## Music
 
 
 ## Far TODOs
 # Inject plot positions for different levels somehow
 # Improve walk cycles
-# Allow swapping items with floor items
 
 
 # Done
