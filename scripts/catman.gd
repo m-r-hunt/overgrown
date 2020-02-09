@@ -132,6 +132,9 @@ func try_place():
 			$Held.sell(Sell.new(obj, self))
 	else:
 		var pickable_detector := $Selector/PickableArea as Area2D
+		var placement_detector := $Selector/PlacementArea as Area2D
+		if len(placement_detector.get_overlapping_areas()) == 0:
+			return
 		var areas := pickable_detector.get_overlapping_areas()
 		if len(areas) == 0:
 			var obj := get_node("Held")

@@ -2,8 +2,6 @@ extends Node
 
 
 ## Near TODOs
-# Don't place stuff offscreen or on top of stuff
-# Restrict placement of items to inside farms
 
 
 ## Polish Needed
@@ -14,6 +12,7 @@ extends Node
 # Perfect title screen
 # Buyer speech bubble flip position
 # Watering can
+# Redo Timer
 
 
 ## Far TODOs
@@ -41,6 +40,8 @@ extends Node
 # A few different seeds
 # Buying feedback and no negative money
 # Stop buyers walking through gates
+# Don't place stuff offscreen or on top of stuff
+# Restrict placement of items to inside farms
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

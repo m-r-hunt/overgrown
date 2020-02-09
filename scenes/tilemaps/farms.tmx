@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="32" height="19" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="24">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="32" height="19" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="29">
  <tileset firstgid="1" source="tiles.tsx"/>
  <layer id="6" name="Tile Layer 2" width="32" height="19">
   <data encoding="csv">
@@ -63,6 +63,9 @@
   <object id="6" type="money_sign" x="56" y="127">
    <point/>
   </object>
+  <object id="24" type="normal_farm_zone" x="96" y="64">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="BottomLeft">
   <object id="9" type="catman" x="104" y="232">
@@ -78,6 +81,9 @@
    <point/>
   </object>
   <object id="21" type="money_sign" x="58" y="192">
+   <point/>
+  </object>
+  <object id="25" type="normal_farm_zone" x="96" y="240">
    <point/>
   </object>
  </objectgroup>
@@ -97,6 +103,9 @@
   <object id="22" type="money_sign" x="454" y="127">
    <point/>
   </object>
+  <object id="28" type="normal_farm_zone" x="416" y="64">
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="5" name="BottomRight">
   <object id="11" type="catman" x="416" y="236">
@@ -112,6 +121,9 @@
    <point/>
   </object>
   <object id="23" type="money_sign" x="456" y="192">
+   <point/>
+  </object>
+  <object id="27" type="normal_farm_zone" x="416" y="240">
    <point/>
   </object>
  </objectgroup>

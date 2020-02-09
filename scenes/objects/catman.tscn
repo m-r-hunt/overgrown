@@ -41,6 +41,13 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Selector/SellerArea"]
 shape = SubResource( 1 )
 
+[node name="PlacementArea" type="Area2D" parent="Selector"]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Selector/PlacementArea"]
+shape = SubResource( 1 )
+
 [node name="AsepriteSprite" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, -16 )
 texture = ExtResource( 5 )
