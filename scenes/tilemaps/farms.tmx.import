@@ -11,3 +11,7 @@ dest_files=[ "res://.import/farms.tmx-0c47fd251d8975dc56a9a7c88c99a1d5.scn" ]
 
 [params]
 
+object_folder="res://scenes/objects/"
+custom_layers={
+"Plots": "res://scripts/plots_loader.gd"
+}

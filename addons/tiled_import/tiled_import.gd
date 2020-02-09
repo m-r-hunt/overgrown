@@ -42,6 +42,8 @@ func get_preset_name(_preset):
 
 func get_import_options(_preset):
 	var options = [
+		{"name": "object_folder", "default_value": "res://scenes/objects/"},
+		{"name": "custom_layers", "default_value": {}},
 	]
 	return options
 
@@ -52,7 +54,7 @@ func get_import_order():
 	return 101
 
 
-func import(src, target_path, _import_options, _r_platform_variants, _r_gen_files):
+func import(src, target_path, import_options, _r_platform_variants, _r_gen_files):
 	var tmx_path = src
 	var tmx_dir = src.get_base_dir()
 	target_path = target_path + "." + get_save_extension()
@@ -135,13 +137,19 @@ func import(src, target_path, _import_options, _r_platform_variants, _r_gen_file
 	for ts in tilesets:
 		ts.add_to_godot_tileset(tileset)
 	
+	var custom_layers = import_options["custom_layers"]
 	for layer in layers:
-		var map = layer.make_godot_tilemap(tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
+		var map
+		if layer.name in custom_layers:
+			var script = load(custom_layers[layer.name])
+			map = script.run(layer, tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
+		else:
+			map = layer.make_godot_tilemap(tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
 		root_node.add_child(map)
 		map.owner = root_node
 	
 	for group in object_groups:
-		group.make_godot_node(root_node)
+		group.make_godot_node(root_node, import_options["object_folder"])
 
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(root_node)
@@ -329,13 +337,13 @@ class TiledObjectGroup:
 		objects = _objects
 
 
-	func make_godot_node(owner: Node):
+	func make_godot_node(owner: Node, folder: String):
 		var node = Node2D.new()
 		node.name = name
 		owner.add_child(node)
 		node.owner = owner
 		for object in objects:
-			var object_scene = load("res://scenes/objects/" + object["type"] + ".tscn")
+			var object_scene = load(folder + object["type"] + ".tscn")
 			var instance = object_scene.instance()
 			node.add_child(instance)
 			instance.owner = owner
