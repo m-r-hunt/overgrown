@@ -31,15 +31,13 @@ func has_money(amount: int, player: int) -> bool:
 
 
 func add_money(amount: int, player: int):
-	if started:
-		player_moneys[player-1] += amount
+	player_moneys[player-1] += amount
 
 
 func spend_money(amount: int, player: int) -> bool:
-	if started:
-		if player_moneys[player-1] >= amount:
-			player_moneys[player-1] -= amount
-			return true
+	if player_moneys[player-1] >= amount:
+		player_moneys[player-1] -= amount
+		return true
 	return false
 
 
