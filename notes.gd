@@ -36,6 +36,7 @@ extends Node
 ## Far TODOs
 # Inject plot positions for different levels somehow
 # Improve walk cycles
+# Improve tilemap collision shapes (proper import from Tiled)
 
 
 # Done
