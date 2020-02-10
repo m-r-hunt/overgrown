@@ -100,6 +100,12 @@ wav={
 "force/max_rate_hz": 44100,
 "force/mono": false
 }
+"Tiled Import"={
+"custom_layers": {
+"Plots": "res://scripts/plots_loader.gd"
+},
+"object_folder": "res://scenes/objects/"
+}
 
 [input]
 
