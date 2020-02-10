@@ -141,6 +141,26 @@ func try_place():
 			obj.position = $Selector.global_position - get_parent().global_position + Vector2(0, 8)
 			remove_child(obj)
 			get_parent().add_child(obj)
+		elif len(areas) == 1:
+			# Swap with ground
+			var to_pick := areas[0] as Node2D
+			if to_pick.has_method("pickable") && to_pick.pickable(player_number):
+				# Put down $Held
+				var obj := get_node("Held")
+				obj.position = $Selector.global_position - get_parent().global_position + Vector2(0, 8)
+				remove_child(obj)
+				get_parent().add_child(obj)
+				# Pick up from ground
+				var old_parent := to_pick.get_parent()
+				old_parent.remove_child(to_pick)
+				if old_parent.has_method("reset_after_pick"):
+					old_parent.reset_after_pick()
+				add_child(to_pick)
+				to_pick.position = Vector2(0.0, -32.0)
+				to_pick.name = "Held"
+				if to_pick.has_method("pick"):
+					to_pick.pick(player_number)
+			
 
 
 func try_pick():

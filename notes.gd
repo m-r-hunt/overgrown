@@ -3,7 +3,6 @@ extends Node
 
 ## Near TODOs
 # New control scheme
-# Allow swapping items with floor items
 
 
 ## Polish Needed
@@ -34,7 +33,6 @@ extends Node
 
 
 ## Far TODOs
-# Inject plot positions for different levels somehow
 # Improve walk cycles
 # Improve tilemap collision shapes (proper import from Tiled)
 
@@ -60,6 +58,8 @@ extends Node
 # Stop buyers walking through gates
 # Don't place stuff offscreen or on top of stuff
 # Restrict placement of items to inside farms
+# Inject plot positions for different levels somehow
+# Allow swapping items with floor items
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
