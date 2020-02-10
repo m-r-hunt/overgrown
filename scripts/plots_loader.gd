@@ -1,6 +1,18 @@
 extends Reference
 
-static func run(_tiled_layer, _tileset, _tilewidth, _tileheight) -> Node:
+static func run(tiled_layer, _tileset, tilewidth, tileheight, root):
 	print("Hello from plot loader")
+	var plot_scene = load("res://scenes/objects/plot.tscn")
+	var layer = Node2D.new()
+	root.add_child(layer)
+	layer.owner = root
 	
-	return Node2D.new()
+	var idata = tiled_layer.process_csv()
+	for x in range(0, tiled_layer.width):
+		for y in range(0, tiled_layer.height):
+			var tid = idata[y*tiled_layer.width + x]
+			if tid != 0:
+				var plot = plot_scene.instance()
+				plot.position = Vector2(x * tilewidth + tilewidth/2, y * tileheight)
+				layer.add_child(plot)
+				plot.owner = root

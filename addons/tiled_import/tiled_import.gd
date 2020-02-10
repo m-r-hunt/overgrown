@@ -51,8 +51,8 @@ func get_import_options(_preset):
 		
 		# Dictionary mapping layer name to script path (string) used to load that layer.
 		# Given script should have a function:
-		# static func run(_tiled_layer, _tileset, _tilewidth, _tileheight) -> Node:
-		# This should process layer data (given via _tiled_layer) to produce a node inserted in the scene
+		# static func run(_tiled_layer, _tileset, _tilewidth, _tileheight, root_node):
+		# This should process layer data (given via _tiled_layer) and insert a node as a child of/owned by the given root_node
 		# The intent is to allow "tile object" layers - painted as tile layers but loaded into nodes via custom logic
 		{"name": "custom_layers", "default_value": {}},
 	]
@@ -150,14 +150,13 @@ func import(src, target_path, import_options, _r_platform_variants, _r_gen_files
 	
 	var custom_layers = import_options["custom_layers"]
 	for layer in layers:
-		var map
 		if layer.name in custom_layers:
 			var script = load(custom_layers[layer.name])
-			map = script.run(layer, tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
+			script.run(layer, tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]), root_node)
 		else:
-			map = layer.make_godot_tilemap(tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
-		root_node.add_child(map)
-		map.owner = root_node
+			var map = layer.make_godot_tilemap(tileset, int(map_attributes["tilewidth"]), int(map_attributes["tileheight"]))
+			root_node.add_child(map)
+			map.owner = root_node
 	
 	for group in object_groups:
 		group.make_godot_node(root_node, import_options["object_folder"])
@@ -375,14 +374,7 @@ class TiledLayer:
 		width = _width
 		height = _height
 
-
-	func make_godot_tilemap(tileset: TileSet, tilewidth: int, tileheight: int):
-		var node = TileMap.new()
-		node.name = name
-		node.tile_set = tileset
-		node.cell_tile_origin = TileMap.TILE_ORIGIN_CENTER
-		node.cell_size = Vector2(tilewidth, tileheight)
-		node.cell_y_sort = true
+	func process_csv() -> PoolIntArray:
 		var buf = ""
 		var idata = PoolIntArray()
 		for i in range(0, len(layer_data)):
@@ -393,6 +385,16 @@ class TiledLayer:
 				buf += layer_data[i]
 		if buf != "":
 			idata.append(int(buf.strip_edges()))
+		return idata
+
+	func make_godot_tilemap(tileset: TileSet, tilewidth: int, tileheight: int):
+		var node = TileMap.new()
+		node.name = name
+		node.tile_set = tileset
+		node.cell_tile_origin = TileMap.TILE_ORIGIN_CENTER
+		node.cell_size = Vector2(tilewidth, tileheight)
+		node.cell_y_sort = true
+		var idata = process_csv()
 		for x in range(0, width):
 			for y in range(0, height):
 				node.set_cell(x, y, idata[y*width + x])

@@ -10,6 +10,7 @@ var object_layers = [
 	"TopRight",
 	"BottomLeft",
 	"BottomRight",
+	"Plots",
 ]
 
 
@@ -26,11 +27,6 @@ func _ready():
 	set_player_number("BottomLeft", 3)
 	set_player_number("BottomRight", 4)
 	
-	place_plots(2, 9, 2, 5)
-	place_plots(22, 29, 2, 5)
-	place_plots(2, 9, 13, 16)
-	place_plots(22, 29, 13, 16)
-	
 	for node in get_children():
 		if node is TileMap:
 			continue
@@ -42,19 +38,6 @@ func _ready():
 		else:
 			remove_child(node)
 			$"Tile Layer 1".add_child(node)
-
-
-func place_plots(xmin: int, xmax: int, ymin: int, ymax: int):
-	var plot_prefab := preload("res://scenes/objects/plot.tscn")
-	var x: int = xmin*TILE_SIZE + HALF_TILE_SIZE
-	while x <= xmax*TILE_SIZE + HALF_TILE_SIZE:
-		var y: int = ymin*TILE_SIZE
-		while y <= ymax*TILE_SIZE:
-			var plot := plot_prefab.instance()
-			plot.position = Vector2(x, y)
-			$"Tile Layer 1".add_child(plot)
-			y += 16
-		x += 16
 
 
 func set_player_number(farm: String, p: int):
