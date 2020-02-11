@@ -33,7 +33,7 @@ position = Vector2( 254, 32 )
 position = Vector2( 16, 152 )
 
 [node name="RoundTimer" parent="." instance=ExtResource( 12 )]
-position = Vector2( 472, 270 )
+position = Vector2( 301, 32 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 232.0

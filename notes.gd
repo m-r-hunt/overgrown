@@ -3,6 +3,9 @@ extends Node
 
 ## Near TODOs
 # New control scheme
+# Redo Timer
+## Animate sand in each state
+## Make sure end works properly
 
 
 ## Polish Needed
@@ -23,8 +26,6 @@ extends Node
 # Watering can
 ## Animations for watering/refilling
 ## Freeze catmans for a time when watering/refilling
-# Redo Timer
-## Needs redesign
 # Balance
 ## Playtest?
 # Sound

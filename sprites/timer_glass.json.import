@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/timer_glass.json-f560f9692b893a3d402e1c3e50d82d13.scn"
+
+[deps]
+
+source_file="res://sprites/timer_glass.json"
+dest_files=[ "res://.import/timer_glass.json-f560f9692b893a3d402e1c3e50d82d13.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

@@ -1,5 +1,5 @@
-extends PathFollow2D
+extends Node2D
 
 
 func _process(_delta: float):
-	unit_offset = PlayerStats.get_time_portion()
+	$AsepriteSprite.frame = floor($AsepriteSprite.hframes * PlayerStats.get_time_portion())
