@@ -4,8 +4,8 @@ extends Node
 ## Near TODOs
 # New control scheme
 # Redo Timer
-## Animate sand in each state
 ## Make sure end works properly
+## Move around at start (and end?)
 
 
 ## Polish Needed
@@ -61,6 +61,7 @@ extends Node
 # Restrict placement of items to inside farms
 # Inject plot positions for different levels somehow
 # Allow swapping items with floor items
+## Animate sand in each state
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
