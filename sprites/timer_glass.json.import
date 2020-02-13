@@ -11,6 +11,6 @@ dest_files=[ "res://.import/timer_glass.json-f560f9692b893a3d402e1c3e50d82d13.sc
 
 [params]
 
-autoplay_animation=""
+autoplay_animation="Idle"
 constant_frame_rate=100
 default_animation_looping=true
