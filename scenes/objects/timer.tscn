@@ -8,3 +8,5 @@ script = ExtResource( 2 )
 
 [node name="AsepriteSprite" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, -16 )
+
+[node name="Tween" type="Tween" parent="."]

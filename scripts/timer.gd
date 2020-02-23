@@ -6,6 +6,7 @@ var playing := -1
 
 
 func _ready():
+	$AsepriteSprite.position = Vector2(240, 135) - position
 	$AsepriteSprite/AnimationPlayer.get_animation("Idle").loop = false
 	$AsepriteSprite/AnimationPlayer.play("Idle")
 	Utils.e_connect(PlayerStats, "time_started", self, "on_time_started")
@@ -37,6 +38,8 @@ func on_time_started():
 	$AsepriteSprite/AnimationPlayer.play("Fall")
 	yield($AsepriteSprite/AnimationPlayer, "animation_finished")
 	main_sequence = true
+	$Tween.interpolate_property($AsepriteSprite, "position", $AsepriteSprite.position, Vector2.ZERO, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	$Tween.start()
 
 
 func on_time_up():
