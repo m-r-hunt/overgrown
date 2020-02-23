@@ -6,6 +6,7 @@ extends Node
 # Redo Timer
 ## Make sure end works properly
 ## Move around at start (and end?)
+## Timer hitbox
 
 
 ## Polish Needed
