@@ -3,17 +3,13 @@ extends Node
 
 ## Near TODOs
 # New control scheme
-# Redo Timer
-## Make sure end works properly
-## Move around at start (and end?)
-## Timer hitbox
-
-
-## Polish Needed
 # Truck
 ## Animated open/close
 ## Animated drive away/come back
 ## Some kind of indication of prices for seeds
+
+
+## Polish Needed
 # Pedestrians/Buyers
 ## Spawn on the right
 ## Fix y positioning
@@ -63,6 +59,10 @@ extends Node
 # Inject plot positions for different levels somehow
 # Allow swapping items with floor items
 ## Animate sand in each state
+## Timer hitbox
+## Move around at start (and end?)
+# Redo Timer
+## Make sure end works properly
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

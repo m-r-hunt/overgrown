@@ -45,4 +45,8 @@ func on_time_started():
 
 func on_time_up():
 	main_sequence = false
+	$Tween.interpolate_property($AsepriteSprite, "position", $AsepriteSprite.position, Vector2(240, 135) - position, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	$AsepriteSprite/AnimationPlayer.get_animation("Finish").loop = false
 	$AsepriteSprite/AnimationPlayer.play("Finish")
