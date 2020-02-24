@@ -13,4 +13,4 @@ dest_files=[ "res://.import/truck.json-a33a9854eb61e8e6a8a546e23f8c22cd.scn" ]
 
 autoplay_animation=""
 constant_frame_rate=100
-default_animation_looping=true
+default_animation_looping=false
