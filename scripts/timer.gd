@@ -3,6 +3,7 @@ extends Node2D
 
 var main_sequence := false
 var playing := -1
+onready var original_position := ($AsepriteSprite as Node2D).position
 
 
 func _ready():
@@ -38,7 +39,7 @@ func on_time_started():
 	$AsepriteSprite/AnimationPlayer.play("Fall")
 	yield($AsepriteSprite/AnimationPlayer, "animation_finished")
 	main_sequence = true
-	$Tween.interpolate_property($AsepriteSprite, "position", $AsepriteSprite.position, Vector2.ZERO, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
+	$Tween.interpolate_property($AsepriteSprite, "position", $AsepriteSprite.position, original_position, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
 	$Tween.start()
 
 

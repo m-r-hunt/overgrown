@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/timer_glass.json" type="PackedScene" id=1]
 [ext_resource path="res://scripts/timer.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 15 )
 
 [node name="Timer" type="Node2D"]
 script = ExtResource( 2 )
@@ -10,3 +13,9 @@ script = ExtResource( 2 )
 position = Vector2( 0, -16 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -16 )
+shape = SubResource( 1 )
