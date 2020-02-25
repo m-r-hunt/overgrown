@@ -1,0 +1,99 @@
+{ "frames": [
+   {
+    "filename": "small_numbers 0.ase",
+    "frame": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 1.ase",
+    "frame": { "x": 5, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 2.ase",
+    "frame": { "x": 10, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 3.ase",
+    "frame": { "x": 15, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 4.ase",
+    "frame": { "x": 20, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 5.ase",
+    "frame": { "x": 25, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 6.ase",
+    "frame": { "x": 30, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 7.ase",
+    "frame": { "x": 35, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   },
+   {
+    "filename": "small_numbers 8.ase",
+    "frame": { "x": 40, "y": 0, "w": 5, "h": 5 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 5 },
+    "sourceSize": { "w": 5, "h": 5 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.13-x64",
+  "image": "small_numbers.png",
+  "format": "RGBA8888",
+  "size": { "w": 45, "h": 5 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

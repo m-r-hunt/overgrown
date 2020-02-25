@@ -12,17 +12,10 @@ func _ready():
 	var sprite := (plant_type as PlantResource).sprite.instance()
 	sprite.name = "AsepriteSprite"
 	add_child(sprite)
+	move_child(sprite, 0)
 	sprite.position.y = -8
-	$Label.text = str(count)
-	$Label.set_as_toplevel(true)
 	$CoinSprite.frame = plant_type.bag_cost-1
-
-
-func _process(_delta: float):
-	$Label.margin_left = global_position.x-1
-	$Label.margin_right = global_position.x+7
-	$Label.margin_top = global_position.y-7
-	$Label.margin_bottom = global_position.y+7
+	$NumberSprite.frame = count-1
 
 
 func pickable(player_number: int) -> bool:
@@ -40,7 +33,6 @@ func place(place: Place):
 	assert(place)
 	if place.target.is_empty():
 		count -= 1
-		$Label.text = str(count)
 		var planted := load("res://scenes/objects/plant_planted.tscn").instance() as Node2D
 		planted.plant_type = plant_type
 		place.target.add_child(planted)
@@ -53,3 +45,5 @@ func place(place: Place):
 
 		if count == 0:
 			queue_free()
+		else:
+			$NumberSprite.frame = count - 1

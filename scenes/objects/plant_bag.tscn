@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/plant_bag.gd" type="Script" id=1]
 [ext_resource path="res://sprites/coin_indicator.json" type="PackedScene" id=2]
+[ext_resource path="res://sprites/seed_indicator.json" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -15,17 +16,9 @@ script = ExtResource( 1 )
 position = Vector2( 0, -7 )
 shape = SubResource( 1 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = -1.0
-margin_top = -14.0
-margin_right = 7.0
-custom_colors/font_color = Color( 0.101961, 0, 0.827451, 1 )
-align = 2
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CoinSprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( -2, -6 )
 z_index = 10
+
+[node name="NumberSprite" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -7 )

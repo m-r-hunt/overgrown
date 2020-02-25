@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/seed_indicator.json-334cdb7e44008010cb926ec965cc80ee.scn"
+
+[deps]
+
+source_file="res://sprites/seed_indicator.json"
+dest_files=[ "res://.import/seed_indicator.json-334cdb7e44008010cb926ec965cc80ee.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true

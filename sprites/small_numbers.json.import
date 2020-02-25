@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/small_numbers.json-565cd2cf57a760b4e11977c4c6428535.scn"
+
+[deps]
+
+source_file="res://sprites/small_numbers.json"
+dest_files=[ "res://.import/small_numbers.json-565cd2cf57a760b4e11977c4c6428535.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
