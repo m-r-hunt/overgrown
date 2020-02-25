@@ -4,8 +4,6 @@ extends Node
 ## Near TODOs
 # New control scheme
 # Truck
-## Animated open/close
-## Animated drive away/come back
 ## Some kind of indication of prices for seeds
 
 
@@ -63,6 +61,8 @@ extends Node
 ## Move around at start (and end?)
 # Redo Timer
 ## Make sure end works properly
+## Animated open/close
+## Animated drive away/come back
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)

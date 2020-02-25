@@ -1,7 +1,7 @@
 extends Area2D
 
 
-export var plant_type: Resource
+export var plant_type: Resource = load("res://plants/carrot.tres")
 export var count := 9
 
 var bought := false
@@ -15,6 +15,7 @@ func _ready():
 	sprite.position.y = -8
 	$Label.text = str(count)
 	$Label.set_as_toplevel(true)
+	$CoinSprite.frame = plant_type.bag_cost-1
 
 
 func _process(_delta: float):
@@ -32,6 +33,7 @@ func pick(player_number: int):
 	if not bought:
 		assert(PlayerStats.spend_money(plant_type.bag_cost, player_number))
 		bought = true
+		$CoinSprite.visible = false
 
 
 func place(place: Place):

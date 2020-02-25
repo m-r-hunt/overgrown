@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/coin_indicator.json-44a4ab48ed3b8a1544a39e069673254b.scn"
+
+[deps]
+
+source_file="res://sprites/coin_indicator.json"
+dest_files=[ "res://.import/coin_indicator.json-44a4ab48ed3b8a1544a39e069673254b.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=true
