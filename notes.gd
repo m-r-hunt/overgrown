@@ -3,8 +3,6 @@ extends Node
 
 ## Near TODOs
 # New control scheme
-# Truck
-## Some kind of indication of prices for seeds
 
 
 ## Polish Needed
@@ -21,6 +19,10 @@ extends Node
 # Watering can
 ## Animations for watering/refilling
 ## Freeze catmans for a time when watering/refilling
+# Dashing
+## Improve velocity curve
+## Bonk star/stun effect?
+## Particle trail
 # Balance
 ## Playtest?
 # Sound
@@ -63,6 +65,8 @@ extends Node
 ## Make sure end works properly
 ## Animated open/close
 ## Animated drive away/come back
+# Truck
+## Some kind of indication of prices for seeds
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
