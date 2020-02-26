@@ -1,0 +1,16 @@
+[remap]
+
+importer="Aseprite Import"
+type="PackedScene"
+path="res://.import/truck_door.json-0d7550de99e789b06fc3a10722a55127.scn"
+
+[deps]
+
+source_file="res://sprites/truck_door.json"
+dest_files=[ "res://.import/truck_door.json-0d7550de99e789b06fc3a10722a55127.scn" ]
+
+[params]
+
+autoplay_animation=""
+constant_frame_rate=100
+default_animation_looping=false

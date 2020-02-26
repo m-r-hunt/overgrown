@@ -8,5 +8,5 @@ script = ExtResource( 1 )
 sprite = ExtResource( 2 )
 name = "Carrot"
 bag_cost = 1
-sell_price = 10
-growth_time = 6
+sell_price = 2
+growth_time = 4
