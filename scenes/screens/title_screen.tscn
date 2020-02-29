@@ -12,15 +12,9 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 
 [node name="PlayButton" parent="." instance=ExtResource( 3 )]
-margin_left = 178.0
-margin_top = 127.0
-margin_right = 306.0
-margin_bottom = 159.0
+position = Vector2( 240, 135 )
 text = "Play"
 
 [node name="QuitButton" parent="." instance=ExtResource( 3 )]
-margin_left = 179.0
-margin_top = 178.0
-margin_right = 307.0
-margin_bottom = 210.0
+position = Vector2( 240, 180 )
 text = "Quit"
