@@ -4,6 +4,9 @@ extends KinematicBody2D
 var speed := 20.0
 var wander_time := 0.0
 var wander_direction := 0
+# Hack todo remnove
+var dir
+var spawned
 
 
 func _ready():

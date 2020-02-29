@@ -3,9 +3,6 @@ extends Node
 
 ## Near TODOs
 # New control scheme
-
-
-## Polish Needed
 # Pedestrians/Buyers
 ## Spawn on the right
 ## Fix y positioning
@@ -13,6 +10,9 @@ extends Node
 ## Fade out buyers when leaving
 ## Buyer speech bubble flip position
 ## More animations for buyers
+
+
+## Polish Needed
 # Perfect title screen
 ## Button/title locations
 ## Add border foliage
@@ -90,3 +90,11 @@ extends Node
 #5 day ongoing structure
 #Farm upgrades
 #Animals
+
+
+# Mikle's Observations
+## Better visibility on stats
+## Tutorials
+## Controls
+## Sound
+## Longer growth times(?)/balance in general - grapes OP? Wheat bad?
