@@ -17,7 +17,7 @@
 script = ExtResource( 1 )
 
 [node name="TiledMap" parent="." instance=ExtResource( 2 )]
-position = Vector2( -16, -16 )
+position = Vector2( -32, -32 )
 script = ExtResource( 3 )
 
 [node name="SellBox" parent="TiledMap" instance=ExtResource( 5 )]
@@ -30,10 +30,10 @@ position = Vector2( 236, 223 )
 position = Vector2( 254, 32 )
 
 [node name="PedestrianSpawner" parent="TiledMap" instance=ExtResource( 6 )]
-position = Vector2( 16, 152 )
+position = Vector2( -1, 152 )
 
 [node name="PedestrianSpawnerRight" parent="TiledMap" instance=ExtResource( 6 )]
-position = Vector2( 496, 152 )
+position = Vector2( 512, 152 )
 scale = Vector2( -1, 1 )
 dir = -1.0
 
