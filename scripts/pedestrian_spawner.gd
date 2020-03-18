@@ -20,7 +20,7 @@ func _process(delta: float):
 			new_ped = preload("res://scenes/objects/buyer.tscn").instance()
 		else:
 			new_ped = preload("res://scenes/objects/pedestrian.tscn").instance()
-		new_ped.position = position + Vector2(8, rand_range(-16, 16))
+		new_ped.position = position + Vector2(8, rand_range(-8, 8))
 		new_ped.dir = dir
 		new_ped.spawned = self
 		get_parent().add_child(new_ped)

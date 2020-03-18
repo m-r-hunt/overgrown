@@ -30,10 +30,10 @@ position = Vector2( 236, 223 )
 position = Vector2( 254, 32 )
 
 [node name="PedestrianSpawner" parent="TiledMap" instance=ExtResource( 6 )]
-position = Vector2( -1, 152 )
+position = Vector2( 24, 168 )
 
 [node name="PedestrianSpawnerRight" parent="TiledMap" instance=ExtResource( 6 )]
-position = Vector2( 512, 152 )
+position = Vector2( 520, 168 )
 scale = Vector2( -1, 1 )
 dir = -1.0
 

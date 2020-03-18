@@ -4,10 +4,6 @@ extends Node
 ## Near TODOs
 # New control scheme
 # Pedestrians/Buyers
-## Spawn on the right
-## Fix y positioning
-## Hide entry/exit better
-## Fade out buyers when leaving
 ## Buyer speech bubble flip position
 ## More animations for buyers
 
@@ -67,6 +63,11 @@ extends Node
 ## Animated drive away/come back
 # Truck
 ## Some kind of indication of prices for seeds
+# Pedestrians/Buyers
+## Spawn on the right
+## Fix y positioning
+## Hide entry/exit better
+## Fade out buyers when leaving
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
