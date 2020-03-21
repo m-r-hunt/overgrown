@@ -4,7 +4,6 @@ extends Node
 ## Near TODOs
 # New control scheme
 # Pedestrians/Buyers
-## Buyer speech bubble flip position
 ## More animations for buyers
 
 
@@ -68,6 +67,7 @@ extends Node
 ## Fix y positioning
 ## Hide entry/exit better
 ## Fade out buyers when leaving
+## Buyer speech bubble flip position
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
