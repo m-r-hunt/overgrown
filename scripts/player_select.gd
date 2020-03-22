@@ -31,15 +31,19 @@ func joy_axis(device: int, axis: int, value: float): # value = +-1 for direction
 	ev.axis_value = value
 	return ev
 
-const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact", "p%s_dash"]
+const events := ["p%s_left", "p%s_right", "p%s_up", "p%s_down", "p%s_interact", "p%s_dash", "p%s_rstick_left", "p%s_rstick_right", "p%s_rstick_down", "p%s_rstick_up"]
 var inputs := {
 	CONTROL_TYPE.KEYBOARD: {
-		"p%s_left": [key_press(KEY_A), key_press(KEY_LEFT)], 
-		"p%s_right": [key_press(KEY_D), key_press(KEY_RIGHT)], 
-		"p%s_up": [key_press(KEY_W), key_press(KEY_UP)], 
-		"p%s_down": [key_press(KEY_S), key_press(KEY_DOWN)], 
+		"p%s_left": [key_press(KEY_A)], 
+		"p%s_right": [key_press(KEY_D)], 
+		"p%s_up": [key_press(KEY_W)], 
+		"p%s_down": [key_press(KEY_S)], 
 		"p%s_interact": [key_press(KEY_J)],
 		"p%s_dash": [key_press(KEY_K)],
+		"p%s_rstick_left": [key_press(KEY_LEFT)],
+		"p%s_rstick_right": [key_press(KEY_RIGHT)],
+		"p%s_rstick_down": [key_press(KEY_DOWN)],
+		"p%s_rstick_up": [key_press(KEY_UP)],
 	},
 	CONTROL_TYPE.JOY1: {
 		"p%s_left": [joy_press(0, JOY_DPAD_LEFT), joy_axis(0, JOY_AXIS_0, -1)], 
@@ -48,6 +52,10 @@ var inputs := {
 		"p%s_down": [joy_press(0, JOY_DPAD_DOWN), joy_axis(0, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(0, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(0, JOY_XBOX_B)],
+		"p%s_rstick_left": [joy_axis(0, JOY_AXIS_2, -1)],
+		"p%s_rstick_right": [joy_axis(0, JOY_AXIS_2, 1)],
+		"p%s_rstick_down": [joy_axis(0, JOY_AXIS_3, 1)],
+		"p%s_rstick_up": [joy_axis(0, JOY_AXIS_3, -1)],
 	},
 	CONTROL_TYPE.JOY2: {
 		"p%s_left": [joy_press(1, JOY_DPAD_LEFT), joy_axis(1, JOY_AXIS_0, -1)], 
@@ -56,6 +64,10 @@ var inputs := {
 		"p%s_down": [joy_press(1, JOY_DPAD_DOWN), joy_axis(1, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(1, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(1, JOY_XBOX_B)],
+		"p%s_rstick_left": [joy_axis(1, JOY_AXIS_2, -1)],
+		"p%s_rstick_right": [joy_axis(1, JOY_AXIS_2, 1)],
+		"p%s_rstick_down": [joy_axis(1, JOY_AXIS_3, 1)],
+		"p%s_rstick_up": [joy_axis(1, JOY_AXIS_3, -1)],
 	},
 	CONTROL_TYPE.JOY3: {
 		"p%s_left": [joy_press(2, JOY_DPAD_LEFT), joy_axis(2, JOY_AXIS_0, -1)], 
@@ -64,6 +76,10 @@ var inputs := {
 		"p%s_down": [joy_press(2, JOY_DPAD_DOWN), joy_axis(2, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(2, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(2, JOY_XBOX_B)],
+		"p%s_rstick_left": [joy_axis(2, JOY_AXIS_2, -1)],
+		"p%s_rstick_right": [joy_axis(2, JOY_AXIS_2, 1)],
+		"p%s_rstick_down": [joy_axis(2, JOY_AXIS_3, 1)],
+		"p%s_rstick_up": [joy_axis(2, JOY_AXIS_3, -1)],
 	},
 	CONTROL_TYPE.JOY4: {
 		"p%s_left": [joy_press(3, JOY_DPAD_LEFT), joy_axis(3, JOY_AXIS_0, -1)], 
@@ -72,6 +88,10 @@ var inputs := {
 		"p%s_down": [joy_press(3, JOY_DPAD_DOWN), joy_axis(3, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(3, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(3, JOY_XBOX_B)],
+		"p%s_rstick_left": [joy_axis(3, JOY_AXIS_2, -1)],
+		"p%s_rstick_right": [joy_axis(3, JOY_AXIS_2, 1)],
+		"p%s_rstick_down": [joy_axis(3, JOY_AXIS_3, 1)],
+		"p%s_rstick_up": [joy_axis(3, JOY_AXIS_3, -1)],
 	},
 	CONTROL_TYPE.JOY5: {
 		"p%s_left": [joy_press(4, JOY_DPAD_LEFT), joy_axis(4, JOY_AXIS_0, -1)], 
@@ -80,6 +100,10 @@ var inputs := {
 		"p%s_down": [joy_press(4, JOY_DPAD_DOWN), joy_axis(4, JOY_AXIS_1, 1)], 
 		"p%s_interact": [joy_press(4, JOY_XBOX_A)],
 		"p%s_dash": [joy_press(4, JOY_XBOX_B)],
+		"p%s_rstick_left": [joy_axis(4, JOY_AXIS_2, -1)],
+		"p%s_rstick_right": [joy_axis(4, JOY_AXIS_2, 1)],
+		"p%s_rstick_down": [joy_axis(4, JOY_AXIS_3, 1)],
+		"p%s_rstick_up": [joy_axis(4, JOY_AXIS_3, -1)],
 	},
 }
 

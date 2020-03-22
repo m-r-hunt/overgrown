@@ -8,7 +8,6 @@
 [ext_resource path="res://fonts/m5x7_big.tres" type="DynamicFont" id=6]
 [ext_resource path="res://scenes/button.tscn" type="PackedScene" id=7]
 
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -69,8 +68,4 @@ custom_fonts/font = ExtResource( 6 )
 text = "PLAYER SELECT"
 
 [node name="StartButton" parent="." instance=ExtResource( 7 )]
-margin_left = 154.554
-margin_top = 223.989
-margin_right = 282.554
-margin_bottom = 255.989
 text = "START"

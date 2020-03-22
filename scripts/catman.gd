@@ -22,6 +22,10 @@ export var left_action := "p1_left"
 export var right_action := "p1_right"
 export var interact_action := "p1_interact"
 export var dash_action := "p1_dash"
+export var rstick_left := "p1_rstick_left"
+export var rstick_right := "p1_rstick_right"
+export var rstick_up := "p1_rstick_up"
+export var rstick_down := "p1_rstick_down"
 
 
 var state: int = STATE.NORMAL
@@ -46,6 +50,10 @@ func set_player_number(n: int):
 	right_action = str("p", player_number, "_right")
 	interact_action = str("p", player_number, "_interact")
 	dash_action = str("p", player_number, "_dash")
+	rstick_left = str("p", player_number, "_rstick_left")
+	rstick_right = str("p", player_number, "_rstick_right")
+	rstick_down = str("p", player_number, "_rstick_down")
+	rstick_up = str("p", player_number, "_rstick_up")
 	$AsepriteSprite.texture = load(str("res://sprites/catman", player_number, ".png"))
 
 func _physics_process(delta: float):
@@ -72,7 +80,11 @@ func process_movement():
 		dx.x = -1
 	if Input.is_action_pressed(right_action):
 		dx.x = 1
-	if dx != Vector2(0, 0):
+	
+	var rstick_dir = Vector2(Input.get_action_strength(rstick_right) - Input.get_action_strength(rstick_left), Input.get_action_strength(rstick_down) - Input.get_action_strength(rstick_up))
+	if rstick_dir != Vector2.ZERO:
+		last_select_dir = rstick_dir.normalized()
+	elif dx != Vector2.ZERO:
 		last_select_dir = dx
 
 	if dx.y == 1:
@@ -91,8 +103,17 @@ func process_movement():
 
 func process_selector(update_position: bool):
 	if update_position:
-		var selector_x := 8 + floor($CollisionShape2D.global_position.x / 16)*16 + last_select_dir.x * 16
-		var selector_y := 8 + floor($CollisionShape2D.global_position.y / 16)*16 + last_select_dir.y * 16
+		var selector_x := 8 + floor($CollisionShape2D.global_position.x / 16)*16
+		var selector_y := 8 + floor($CollisionShape2D.global_position.y / 16)*16
+		if last_select_dir.x < 0:
+			selector_x -= 16
+		if last_select_dir.x > 0:
+			selector_x += 16
+		if last_select_dir.y < 0:
+			selector_y -= 16
+		if last_select_dir.y > 0:
+			selector_y += 16
+
 		selector_pos = Vector2(selector_x, selector_y)
 	$Selector.position = selector_pos - global_position
 
@@ -105,6 +126,7 @@ func update_normal():
 		interact()
 	if Input.is_action_just_pressed(dash_action):
 		state = STATE.DASHING
+		$Particles2D.emitting = true
 		dash_time = 0.0
 
 
@@ -205,9 +227,11 @@ func update_dashing(delta: float):
 	dash_time += delta
 	if dash_time >= DASH_LENGTH:
 		state = STATE.NORMAL
+		$Particles2D.emitting = false
 	var dx = last_select_dir * DASH_SPEED
 	var coll = move_and_collide(dx*delta)
 	if coll:
+		$Particles2D.emitting = false
 		bash(dash_time)
 		if coll.collider.has_method("bash"):
 			coll.collider.bash(dash_time)

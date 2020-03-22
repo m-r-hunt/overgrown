@@ -243,6 +243,74 @@ p4_dash={
 "deadzone": 0.5,
 "events": [  ]
 }
+p1_rstick_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":-1.0,"script":null)
+ ]
+}
+p1_rstick_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+ ]
+}
+p1_rstick_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":-1.0,"script":null)
+ ]
+}
+p1_rstick_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+p2_rstick_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_rstick_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_rstick_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p2_rstick_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_rstick_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_rstick_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_rstick_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p3_rstick_right={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_rstick_up={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_rstick_down={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_rstick_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+p4_rstick_right={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [layer_names]
 

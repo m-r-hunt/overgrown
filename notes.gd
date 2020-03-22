@@ -8,9 +8,6 @@ extends Node
 
 
 ## Polish Needed
-# Perfect title screen
-## Button/title locations
-## Add border foliage
 # Watering can
 ## Animations for watering/refilling
 ## Freeze catmans for a time when watering/refilling
@@ -68,6 +65,9 @@ extends Node
 ## Hide entry/exit better
 ## Fade out buyers when leaving
 ## Buyer speech bubble flip position
+# Perfect title screen
+## Button/title locations
+## Add border foliage
 
 ## Planning
 #LAN Party Date/Deadline: 28th March 2020 (Saturday)
