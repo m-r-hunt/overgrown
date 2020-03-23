@@ -189,6 +189,7 @@ p1_interact={
 p2_interact={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 p3_interact={
@@ -233,6 +234,7 @@ p1_dash={
 p2_dash={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 p3_dash={
@@ -243,39 +245,39 @@ p4_dash={
 "deadzone": 0.5,
 "events": [  ]
 }
-p1_rstick_up={
+p2_rstick_up={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":-1.0,"script":null)
  ]
 }
-p1_rstick_down={
+p2_rstick_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
  ]
 }
-p1_rstick_left={
+p2_rstick_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":-1.0,"script":null)
  ]
 }
-p1_rstick_right={
+p2_rstick_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
  ]
 }
-p2_rstick_up={
+p1_rstick_up={
 "deadzone": 0.5,
 "events": [  ]
 }
-p2_rstick_down={
+p1_rstick_down={
 "deadzone": 0.5,
 "events": [  ]
 }
-p2_rstick_left={
+p1_rstick_left={
 "deadzone": 0.5,
 "events": [  ]
 }
-p2_rstick_right={
+p1_rstick_right={
 "deadzone": 0.5,
 "events": [  ]
 }
